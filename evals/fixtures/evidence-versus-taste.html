@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Form comparison</title>
+<style>
+  body { margin: 2rem auto; padding: 0 1rem; max-width: 56rem; font: 16px/1.5 system-ui; color: #182230; background: #f5f7fa; }
+  main { display: grid; grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr)); gap: 1.5rem; }
+  section { padding: 1.5rem; background: white; border: 1px solid #b8c2cf; border-radius: .75rem; }
+  h2 { margin-top: 0; }
+  label { display: block; margin-top: 1rem; }
+  input { box-sizing: border-box; width: 100%; padding: .65rem; font: inherit; border: 1px solid #66758a; border-radius: .3rem; }
+  .submit { display: block; box-sizing: border-box; width: 100%; margin-top: 1.5rem; padding: .75rem; border: 0; border-radius: .3rem; background: #184fa3; color: white; text-align: center; font: inherit; cursor: pointer; }
+  :focus-visible { outline: 3px solid #bf5500; outline-offset: 3px; }
+  .feedback { min-height: 3rem; }
+</style>
+<h1>Submit a review request</h1>
+<p>Two local prototypes. Nothing is sent or stored. Compare pointer and keyboard use.</p>
+<main>
+  <section>
+    <h2>Variant A</h2>
+    <!-- No form element or keyboard handler: Enter in an input cannot submit. -->
+    <div>
+      <label for="a-name">Name</label><input id="a-name" value="Alex Morgan">
+      <label for="a-record">Record reference</label><input id="a-record" value="INV-2048">
+      <div class="submit" id="a-submit">Submit request</div>
+    </div>
+    <p class="feedback" id="a-feedback" aria-live="polite">Ready to submit.</p>
+  </section>
+  <section>
+    <h2>Variant B</h2>
+    <form id="b-form">
+      <label for="b-name">Name</label><input id="b-name" value="Alex Morgan">
+      <label for="b-record">Record reference</label><input id="b-record" value="INV-2048">
+      <button class="submit" type="submit">Submit request</button>
+    </form>
+    <p class="feedback" id="b-feedback" aria-live="polite">Ready to submit.</p>
+  </section>
+</main>
+<script>
+  const showFeedback = id => {
+    document.getElementById(id).textContent = 'Request submitted locally. No data was sent.';
+  };
+  document.getElementById('a-submit').addEventListener('click', () => showFeedback('a-feedback'));
+  document.getElementById('b-form').addEventListener('submit', event => {
+    event.preventDefault();
+    showFeedback('b-feedback');
+  });
+</script>
+</html>

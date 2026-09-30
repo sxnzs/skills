@@ -46,6 +46,20 @@ for s in "$PWD"/skills/skills/*; do ln -s "$s" ~/.claude/skills/; done
 
 The skills stop at a decision or plan; building it is a separate request.
 
+## Verify
+
+Use Node 24 or newer; no dependency installation is required.
+
+```sh
+npm run check
+```
+
+The dependency-free TypeScript checker supports flat scalar frontmatter and
+inline Markdown links, not general YAML or Markdown. It runs regression tests
+and checks skill metadata, sibling references, and documentation links.
+[Behavioral cases](evals/README.md) describe separate observations in disposable
+fixtures; the structural checker does not prove agent behavior.
+
 ## Lineage
 
 These skills were written after studying first-party skills by

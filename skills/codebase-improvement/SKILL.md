@@ -9,6 +9,8 @@ Work out, together, what is actually making this code hard to work with and what
 
 ## What done looks like
 
+When friction is supported:
+
 - The friction, stated concretely: which change was hard, where, and why.
 - Two or three structurally different alternatives. If one reads as a tweak of
   another, they are one alternative.
@@ -23,11 +25,10 @@ Work out, together, what is actually making this code hard to work with and what
 ## How the work goes
 
 - **Ground it in real friction.** Start from a change someone tried to make, a
-  bug that kept recurring, or code nobody wants to touch. If the human hasn't
-  named one, ask for it before proposing anything. Improvements without a felt
-  problem are taste, not engineering.
-- **Read before proposing.** Trace how the code is actually called and changed.
-  Git history often shows where the pain is.
+  bug that kept recurring, or code nobody wants to touch. Inspect the available
+  code, calls, and history first. If no concrete friction emerges, ask for an
+  example before proposing changes. Without evidence, leaving code unchanged
+  is a valid result.
 - **Show the shape, not the essay.** Usage examples, call trees, and before/after
   structure let the human disagree with something specific.
 - **Prefer deleting to adding.** Removing a layer beats wrapping it.
@@ -39,6 +40,7 @@ Work out, together, what is actually making this code hard to work with and what
 - Plan before editing. The human picks the direction; the plan is the handoff.
   Write it where the project already keeps plans or docs.
 - Keep behavior identical unless a behavior change was explicitly agreed. If
-  there is no check that would catch a behavior change, adding one is step one.
+  there is no check that would catch a behavior change, adding one is the first
+  step of the chosen implementation plan, not work to begin before the choice.
 - If the real question is "what should this product do", switch to
   **idea-development**, carrying what you learned.

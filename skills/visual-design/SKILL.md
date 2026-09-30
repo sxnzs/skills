@@ -20,12 +20,14 @@ Find a visual direction the human recognizes as right, by comparing real, well-m
 
 - **Start from what exists.** Read the project's current tokens, components,
   and any brand material before proposing anything.
-- **Diverge on a named axis.** Build two to four genuinely different directions,
-  each differing on something you can name (density, personality, contrast,
-  material, typography). Three shades of the same idea is one option.
-- **Keep a craft floor.** Build every direction well enough to ship: real
-  content, full size, in the real surroundings. A careless direction loses on
-  execution and teaches nothing about the idea behind it.
+- **Diverge on a named axis.** Size the comparison to the unresolved decision:
+  a detail for a tiny question, two to four genuinely different directions when
+  the broader look is unsettled. Name the difference (density, personality,
+  contrast, material, typography). Three shades of the same idea is one option.
+- **Keep a craft floor.** Use realistic content at its intended size and in the
+  real surroundings, with equally good, shipped-quality execution on the
+  dimension being compared.
+  A careless direction loses on execution and teaches nothing about the idea.
 - **Look at what rendered.** Screenshot and inspect every direction; code and
   screen often disagree. If you can't render, say so and ask the human to look
   rather than describing what you haven't seen.
@@ -34,10 +36,17 @@ Find a visual direction the human recognizes as right, by comparing real, well-m
 
 ## Boundaries
 
-- Build explorations on a throwaway surface (a scratch page or route), not in
-  production components, and delete it once the choice is recorded.
-- The handoff is the chosen values mapped onto the project's own tokens and
-  conventions. Apply them to real code only when asked.
+- Presentation awaiting human choice is pending, not complete.
+- Write the chosen design in the project's existing docs or plans: reconstructable
+  visual references, exact values mapped onto its tokens and conventions,
+  behaviors where relevant, rationale, rejected alternatives, and consequential
+  open questions.
+- Build explorations on a throwaway surface, not in production components. Clean
+  up only agent-created disposable exploration after human choice and an adequate
+  recorded handoff. Preserve user-authored and otherwise irreplaceable assets.
+  Apply the design to real code only when asked.
+- If the intended user, task, or product outcome is unsettled, return to
+  **idea-development**, carrying the context rather than restarting discovery.
 - Extend the project's existing tokens and components; don't fork them unasked.
 - Visual direction and interface behavior inform each other. When the question is
   how something works rather than how it looks, bring in **ui-design** without
