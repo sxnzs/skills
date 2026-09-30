@@ -68,3 +68,7 @@ Source: [mattpocock/skills](https://github.com/mattpocock/skills).
 The grilling, domain-modeling, and prototyping skills there are what made the
 problem visible: they are good individually, and choosing the next one is the
 friction. These four skills name the destination instead.
+
+**next** answers the question that friction produces. Its shape comes from
+the pstack router (one recommendation, read the artifacts, never interview)
+and keeps the handoff map in one place instead of in every skill.

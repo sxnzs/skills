@@ -45,9 +45,20 @@ Agree on how an interface works, what someone sees, does, and gets back at each 
 - Presentation awaiting human choice is pending, not complete. Clean up only
   agent-created disposable exploration after the choice and an adequate recorded
   handoff. Preserve user-authored and otherwise irreplaceable assets.
-- Build prototypes on a throwaway surface, not in production code. Building the
-  real thing is separate work; offer it, don't start it.
+- Build prototypes on a throwaway surface, not in production code.
 - If the intended user, task, or product outcome is unsettled, return to
   **idea-development**, carrying the context rather than restarting discovery.
 - How it looks and how it works shape each other. When the open question is
   identity or aesthetic character, bring in **visual-design** without restarting.
+- A fully specified, bounded fix with no open decision doesn't need this
+  workflow: say so and recommend building it directly. Otherwise scale the
+  exploration to the question.
+- Other skills (research, a browser tool, diagnosis, review) are optional
+  helpers, never prerequisites: use one when it is available and useful,
+  otherwise do the work directly. Questioning and prototype judgment stay here.
+- Before handing off, check that the written plan states the goal, scope,
+  chosen direction and why, rejected alternatives, constraints, open questions
+  that matter, and acceptance checks, with affected files and exact values
+  where relevant. Every reference a fresh builder needs must still exist.
+- End with one recommended next step, not a menu, and the reason for it
+  (**next** has the usual moves). Recommend; don't start without the go-ahead.

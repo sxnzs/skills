@@ -2,6 +2,7 @@
 
 Four agent skills for the work that happens before code is written or changed:
 turning ideas, messy code, and unsettled screens into shared decisions and plans.
+A fifth, **next**, answers "what now?" with one step.
 
 | Skill | Say something like | Leaves behind |
 | --- | --- | --- |
@@ -9,6 +10,7 @@ turning ideas, messy code, and unsettled screens into shared decisions and plans
 | [**codebase-improvement**](skills/codebase-improvement/SKILL.md) | "Help me improve this codebase." | A justified better structure and a step-by-step plan |
 | [**visual-design**](skills/visual-design/SKILL.md) | "Let's find the visual direction." | A chosen look, expressed as concrete values |
 | [**ui-design**](skills/ui-design/SKILL.md) | "Help me design this interface." | Agreed flows, states, and interactions |
+| [**next**](skills/next/SKILL.md) | "What's next?" | One recommended step and why, from what already exists |
 
 ## Why these four
 
@@ -27,6 +29,11 @@ They share one shape:
   when it wins and what it costs. You choose.
 - **A handoff, not a transcript.** Decisions and plans someone else can build
   from without replaying the conversation.
+
+Building, reviewing, and other tools stay separate skills underneath. The
+workflows use them when they are installed and do the work directly when they
+aren't; **next** keeps the map of which step usually follows which, so no
+workflow has to. See [research/second-layer.md](research/second-layer.md).
 
 Visual design and UI design are separate skills because "how it looks" and "how
 it works" are different questions, but they share context and hand off to each

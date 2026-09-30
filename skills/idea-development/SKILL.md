@@ -40,9 +40,20 @@ Stop earlier if the idea turns out not to be worth building. That is a result, n
 - Capture decisions, not the transcript. Record a decision when it would be
   expensive to rediscover. Write the result where the project already keeps
   plans or docs; ask once if there is no obvious place.
-- The plan is a handoff, not the build. Implementation, tickets, and review are
-  separate work; offer them, don't start them.
+- The plan is a handoff, not the build.
 - If the idea is really "make this existing code better", switch to
   **codebase-improvement**. If it is about how something looks or behaves on
   screen, bring in **visual-design** or **ui-design**. Carry the context across;
   don't restart discovery.
+- A fully specified, bounded fix with no open decision doesn't need this
+  workflow: say so and recommend building it directly. Otherwise scale the
+  exploration to the question.
+- Other skills (research, a browser tool, diagnosis, review) are optional
+  helpers, never prerequisites: use one when it is available and useful,
+  otherwise do the work directly. Questioning and prototype judgment stay here.
+- Before handing off, check that the written plan states the goal, scope,
+  chosen direction and why, rejected alternatives, constraints, open questions
+  that matter, and acceptance checks, with affected files and exact values
+  where relevant. Every reference a fresh builder needs must still exist.
+- End with one recommended next step, not a menu, and the reason for it
+  (**next** has the usual moves). Recommend; don't start without the go-ahead.

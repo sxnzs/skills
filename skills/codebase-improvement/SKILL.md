@@ -44,3 +44,15 @@ When friction is supported:
   step of the chosen implementation plan, not work to begin before the choice.
 - If the real question is "what should this product do", switch to
   **idea-development**, carrying what you learned.
+- A fully specified, bounded fix with no open decision doesn't need this
+  workflow: say so and recommend building it directly. Otherwise scale the
+  exploration to the question.
+- Other skills (research, a browser tool, diagnosis, review) are optional
+  helpers, never prerequisites: use one when it is available and useful,
+  otherwise do the work directly. Questioning and prototype judgment stay here.
+- Before handing off, check that the written plan states the goal, scope,
+  chosen direction and why, rejected alternatives, constraints, open questions
+  that matter, and acceptance checks, with affected files and exact values
+  where relevant. Every reference a fresh builder needs must still exist.
+- End with one recommended next step, not a menu, and the reason for it
+  (**next** has the usual moves). Recommend; don't start without the go-ahead.
