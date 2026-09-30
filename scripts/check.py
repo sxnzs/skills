@@ -26,6 +26,10 @@ for d in skills:
     desc = meta.get("description", "")
     if not desc or len(desc) > MAX_DESCRIPTION or "Use when" not in desc:
         errors.append(f"{d.name}: description empty, too long, or lacks 'Use when'")
+    for key, value in meta.items():
+        # Unquoted YAML scalars can't contain ': ' or ' #' (strict parsers reject or truncate them).
+        if value[:1] not in "'\"" and (": " in value or " #" in value):
+            errors.append(f"{d.name}: {key} needs quoting or rewording (contains ': ' or ' #')")
     for ref in re.findall(r"\*\*([a-z]+(?:-[a-z]+)+)\*\*", text):
         if ref not in names:
             errors.append(f"{d.name}: references unknown skill {ref!r}")

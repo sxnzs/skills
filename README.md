@@ -1,7 +1,7 @@
 # skills
 
-Four agent skills for the work that happens before code: turning ideas, messy
-code, and unsettled screens into shared decisions and plans.
+Four agent skills for the work that happens before code is written or changed:
+turning ideas, messy code, and unsettled screens into shared decisions and plans.
 
 | Skill | Say something like | Leaves behind |
 | --- | --- | --- |
@@ -40,8 +40,11 @@ your harness's skills directory, for example:
 
 ```sh
 git clone https://github.com/sxnzs/skills
-ln -s "$PWD/skills/skills/idea-development" ~/.claude/skills/idea-development
+mkdir -p ~/.claude/skills
+for s in "$PWD"/skills/skills/*; do ln -s "$s" ~/.claude/skills/; done
 ```
+
+The skills stop at a decision or plan; building it is a separate request.
 
 ## Lineage
 

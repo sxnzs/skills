@@ -15,10 +15,12 @@ and the rest of [pstack](https://github.com/cursor/plugins/tree/main/pstack).
   and demands structurally different alternatives.
 - `figure-it-out` defines observable success, attacks the riskiest unknown
   first, and keeps a decision trail. → every skill here ends in recorded
-  decisions with the rejected options.
+  decisions with the rejected options; **idea-development** takes the riskiest
+  unknown first.
 - Questions are routed by observability: if running something answers it, run
   it; ask the human only for preference and product calls. → "route questions by
-  who can answer them".
+  who can answer them", and the design skills ask the human to look only when
+  the agent can't render or click through itself.
 - "Keep only prose that changes a decision." → the test applied to every line
   of these skills.
 
