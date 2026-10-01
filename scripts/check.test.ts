@@ -120,4 +120,13 @@ test('plugin manifests match skills and package version', () => fixture((root, p
   put('.claude-plugin/plugin.json', claude(['./skills/test-bucket/test-skill']));
   put('.codex-plugin/plugin.json', JSON.stringify({ version: '1.0.0', skills: './skills/engineering' }));
   assert.ok(validate(root).some(error => /codex-plugin.*must be/.test(error)));
+  put('.codex-plugin/plugin.json', JSON.stringify({ version: '1.1.0', skills: './skills/' }));
+  assert.ok(validate(root).some(error => /codex-plugin.*version 1\.1\.0/.test(error)));
+}));
+
+test('plugin manifests require a package version', () => fixture((root, put) => {
+  put('package.json', '{}');
+  put('.claude-plugin/plugin.json', JSON.stringify({ skills: ['./skills/test-bucket/test-skill'] }));
+  put('.codex-plugin/plugin.json', JSON.stringify({ skills: './skills/' }));
+  assert.ok(validate(root).includes('package.json: version required when plugin manifests exist'));
 }));

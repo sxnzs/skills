@@ -107,6 +107,9 @@ function checkManifests(root: string, skills: { bucket: string, name: string }[]
   const errors: string[] = [];
   const version = readJson(root, 'package.json', errors)?.version;
   const claude = readJson(root, '.claude-plugin/plugin.json', errors);
+  const codexManifest = readJson(root, '.codex-plugin/plugin.json', errors);
+  if ((claude || codexManifest) && (typeof version !== 'string' || !version))
+    errors.push('package.json: version required when plugin manifests exist');
   if (claude) {
     const listed = [...(Array.isArray(claude.skills) ? claude.skills : [])].sort();
     const expected = skills.map(({ bucket, name }) => `./skills/${bucket}/${name}`).sort();
@@ -114,7 +117,7 @@ function checkManifests(root: string, skills: { bucket: string, name: string }[]
     for (const path of listed) if (!expected.includes(path)) errors.push(`.claude-plugin/plugin.json: unknown ${path}`);
     if (claude.version !== version) errors.push(`.claude-plugin/plugin.json: version ${claude.version} != package.json ${version}`);
   }
-  const codex = readJson(root, '.codex-plugin/plugin.json', errors);
+  const codex = codexManifest;
   if (codex) {
     if (codex.skills !== './skills/') errors.push(`.codex-plugin/plugin.json: skills must be "./skills/"`);
     if (codex.version !== version) errors.push(`.codex-plugin/plugin.json: version ${codex.version} != package.json ${version}`);

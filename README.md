@@ -1,162 +1,215 @@
-# skills
+# Skills
 
-Fifteen focused skills distilled from the pinned source corpus: thirteen core
-jobs and two specialists. Each owns a useful outcome; investigation, prototypes
-and verification support that outcome without becoming a chain of prerequisite
-skills.
+Fifteen agent skills for the work around code: deciding what to build, building
+it in checked steps, finding out why it broke, proving it's done, and telling
+people about it.
 
-| Skill | Say something like | Leaves behind |
-| --- | --- | --- |
-| [**idea-development**](skills/design/idea-development/SKILL.md) | "Help me develop this idea." | A shared vision, the decisions behind it, and a plan |
-| [**codebase-improvement**](skills/engineering/codebase-improvement/SKILL.md) | "Help me improve this codebase." | A justified structure and plan, with implementation when requested |
-| [**visual-design**](skills/design/visual-design/SKILL.md) | "Let's find the visual direction." | A chosen look, expressed as concrete values |
-| [**ui-design**](skills/design/ui-design/SKILL.md) | "Help me design this interface." | Agreed flows, states, and interactions |
-| [**next**](skills/productivity/next/SKILL.md) | "What's next?" | One recommended step and why, from what already exists |
-| [**diagnosing-bugs**](skills/engineering/diagnosing-bugs/SKILL.md) | "Fix this regression." | A cause and a fix with failing-before/passing-after evidence |
-| [**code-review**](skills/engineering/code-review/SKILL.md) | "Check the latest changes." | Findings against intent and repository standards |
-| [**critic**](skills/engineering/critic/SKILL.md) | "Is this work actually done?" | A pass, failure or unverified verdict backed by observed evidence |
-| [**motion-design**](skills/design/motion-design/SKILL.md) | "Make this interaction feel right." | Purposeful, interruptible motion and observed checks |
-| [**write-swift**](skills/engineering/write-swift/SKILL.md) | "Fix this SwiftUI lifecycle bug." | Swift changes checked against the project's toolchain and state boundaries |
-| [**feature-development**](skills/engineering/feature-development/SKILL.md) | "Build this feature." | Behavior delivered in verified test-first slices |
-| [**research**](skills/productivity/research/SKILL.md) | "Find out how this API handles retries." | A cited, dated answer from primary sources |
-| [**writing**](skills/productivity/writing/SKILL.md) | "Tighten this README." | Prose that reads plainly, or an instruction file agents follow |
-| [**teach**](skills/productivity/teach/SKILL.md) | "Explain this; that didn't land." | Understanding checked by the learner doing something |
-| [**close-out**](skills/productivity/close-out/SKILL.md) | "Write the PR." | A commit message, PR body, handoff, announcement or retro true to the evidence |
+I started with dozens of skills from four different collections and kept hitting
+the same problem: before doing the work, I had to work out which skill came
+next. So I rewrote them into one library where each skill is named after the
+work you say you're starting ("help me develop this idea", "fix this
+regression", "write the PR"), and the techniques live inside it. Grilling,
+prototypes, research and decision notes are things a skill reaches for when they
+help, not steps you have to sequence.
 
-## How the skills work
-
-Collections of small skills make you ask "which skill is next?". These are named
-after the work you already know you're starting, not after the techniques inside
-it. Questioning, research, prototypes, and decision notes are tools each skill
-reaches for when they help, not steps you have to sequence.
-
-The decision and design skills share a collaboration pattern:
-
-- **Look before asking.** The agent reads what it can find before spending your
-  attention.
-- **Something concrete to disagree with.** Usage examples, before/after
-  structure, working prototypes, not abstract questions.
-- **Real options, honest costs.** Genuinely different alternatives, each with
-  when it wins and what it costs. You choose.
-- **A handoff, not a transcript.** Decisions and plans someone else can build
-  from without replaying the conversation.
-
-Debugging, reviewing and checking completion each have their own outcome.
-Motion and Swift add specialist knowledge when the work needs it. Helpers are
-optional; an absent sibling does not block the requested work. **next** recommends
-from the actual remaining gap rather than imposing a skill sequence.
-
-Visual design and UI design are separate skills because "how it looks" and "how
-it works" are different questions, but they share context and hand off to each
-other mid-conversation.
-
-```mermaid
-flowchart TB
-  next(["next: one recommended step"])
-
-  subgraph decide [Decide]
-    idea[idea-development]
-    research[research]
-  end
-  subgraph design [Design]
-    ui[ui-design]
-    visual[visual-design]
-    motion[motion-design]
-  end
-  subgraph change [Change code]
-    feature[feature-development]
-    improve[codebase-improvement]
-    bugs[diagnosing-bugs]
-    swift[write-swift]
-  end
-  subgraph check [Check]
-    review[code-review]
-    critic[critic]
-  end
-  subgraph communicate [Communicate]
-    closeout[close-out]
-    writing[writing]
-    teach[teach]
-  end
-
-  next -. any stage .- decide
-  decide ==> design ==> change ==> check ==> communicate
-
-  idea -->|missing fact| research
-  idea -->|appearance| visual
-  idea -->|interface behavior| ui
-  idea -->|settled build| feature
-  idea -->|structural friction| improve
-  ui <-->|shared context| visual
-  ui -->|substantial motion| motion
-  visual -->|substantial motion| motion
-  design -->|unsettled outcome| idea
-  feature -->|structural friction| improve
-  feature -. failing symptom .-> bugs
-  improve -->|unsettled intent| idea
-  improve -->|bounded bug| bugs
-  bugs -. no failing symptom .-> improve
-  bugs -->|missing seam| improve
-  swift -. flows or motion .-> ui
-  review -. "is it done?" .-> critic
-  critic -. "review the change" .-> review
-  critic -->|verified| closeout
-```
-
-Thick arrows are the usual direction of work, not a required sequence. Solid
-arrows are handoffs a skill makes when the work turns out to belong elsewhere;
-dashed arrows are "use this instead" redirects. Every handoff carries the
-context across rather than restarting discovery. **next** reads where the work
-stands and points at whichever skill closes the most consequential gap.
+They're plain `SKILL.md` folders. They work in Claude Code, Codex, OpenCode,
+Cursor, pi and anything else that reads the Agent Skills format, and they're
+written to stay portable across models. Read them, change them, make them yours.
 
 ## Install
 
-Each skill is a folder with a `SKILL.md`, the format used by Claude Code, Codex,
-Cursor, pi, and other agent harnesses. Copy or symlink the folders you want into
-your harness's skills directory, for example:
+Pick one route. Installing more than one gives you every skill twice.
 
-```sh
-git clone https://github.com/sxnzs/skills
-mkdir -p ~/.claude/skills
-for s in "$PWD"/skills/skills/*; do ln -s "$s" ~/.claude/skills/; done
+<details>
+<summary><strong>Claude Code plugin</strong></summary>
+
+```bash
+claude plugin marketplace add sxnzs/skills
+claude plugin install sxnzs-skills@sxnzs
 ```
 
-Requests for discussion, options or plans stop at that deliverable. When the
-user also asks to implement a settled direction, the workflow carries the work
-through its checks without asking for the same approval again. A genuine open
-product or taste decision stays with the user. **next** only recommends;
-review-only requests report findings; **critic** verifies without repairing.
+Or from inside a session: `/plugin marketplace add sxnzs/skills`, then
+`/plugin install sxnzs-skills@sxnzs`. You get the whole set as a managed bundle.
+New releases arrive when you run `claude plugin update sxnzs-skills@sxnzs`, or
+automatically if you enable auto-update for `sxnzs` under `/plugin` →
+Marketplaces.
 
-The skill bodies stay portable across capable models. Model IDs, effort and
-measured workarounds belong in the harness or [model calibration notes](evals/MODELS.md),
-not in a separate copy of every skill. Motion and Swift disclose their specialist
-references only when the task needs them.
+</details>
 
-## Verify
+<details>
+<summary><strong>Codex plugin</strong></summary>
 
-Use Node 24 or newer and Python 3; no dependency installation is required.
-The Swift example is compiled with strict concurrency when `swiftc` is installed;
-otherwise that check is explicitly skipped. Motion controller checks use Node.
-
-```sh
-npm run check
+```bash
+codex plugin marketplace add sxnzs/skills
+codex plugin add sxnzs-skills@sxnzs
 ```
 
-The dependency-free TypeScript checker supports flat scalar frontmatter and
-inline Markdown links, not general YAML or Markdown. It runs regression tests
-and checks skill metadata, sibling references, and documentation links.
-[Behavioral cases](evals/README.md) describe separate observations in disposable
-fixtures; the structural checker does not prove agent behavior.
+</details>
+
+<details>
+<summary><strong>Any agent, as files you own (skills.sh)</strong></summary>
+
+```bash
+npx skills@latest add sxnzs/skills
+```
+
+Pick the skills and agents you want. The files land in your project or home
+directory, so you can edit them; run `npx skills update` when you want my
+changes. One skill at a time:
+
+```bash
+npx skills@latest add sxnzs/skills --skill=code-review
+```
+
+</details>
+
+There is no setup step. Each skill reads your repository's own conventions
+(check commands, issue tracker, docs layout) when it needs them.
+
+## The skills
+
+| Skill | Say something like | Leaves behind |
+| --- | --- | --- |
+| **Engineering** | | |
+| [feature-development](docs/engineering/feature-development.md) | "Build this feature." | Behavior delivered in verified, test-first slices |
+| [diagnosing-bugs](docs/engineering/diagnosing-bugs.md) | "Fix this regression." | A proven cause and a fix with failing-before, passing-after evidence |
+| [codebase-improvement](docs/engineering/codebase-improvement.md) | "This code is painful to change." | A justified structure and plan, implemented when you ask |
+| [code-review](docs/engineering/code-review.md) | "Check the latest changes." | Findings against intent and your repository's standards |
+| [critic](docs/engineering/critic.md) | "Is this actually done?" | A pass, fail or unverified verdict backed by evidence |
+| [write-swift](docs/engineering/write-swift.md) | "Fix this SwiftUI lifecycle bug." | Swift checked against your real toolchain and isolation rules |
+| **Design** | | |
+| [idea-development](docs/design/idea-development.md) | "Help me develop this idea." | The decisions behind an idea, and a plan to build it |
+| [ui-design](docs/design/ui-design.md) | "Help me design this flow." | Flows, states and interactions settled with working prototypes |
+| [visual-design](docs/design/visual-design.md) | "Let's find the look." | A chosen direction, expressed as concrete values |
+| [motion-design](docs/design/motion-design.md) | "Make this interaction feel right." | Purposeful, interruptible motion, checked in playback |
+| **Productivity** | | |
+| [research](docs/productivity/research.md) | "Find out how this API handles retries." | A cited, dated answer from primary sources |
+| [writing](docs/productivity/writing.md) | "Tighten this README." | Plain prose, or an instruction file agents follow |
+| [teach](docs/productivity/teach.md) | "Explain this; that didn't land." | Understanding you've checked by doing something |
+| [close-out](docs/productivity/close-out.md) | "Write the PR." | A commit message, PR body, handoff or retro true to the evidence |
+| [next](docs/productivity/next.md) | "What's next?" | One recommended step, and why |
+
+[How the skills fit together](docs/README.md) shows the handoffs between them.
+
+## Why these skills exist
+
+Each one fixes a way I watched agents fail.
+
+### The agent built the wrong thing
+
+You describe a feature, the agent starts typing, and an hour later you find out
+it understood something else. The gap was in the first five minutes.
+
+**[idea-development](docs/design/idea-development.md)** closes it. The agent
+reads what already exists, then asks the questions you can answer now, numbered,
+each with its recommended answer, and holds back the ones that depend on them.
+You disagree with concrete proposals instead of abstract questions, and you end
+with decisions and a plan someone else could build from. Sometimes the outcome
+is that the idea isn't worth building, which is a cheap thing to learn early.
+
+### "Done", it says. It isn't.
+
+Agents report success generously. A green test suite doesn't prove the feature
+exists, and a test that calculates its expectation like the implementation can
+reproduce the same bug and still pass.
+
+**[feature-development](docs/engineering/feature-development.md)** builds in
+thin slices: one failing test at a public seam, the least code that passes it,
+then the project's real checks. **[critic](docs/engineering/critic.md)** checks
+a finished claim against the actual files and check output, and answers PASS,
+FAIL or UNVERIFIED. It never upgrades "probably" to "verified".
+
+### Debugging by guessing
+
+The agent sees an error, guesses a cause, edits, and repeats. Sometimes the
+symptom moves and it calls that a fix.
+
+**[diagnosing-bugs](docs/engineering/diagnosing-bugs.md)** starts by building a
+loop: one command that checks your exact symptom, gives the same answer every
+run, and runs fast. Then it ranks competing explanations, each with the
+observation that would confirm or kill it, and changes one variable at a time.
+The fix comes with evidence that it failed before and passes after.
+
+### Refactoring for its own sake
+
+"This file is big" is not a reason to restructure it.
+**[codebase-improvement](docs/engineering/codebase-improvement.md)** starts from
+a change that was actually hard to make, and picks the smallest structural move
+that removes that friction. Leaving the code alone is a valid result.
+
+### Reviews that don't ask what the change was for
+
+**[code-review](docs/engineering/code-review.md)** checks a diff two ways: does
+it do what the issue or spec asked, and does it follow how this repository
+writes code. A change can pass one and fail the other, so you get both answers.
+
+### Design by adjective
+
+"Make it cleaner" and "avoid a generic look" give you a different default, not a
+better design. **[ui-design](docs/design/ui-design.md)** and
+**[visual-design](docs/design/visual-design.md)** compare real options on a
+named axis, with realistic content and inside the real page, then record the
+choice as values and behaviors a builder can apply.
+**[motion-design](docs/design/motion-design.md)** tunes timing, gesture
+continuity and interruption, then checks the result in playback.
+
+### Confident facts with no source
+
+**[research](docs/productivity/research.md)** answers from the sources that own
+the claim (official docs, specs, source code), records the version or date each
+claim applies to, and leaves a short note you can check without repeating the
+work.
+
+### Work nobody hears about
+
+A verified change nobody knows about is unfinished.
+**[close-out](docs/productivity/close-out.md)** writes the commit message, PR
+body, handoff or retro from the evidence, keeps verified and unverified claims
+apart, and lists what was dropped and why. **[writing](docs/productivity/writing.md)**
+handles the rest of the prose, including instruction files for agents, and
+**[teach](docs/productivity/teach.md)** is for when you want to understand
+something, not just have it done.
+
+### "Which skill now?"
+
+**[next](docs/productivity/next.md)** reads where the work stands and recommends
+one step, with the reason. It only recommends.
+
+## Working with current models
+
+The skills are written for models that follow instructions closely, such as
+Claude Opus 5.5 and GPT-6. A planning request stops at the plan. Authorized work
+carries on through its checks without stopping to ask for approval you already
+gave, and pauses only for a decision that is yours to make or an action that
+needs permission. Model-specific settings, such as reasoning effort, belong in
+your harness. [Model notes](evals/MODELS.md) has what I've measured and two lines
+worth adding to your own agent instructions.
+
+## Contributing and local development
+
+Issues and pull requests are welcome. The rules for editing skills are in
+[AGENTS.md](AGENTS.md).
+
+```sh
+git clone https://github.com/sxnzs/skills && cd skills
+scripts/link-skills.sh   # symlink every skill into ~/.claude/skills and ~/.agents/skills
+npm run check            # Node 24+ and Python 3; no install step
+```
+
+The check validates skill metadata, sibling references, docs pages, plugin
+manifests and links, and runs the motion and Swift examples. It can't prove how
+an agent behaves; [evals](evals/README.md) covers that separately. Changes are
+listed in the [changelog](CHANGELOG.md).
 
 ## Lineage
 
-These skills were written after studying first-party skills by
+These skills were written after studying the skills of
+[@mattpocock](https://github.com/mattpocock/skills),
 [@poteto](https://github.com/cursor/plugins/tree/main/pstack),
-[@dexhorthy](https://github.com/humanlayer/skills), and
-[@emilkowalski](https://github.com/emilkowalski/skills), and the collection by
-[@mattpocock](https://github.com/mattpocock/skills). What we took from each is
-in [LINEAGE.md](LINEAGE.md). No source text is copied beyond short attributed
-quotes.
+[@dexhorthy](https://github.com/humanlayer/skills) and
+[@emilkowalski](https://github.com/emilkowalski/skills). [LINEAGE.md](LINEAGE.md)
+records what came from each. The text is rewritten; no source text is copied
+beyond short attributed quotes.
 
 ## License
 

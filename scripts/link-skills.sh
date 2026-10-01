@@ -35,9 +35,12 @@ for dest in "${DESTS[@]}"; do
 
   for link in "$dest"/*; do
     [ -L "$link" ] || continue
+    [ -e "$link" ] && continue
     target="$(readlink "$link")"
+    case "$target" in /*) ;; *) target="$dest/$target" ;; esac
+    target="$(python3 -c 'import os, sys; print(os.path.normpath(sys.argv[1]))' "$target")"
     case "$target" in
-      "$REPO"/*) [ -e "$link" ] || { rm "$link"; echo "pruned $(basename "$link") ($dest)"; } ;;
+      "$REPO"/*) rm "$link"; echo "pruned $(basename "$link") ($dest)" ;;
     esac
   done
 
