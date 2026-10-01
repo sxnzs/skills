@@ -2,8 +2,10 @@
 
 Use when the way from here to the destination is unclear and too large for one
 session. The map finds the route by resolving decisions; it does not build the
-destination. Keep it in the project's issue tracker when it has one, otherwise
-as Markdown files in the repository.
+destination. Use the project's issue tracker when writes there are already
+authorized; otherwise keep the map and ticket drafts as Markdown files in the
+repository. Creating, claiming, updating or closing tracker tickets requires
+that authorization; planning alone does not provide it.
 
 ## The map
 

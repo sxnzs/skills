@@ -25,6 +25,10 @@ redact secret values in traces, fixtures and reports.
   distinguishing boundaries. Minimize the reproduction one variable at a time
   while retaining the failure; for slowness, record a baseline and bisect before
   optimizing.
+- Before settling on a cause, check the symptom's history: prior reports, fixes
+  that shipped and were reverted, and related work still in flight. Confirm each
+  artifact you find — commit, branch, ticket — against the current code; a
+  reverted fix marks where the last attempt failed.
 - If reproduction is blocked, inspect what is available and continue safe,
   useful investigation. State what is missing and what would settle it. Ask for
   the smallest human action or observation needed. Keep an unproven hypothesis

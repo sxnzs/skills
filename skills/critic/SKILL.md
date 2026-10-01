@@ -18,10 +18,15 @@ The producer's summary is a starting point for verification, not its conclusion.
   tooling note, package scripts, a Makefile or task runner. Prefer them over
   ad-hoc equivalents and never invent one that does not exist.
 - Use the cheapest checks that can settle the claim: tests, lint and types before
-  builds, deploy or log inspection. Seek independent judgment
-  when consequential uncertainty remains; give that reviewer the request and raw
-  artifacts rather than the producer's preferred answer. An independent verdict
-  requires an actual separate reviewer; never relabel self-review as independent.
+  builds or log inspection. Run checks within existing authorization; deployment
+  and other external writes require authorization for those actions. Seek
+  independent judgment
+  when consequential uncertainty remains; give every reviewer the same request,
+  completion contract and raw artifacts rather than the producer's preferred
+  answer. Weigh a finding raised independently by more than one reviewer above
+  a lone one, and report disagreements instead of averaging them away. An
+  independent verdict requires an actual separate reviewer; never relabel
+  self-review as independent.
 - Do not fix or expand the implementation during verification unless asked.
   Identify the smallest repair or missing check that would resolve a blocker.
 

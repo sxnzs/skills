@@ -29,8 +29,9 @@ existing artifacts are linked rather than restated.
   do next, state the goal, current state,
   decisions with reasons, open questions, affected files, checks and their
   results, and the next step; suggest the skills that fit it. Point to specs,
-  plans, issues and commits instead of copying them. Save it outside the
-  working tree unless asked otherwise, or seed a new background session with it
+  plans, issues and commits instead of copying them. Save it where the project
+  keeps handoffs, such as `HANDOFF.md`; otherwise use `artifacts/`. Follow a
+  location the user specifies, or seed a new background session with it
   when the environment supports that and the user wants it.
 - **Announcement:** only when the work earns attention. Say what changed, why it
   matters, the proof, and how to try it, in a plain voice without hype. Draft it;

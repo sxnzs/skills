@@ -26,8 +26,10 @@ judging it.
 - Follow the changed behavior to a concrete failure condition. Check whether
   callers, validation, state transitions or boundary values make it reachable.
   Distinguish defects introduced by this change from pre-existing problems.
-  For consequential changes, identify the fact their safety depends on and test
-  it through the actual code. Check beyond symbol callers when the contract crosses
+  For consequential changes, identify the single fact their safety depends on and
+  prove it by running the actual code; if it cannot be proven, report it as
+  unproven rather than asserted, and list the risks you checked and cleared
+  separately from defects. Check beyond symbol callers when the contract crosses
   wire formats, storage, pinned dependencies or asynchronous lifecycles.
 - Run relevant required checks when possible, using disposable artifacts where
   necessary and staying within the task's authorization for external effects.

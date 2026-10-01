@@ -56,6 +56,3 @@ checks without asking again for approval already given. Consequential unsettled
 requirements belong to **idea-development**; a failing symptom belongs to
 **diagnosing-bugs**. Preserve unrelated work and respect the project's authority
 for external or destructive actions.
-
-Any handoff states the goal, scope, decisions, open questions, affected files and
-acceptance checks, with usable pointers to existing evidence.
