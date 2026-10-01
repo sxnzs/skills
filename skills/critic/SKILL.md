@@ -18,7 +18,8 @@ The producer's summary is a starting point for verification, not its conclusion.
   tooling note, package scripts, a Makefile or task runner. Prefer them over
   ad-hoc equivalents and never invent one that does not exist.
 - Use the cheapest checks that can settle the claim: tests, lint and types before
-  builds or log inspection. Run checks within existing authorization; deployment
+  builds or log inspection. Once the checks that settle a claim pass, do not
+  broaden or repeat them without a new concern. Run checks within existing authorization; deployment
   and other external writes require authorization for those actions. Seek
   independent judgment
   when consequential uncertainty remains; give every reviewer the same request,

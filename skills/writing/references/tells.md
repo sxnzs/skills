@@ -18,6 +18,11 @@ context; a punctuation mark or formal word alone warrants no rewrite.
 - Break repeated rhetorical templates: forced triples, staged contrasts,
   dramatic fragments, fake intimacy, and aphorisms without a concrete claim.
   Preserve deliberate emphasis and the author's characteristic cadence.
+- Cut contrasts with an alternative nobody raised ("this is X, not Y"), invented
+  compound labels that name no real thing, and statements of what you will not
+  do. Remove formulaic closing lines ("In short", "Bottom line") and stock
+  wording (delve, leverage, foster, genuinely, importantly) when they add no
+  meaning; keep requested summaries and precise terminology.
 - Remove headings that promise nothing, paragraphs that restate their heading,
   automatic upbeat endings, and chat pleasantries pasted into an article.
   Keep useful navigation and genre-appropriate greetings.

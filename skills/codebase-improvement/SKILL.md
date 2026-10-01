@@ -54,7 +54,8 @@ the deliverable is the plan. For an authorized refactor, it is the verified chan
 
 Preserve behavior unless the user agreed to change it. Resolve consequential
 choices with the human; reuse decisions and authorization already given. If the
-user asked to implement a settled refactor, carry it through the relevant checks.
+user asked to implement a settled refactor, carry it through the relevant checks,
+continuing between increments rather than pausing to report or offer.
 If they asked for options or a plan, stop there with one recommended next step.
 
 Unsettled product intent belongs to **idea-development**; a bounded bug belongs

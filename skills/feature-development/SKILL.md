@@ -38,7 +38,12 @@ requested.
   passes it, then the relevant checks. Observe failure for the missing behavior,
   not a broken fixture or compilation error. Derive expected values independently
   of the implementation. Mock only system boundaries. Do not write a batch of
-  future tests followed by a batch of implementation.
+  future tests followed by a batch of implementation. An existing check serves
+  as the failing test when it fails for the missing behavior. For a reversible,
+  low-impact change where no meaningful test exists, skip a test that would only
+  mirror the code and report that red-before-green was not observed. Once the
+  required checks pass, broaden or repeat testing only for a
+  new change, failure or concern.
 - After green, consider a separate behavior-preserving refactor and re-run checks;
   do not mix restructuring into the red-to-green loop. If structure prevents a
   useful slice, use **codebase-improvement** with the demonstrated friction. When
@@ -52,7 +57,10 @@ requested.
 ## Boundaries
 
 A planning request stops at the slice plan. An authorized build continues through
-checks without asking again for approval already given. Consequential unsettled
+checks without asking again for approval already given. Between slices, report
+status beside the next action rather than ending the turn to announce it or
+offer to continue; non-blocking questions travel with continued work. Stop when
+nothing can advance without the user. Consequential unsettled
 requirements belong to **idea-development**; a failing symptom belongs to
 **diagnosing-bugs**. Preserve unrelated work and respect the project's authority
 for external or destructive actions.

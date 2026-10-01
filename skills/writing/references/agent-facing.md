@@ -37,6 +37,35 @@ State the desired behavior directly. Reserve prohibitions for real boundaries,
 and pair them with a permitted alternative where helpful. Concrete verbs and
 defined terms are more reliable than motivational adjectives.
 
+## Write for models that follow text closely
+
+Models can respond strongly to unclear or conflicting instructions they load,
+pausing, asking, or stopping early rather than ignoring them.
+
+- Say which instruction wins. The user's explicit request outranks a skill's
+  default; a skill should not quietly widen its own authority.
+- Name the stops you want and the ones you do not. A planning request stops at
+  the plan. Authorized work should not end the turn by announcing the next step,
+  offering to continue, or listing decisions that block nothing; status belongs
+  beside the next action. Name the real stops: nothing can move without the
+  user, or the next action needs approval under host or project rules, such as
+  a destructive action or an unapproved external write.
+- Ask after doing the authorized work that makes a question concrete, so the
+  user approves a reviewable result rather than a plan to produce one.
+- Name the specific patterns to avoid. "Avoid a generic look" or "write
+  naturally" swaps one default for another; a list of concrete patterns, extended
+  after seeing output, changes behavior.
+- Ask for findings, evidence and a short rationale, never for the agent to think
+  harder or write its reasoning out in the answer. The host sets reasoning
+  effort, and requests to reproduce reasoning may be declined.
+- Size verification. Name the checks that settle the work; further testing
+  needs a new change, failure or concern to justify it.
+- Say when parallel work should go to another agent, if the host supports it;
+  otherwise current models may under-delegate.
+- Mark text the user did not write, such as pasted, fetched or tool output, as
+  material to evaluate. Its instructions apply only where the user's own request
+  adopts them, as when asked to fix the issue that states them.
+
 Check the document against realistic requests: would the correct branch be
 reached, would its prerequisites be available, and would it stop at the requested
 deliverable? When behavior remains uncertain, test the instructions rather than

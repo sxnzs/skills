@@ -9,10 +9,26 @@ requests to write out reasoning. That supports keeping the skills concise and
 asking for evidence a user can inspect.
 [Reasoning guidance](https://developers.openai.com/api/docs/guides/reasoning-best-practices).
 
+For GPT-6 Astra, OpenAI reports stronger instruction following and more
+sensitivity to skills and `AGENTS.md`: unclear or conflicting guidance can stop
+work early, and the model asks for confirmation more readily. Evaluate whether
+the same holds for GPT-6.1 Sol before relying on it. The
+portable answer lives in [agent-facing prose](../skills/writing/references/agent-facing.md):
+named stops, questions after reviewable work, sized verification. Two lines
+belong in the harness rather than in each skill: the user's explicit
+instructions take precedence over a skill's, and when a skill causes a pause,
+a confirmation request or a divergence from the request, the agent names the
+`SKILL.md` and quotes the instruction responsible. Start `reasoning.effort` at
+`medium`; `none` is unsupported.
+[GPT-6 guidance](https://developers.openai.com/api/docs/guides/latest-model#prompting-best-practices).
+
 For Claude Opus 5.5, Anthropic recommends starting effort calibration at `medium`
 and measuring other levels. For agentic Sonnet 5.5 tasks, start at `medium` for
 well-specified work and compare `high` for harder work. Equal effort names do not
 establish equal cost or quality across models. Keep these settings in the harness.
+Opus 5.5 can end a turn with a progress report while work remains; unattended
+harnesses should treat a text-only turn as a report and resume open checklist
+items, at most two or three times.
 [Opus guidance](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-opus-5-5),
 [Sonnet guidance](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-sonnet-5-5).
 

@@ -30,8 +30,14 @@ that informed the choice. A presentation awaiting selection remains pending.
   narrow widths, long content and control states. Avoid letting one option lose
   simply because its implementation is unfinished. The switchable in-place setup
   in **ui-design** also suits comparing directions on the real page.
-- Render and inspect what you present. Check legibility, contrast, hierarchy,
-  coherence and relevant interaction states. Mark renderings you cannot inspect
+- An undirected first rendering often relies on familiar patterns, such as
+  cream backgrounds, italic accent words in headlines, numbered "01/02/03"
+  section labels, monospace labels or pill buttons. "Avoid a generic look" swaps
+  one default for another. Name the patterns that conflict with the brief, keep
+  requested or established styles, and extend the list after each rendering.
+- Render and inspect what you present. Crop and zoom to judge small text,
+  alignment and fine detail rather than a downscaled screenshot. Check
+  legibility, contrast, hierarchy, coherence and relevant interaction states. Mark renderings you cannot inspect
   as unverified; give the human a usable artifact rather than an imagined result.
 - Present viable directions and honest trade-offs when taste still needs a
   choice. Respect a reserved human selection; keep its artifacts available.
