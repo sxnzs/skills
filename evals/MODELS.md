@@ -13,7 +13,7 @@ For GPT-6 Astra, OpenAI reports stronger instruction following and more
 sensitivity to skills and `AGENTS.md`: unclear or conflicting guidance can stop
 work early, and the model asks for confirmation more readily. Evaluate whether
 the same holds for GPT-6.1 Sol before relying on it. The
-portable answer lives in [agent-facing prose](../skills/writing/references/agent-facing.md):
+portable answer lives in [agent-facing prose](../skills/productivity/writing/references/agent-facing.md):
 named stops, questions after reviewable work, sized verification. Two lines
 belong in the harness rather than in each skill: the user's explicit
 instructions take precedence over a skill's, and when a skill causes a pause,

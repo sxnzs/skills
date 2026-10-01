@@ -1,0 +1,40 @@
+{
+  "name": "sxnzs-skills",
+  "version": "1.0.0",
+  "description": "Agent skills for the work before, during and after code: idea development, design, test-first building, debugging, review, verification, research and writing.",
+  "author": {
+    "name": "Santiago Sainz",
+    "url": "https://github.com/sxnzs"
+  },
+  "homepage": "https://github.com/sxnzs/skills",
+  "repository": "https://github.com/sxnzs/skills",
+  "license": "MIT",
+  "keywords": [
+    "engineering",
+    "skills",
+    "code-review",
+    "debugging",
+    "tdd",
+    "design",
+    "writing",
+    "research"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "sxnzs skills",
+    "shortDescription": "Skills for idea-to-PR engineering work",
+    "longDescription": "Agent skills for the work before, during and after code: idea development, design, test-first building, debugging, review, verification, research and writing.",
+    "developerName": "Santiago Sainz",
+    "category": "Coding",
+    "capabilities": [
+      "Interactive",
+      "Write"
+    ],
+    "websiteURL": "https://github.com/sxnzs/skills",
+    "defaultPrompt": [
+      "What's next on this branch?",
+      "Review the changes since main",
+      "Help me develop this idea"
+    ]
+  }
+}

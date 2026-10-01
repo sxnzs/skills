@@ -1,6 +1,18 @@
 {
+  "name": "sxnzs-skills",
+  "version": "1.0.0",
   "private": true,
+  "description": "Agent skills for the work before, during and after code: idea development, design, test-first building, debugging, review, verification, research and writing.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sxnzs/skills"
+  },
+  "license": "MIT",
   "type": "module",
-  "engines": { "node": ">=24" },
-  "scripts": { "check": "node --test scripts/check.test.ts skills/motion-design/examples/motion.test.mjs && node scripts/check.ts && python3 -m unittest discover -s evals -p 'test_swift_example.py'" }
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "check": "node --test scripts/check.test.ts skills/design/motion-design/examples/motion.test.mjs && node scripts/check.ts && python3 -m unittest discover -s evals -p 'test_swift_example.py'"
+  }
 }

@@ -2,7 +2,7 @@
 // mkdir -p artifacts/swift-ownership
 // swiftc -swift-version 6 -strict-concurrency=complete -parse-as-library \
 //   -module-cache-path artifacts/swift-ownership/module-cache \
-//   skills/write-swift/examples/request-ownership.swift \
+//   skills/engineering/write-swift/examples/request-ownership.swift \
 //   -o artifacts/swift-ownership/request-ownership
 // artifacts/swift-ownership/request-ownership
 // Add --negative-control to observe stale publication when ownership is ignored.

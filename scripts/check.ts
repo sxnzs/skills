@@ -7,9 +7,21 @@ export function validate(root: string): string[] {
   const errors: string[] = [];
   const skillsDir = join(root, 'skills');
   if (!existsSync(skillsDir)) return ['skills: missing directory'];
-  const names = readdirSync(skillsDir, { withFileTypes: true })
+  const dirs = (dir: string) => readdirSync(dir, { withFileTypes: true })
     .filter(entry => entry.isDirectory()).map(entry => entry.name).sort();
+  // Layout: skills/<bucket>/<skill>/SKILL.md. Every bucket ships.
+  const skills: { bucket: string, name: string }[] = [];
+  for (const bucket of dirs(skillsDir)) {
+    if (existsSync(join(skillsDir, bucket, 'SKILL.md')))
+      errors.push(`${bucket}: skills belong in a bucket, as skills/<bucket>/${bucket}`);
+    for (const name of dirs(join(skillsDir, bucket))) skills.push({ bucket, name });
+  }
+  const names = skills.map(skill => skill.name);
+  for (const name of new Set(names))
+    if (names.filter(other => other === name).length > 1) errors.push(`${name}: duplicate skill name across buckets`);
   const docs = ['README.md', 'LINEAGE.md'];
+  for (const bucket of dirs(skillsDir))
+    if (existsSync(join(skillsDir, bucket, 'README.md'))) docs.push(join('skills', bucket, 'README.md'));
   const evalDir = join(root, 'evals');
   function collect(dir: string): void {
     for (const entry of readdirSync(dir, { withFileTypes: true })) {
@@ -19,13 +31,20 @@ export function validate(root: string): string[] {
     }
   }
   if (existsSync(evalDir)) collect(evalDir);
-  for (const name of names) {
-    const path = join('skills', name, 'SKILL.md');
+  const docsDir = join(root, 'docs');
+  if (existsSync(docsDir)) {
+    collect(docsDir);
+    for (const { bucket, name } of skills)
+      if (!existsSync(join(docsDir, bucket, `${name}.md`))) errors.push(`${name}: missing docs/${bucket}/${name}.md`);
+  }
+  errors.push(...checkManifests(root, skills));
+  for (const { bucket, name } of skills) {
+    const path = join('skills', bucket, name, 'SKILL.md');
     if (!existsSync(join(root, path))) {
       errors.push(`${name}: missing SKILL.md`);
       continue;
     }
-    collect(join(skillsDir, name));
+    collect(join(skillsDir, bucket, name));
     const text = readFileSync(join(root, path), 'utf8');
     const front = /^---\r?\n([\s\S]*?)\r?\n---(?:\r?\n|$)/.exec(text);
     if (!front) errors.push(`${name}: missing frontmatter`);
@@ -77,9 +96,37 @@ export function validate(root: string): string[] {
   return errors;
 }
 
+function readJson(root: string, path: string, errors: string[]): any {
+  if (!existsSync(join(root, path))) return undefined;
+  try { return JSON.parse(readFileSync(join(root, path), 'utf8')); }
+  catch { errors.push(`${path}: invalid JSON`); return undefined; }
+}
+
+// Plugin manifests are optional; when present they must ship exactly the skills on disk.
+function checkManifests(root: string, skills: { bucket: string, name: string }[]): string[] {
+  const errors: string[] = [];
+  const version = readJson(root, 'package.json', errors)?.version;
+  const claude = readJson(root, '.claude-plugin/plugin.json', errors);
+  if (claude) {
+    const listed = [...(Array.isArray(claude.skills) ? claude.skills : [])].sort();
+    const expected = skills.map(({ bucket, name }) => `./skills/${bucket}/${name}`).sort();
+    for (const path of expected) if (!listed.includes(path)) errors.push(`.claude-plugin/plugin.json: missing ${path}`);
+    for (const path of listed) if (!expected.includes(path)) errors.push(`.claude-plugin/plugin.json: unknown ${path}`);
+    if (claude.version !== version) errors.push(`.claude-plugin/plugin.json: version ${claude.version} != package.json ${version}`);
+  }
+  const codex = readJson(root, '.codex-plugin/plugin.json', errors);
+  if (codex) {
+    if (codex.skills !== './skills/') errors.push(`.codex-plugin/plugin.json: skills must be "./skills/"`);
+    if (codex.version !== version) errors.push(`.codex-plugin/plugin.json: version ${codex.version} != package.json ${version}`);
+  }
+  return errors;
+}
+
 const root = fileURLToPath(new URL('../', import.meta.url));
 if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
   const errors = validate(root);
-  console.log(errors.join('\n') || `ok: ${readdirSync(join(root, 'skills'), { withFileTypes: true }).filter(e => e.isDirectory()).length} skills`);
+  const count = readdirSync(join(root, 'skills'), { withFileTypes: true }).filter(e => e.isDirectory())
+    .flatMap(b => readdirSync(join(root, 'skills', b.name), { withFileTypes: true }).filter(e => e.isDirectory())).length;
+  console.log(errors.join('\n') || `ok: ${count} skills`);
   process.exitCode = errors.length ? 1 : 0;
 }

@@ -7,21 +7,21 @@ skills.
 
 | Skill | Say something like | Leaves behind |
 | --- | --- | --- |
-| [**idea-development**](skills/idea-development/SKILL.md) | "Help me develop this idea." | A shared vision, the decisions behind it, and a plan |
-| [**codebase-improvement**](skills/codebase-improvement/SKILL.md) | "Help me improve this codebase." | A justified structure and plan, with implementation when requested |
-| [**visual-design**](skills/visual-design/SKILL.md) | "Let's find the visual direction." | A chosen look, expressed as concrete values |
-| [**ui-design**](skills/ui-design/SKILL.md) | "Help me design this interface." | Agreed flows, states, and interactions |
-| [**next**](skills/next/SKILL.md) | "What's next?" | One recommended step and why, from what already exists |
-| [**diagnosing-bugs**](skills/diagnosing-bugs/SKILL.md) | "Fix this regression." | A cause and a fix with failing-before/passing-after evidence |
-| [**code-review**](skills/code-review/SKILL.md) | "Check the latest changes." | Findings against intent and repository standards |
-| [**critic**](skills/critic/SKILL.md) | "Is this work actually done?" | A pass, failure or unverified verdict backed by observed evidence |
-| [**motion-design**](skills/motion-design/SKILL.md) | "Make this interaction feel right." | Purposeful, interruptible motion and observed checks |
-| [**write-swift**](skills/write-swift/SKILL.md) | "Fix this SwiftUI lifecycle bug." | Swift changes checked against the project's toolchain and state boundaries |
-| [**feature-development**](skills/feature-development/SKILL.md) | "Build this feature." | Behavior delivered in verified test-first slices |
-| [**research**](skills/research/SKILL.md) | "Find out how this API handles retries." | A cited, dated answer from primary sources |
-| [**writing**](skills/writing/SKILL.md) | "Tighten this README." | Prose that reads plainly, or an instruction file agents follow |
-| [**teach**](skills/teach/SKILL.md) | "Explain this; that didn't land." | Understanding checked by the learner doing something |
-| [**close-out**](skills/close-out/SKILL.md) | "Write the PR." | A commit message, PR body, handoff, announcement or retro true to the evidence |
+| [**idea-development**](skills/design/idea-development/SKILL.md) | "Help me develop this idea." | A shared vision, the decisions behind it, and a plan |
+| [**codebase-improvement**](skills/engineering/codebase-improvement/SKILL.md) | "Help me improve this codebase." | A justified structure and plan, with implementation when requested |
+| [**visual-design**](skills/design/visual-design/SKILL.md) | "Let's find the visual direction." | A chosen look, expressed as concrete values |
+| [**ui-design**](skills/design/ui-design/SKILL.md) | "Help me design this interface." | Agreed flows, states, and interactions |
+| [**next**](skills/productivity/next/SKILL.md) | "What's next?" | One recommended step and why, from what already exists |
+| [**diagnosing-bugs**](skills/engineering/diagnosing-bugs/SKILL.md) | "Fix this regression." | A cause and a fix with failing-before/passing-after evidence |
+| [**code-review**](skills/engineering/code-review/SKILL.md) | "Check the latest changes." | Findings against intent and repository standards |
+| [**critic**](skills/engineering/critic/SKILL.md) | "Is this work actually done?" | A pass, failure or unverified verdict backed by observed evidence |
+| [**motion-design**](skills/design/motion-design/SKILL.md) | "Make this interaction feel right." | Purposeful, interruptible motion and observed checks |
+| [**write-swift**](skills/engineering/write-swift/SKILL.md) | "Fix this SwiftUI lifecycle bug." | Swift changes checked against the project's toolchain and state boundaries |
+| [**feature-development**](skills/engineering/feature-development/SKILL.md) | "Build this feature." | Behavior delivered in verified test-first slices |
+| [**research**](skills/productivity/research/SKILL.md) | "Find out how this API handles retries." | A cited, dated answer from primary sources |
+| [**writing**](skills/productivity/writing/SKILL.md) | "Tighten this README." | Prose that reads plainly, or an instruction file agents follow |
+| [**teach**](skills/productivity/teach/SKILL.md) | "Explain this; that didn't land." | Understanding checked by the learner doing something |
+| [**close-out**](skills/productivity/close-out/SKILL.md) | "Write the PR." | A commit message, PR body, handoff, announcement or retro true to the evidence |
 
 ## How the skills work
 

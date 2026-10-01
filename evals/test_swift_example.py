@@ -10,7 +10,7 @@ import unittest
 
 
 REPOSITORY = Path(__file__).resolve().parents[1]
-SOURCE = REPOSITORY / "skills" / "write-swift" / "examples" / "request-ownership.swift"
+SOURCE = REPOSITORY / "skills" / "engineering" / "write-swift" / "examples" / "request-ownership.swift"
 ARTIFACT_ROOT = (
     Path(os.environ["SWIFT_EXAMPLE_TEST_DIR"])
     if os.environ.get("SWIFT_EXAMPLE_TEST_DIR")

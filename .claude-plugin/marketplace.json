@@ -1,0 +1,26 @@
+{
+  "name": "sxnzs",
+  "owner": {
+    "name": "Santiago Sainz",
+    "url": "https://github.com/sxnzs"
+  },
+  "description": "Santiago Sainz's agent skills, as an installable Claude Code plugin.",
+  "plugins": [
+    {
+      "name": "sxnzs-skills",
+      "source": "./",
+      "description": "Agent skills for the work before, during and after code: idea development, design, test-first building, debugging, review, verification, research and writing.",
+      "category": "engineering",
+      "keywords": [
+        "engineering",
+        "skills",
+        "code-review",
+        "debugging",
+        "tdd",
+        "design",
+        "writing",
+        "research"
+      ]
+    }
+  ]
+}
