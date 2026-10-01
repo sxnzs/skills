@@ -1,6 +1,6 @@
 ---
 name: idea-development
-description: Turn a loose idea into a clear outcome, resolved decisions and a buildable plan. Use when brainstorming, shaping a product, or deciding whether something is worth building. For restructuring existing code use codebase-improvement.
+description: Turn a loose idea into decisions and a buildable plan. Use when brainstorming, shaping a product, or asking if it is worth building. For refactors use codebase-improvement.
 ---
 
 # Idea Development
@@ -38,14 +38,18 @@ not worth building is also a useful outcome.
 - Reuse the user's decisions. Choose reasonable reversible details within them,
   stating assumptions when they affect the result. Ask when an answer changes
   the outcome, scope or commitment; continue independent work while it is open.
+- When an answer lives with someone else, write them a
+  [questionnaire](references/questionnaire.md); ask the user only who it goes
+  to and what they need back.
 - Capture decisions and durable vocabulary in the handoff. When a saved plan
   is requested or part of the project's established workflow, use existing notes.
   Record rationale and material rejected alternatives rather than the transcript.
-  Update an existing glossary as terms settle, without implementation detail.
-  Propose a decision record only when the choice is hard to reverse, surprising
-  without context and the result of a real trade-off.
+  Keep terms and decision records per [domain language](references/domain-language.md).
   Size the plan to the work: a paragraph can suffice; dependencies and checks
-  belong in a graph when phases branch or rejoin.
+  belong in a graph when phases branch or rejoin. A requested spec follows
+  [spec shape](references/spec.md), synthesized from what is already settled.
+  When the way is too foggy for one session, chart a
+  [multi-session map](references/multi-session-map.md) of decisions instead.
 
 ## Boundaries
 
@@ -53,9 +57,10 @@ The conversation is done when the currently answerable decisions are settled or
 explicitly deferred, and nothing consequential is silently assumed. Brainstorming
 and planning requests stop at the agreed direction or plan, with one recommended
 next step; discussion alone does not authorize production edits.
-When the user has also requested implementation and
-the material choices are resolved, carry that context into the authorized build
-instead of asking them to approve the same work again.
+When the user has also requested implementation and the material choices are
+resolved, carry that context into **feature-development** instead of asking them
+to approve the same work again. Facts outside the project that a decision waits
+on belong to **research**.
 
 Existing structural friction belongs to **codebase-improvement**; appearance to
 **visual-design**; interface behavior to **ui-design**. Use an available helper

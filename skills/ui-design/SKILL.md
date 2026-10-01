@@ -1,6 +1,6 @@
 ---
 name: ui-design
-description: Design interface flows, states and interactions through realistic prototypes and task checks. Use when a user flow, screen structure or interaction is unsettled. For visual identity and aesthetic character use visual-design; for animation behavior use motion-design.
+description: Design interface flows, states, and interactions with realistic prototypes. Use when a flow, screen structure, or interaction is unsettled. For looks use visual-design.
 ---
 
 # UI Design

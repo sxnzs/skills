@@ -1,6 +1,6 @@
 ---
 name: codebase-improvement
-description: Improve code structure around demonstrated friction and verifiable behavior. Use when refactoring, paying down tech debt, or a module is hard to change. For a reported failure use diagnosing-bugs; for unsettled product intent use idea-development.
+description: Improve code structure around demonstrated friction. Use when refactoring, paying tech debt, or code is hard to change. For a failing symptom use diagnosing-bugs.
 ---
 
 # Codebase Improvement

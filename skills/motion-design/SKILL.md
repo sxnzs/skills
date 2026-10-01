@@ -1,6 +1,6 @@
 ---
 name: motion-design
-description: Build, tune or audit animation and gesture physics around purpose, frequency and observed behavior. Use when transitions, motion or direct manipulation need work. For broader flows use ui-design; for visual identity use visual-design.
+description: Build, tune, or audit animation and gesture physics by purpose and observed behavior. Use when transitions, motion, or direct manipulation need work. For flows use ui-design.
 ---
 
 # Motion Design

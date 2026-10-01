@@ -1,6 +1,6 @@
 ---
 name: critic
-description: Verify finished work against its claims and required checks. Use when an agent reports completion or you want to know whether the work is done. For reviewing the change itself, use code-review.
+description: Verify finished work against its claims and required checks. Use when an agent reports completion or to ask if work is done. To review the change itself, use code-review.
 ---
 
 Derive the completion contract from the user's request and repository requirements.
@@ -14,7 +14,11 @@ The producer's summary is a starting point for verification, not its conclusion.
 - Distinguish a demonstrated defect, missing evidence and an unrelated baseline
   failure. Attribute failures before deciding whether the requested work is done.
   Correct incidental inaccuracies without expanding the acceptance contract.
-- Use the cheapest checks that can settle the claim. Seek independent judgment
+- Find the project's real check commands before running anything: a curated
+  tooling note, package scripts, a Makefile or task runner. Prefer them over
+  ad-hoc equivalents and never invent one that does not exist.
+- Use the cheapest checks that can settle the claim: tests, lint and types before
+  builds, deploy or log inspection. Seek independent judgment
   when consequential uncertainty remains; give that reviewer the request and raw
   artifacts rather than the producer's preferred answer. An independent verdict
   requires an actual separate reviewer; never relabel self-review as independent.
@@ -24,5 +28,6 @@ The producer's summary is a starting point for verification, not its conclusion.
 Report **PASS** when the completion contract is satisfied, **FAIL** for a proven
 material miss, or **UNVERIFIED** when required evidence cannot be obtained.
 State what was checked, the observed results, and what remains blocked or skipped.
+Verified work goes to **close-out** for its commit message, PR body or handoff.
 If the requested format allows only pass/fail, leave the verdict pending and
 explain the verification blocker rather than inventing a result.

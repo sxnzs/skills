@@ -2,6 +2,28 @@
 
 Use when merging shallow pieces into one module or moving where a seam sits.
 
+## Vocabulary
+
+Use these words consistently in proposals; vague synonyms such as "service",
+"component" or "boundary" hide what is being decided.
+
+- **Module:** anything with an interface and an implementation, at any scale.
+- **Interface:** all a caller must know to use it correctly, including
+  invariants, ordering, errors, configuration and performance.
+- **Depth:** behavior a caller gets per unit of interface learned. Deep means a
+  lot behind a little; shallow means the interface nearly equals the body.
+- **Seam:** where behavior can be changed without editing that place; where an
+  interface lives. Choosing the seam is its own decision.
+- **Adapter:** something that fills a seam, such as a production client or a
+  test fake.
+- **Leverage** is what callers gain from depth; **locality** is what maintainers
+  gain: change, bugs and checks concentrate in one place.
+
+Name modules with the project's glossary terms ("order intake"), not class
+names. Interfaces that are easy to test accept their dependencies rather than
+constructing them, return results rather than mutating hidden state, and expose
+few operations with simple parameters.
+
 ## Dependency kind decides the seam
 
 - **In-process** (pure computation, in-memory state): merge and test through the

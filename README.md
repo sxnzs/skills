@@ -1,8 +1,9 @@
 # skills
 
-Ten focused skills distilled from the pinned source corpus: eight core jobs and
-two specialists. Each owns a useful outcome; investigation, prototypes and
-verification support that outcome without becoming a chain of prerequisite skills.
+Fifteen focused skills distilled from the pinned source corpus: thirteen core
+jobs and two specialists. Each owns a useful outcome; investigation, prototypes
+and verification support that outcome without becoming a chain of prerequisite
+skills.
 
 | Skill | Say something like | Leaves behind |
 | --- | --- | --- |
@@ -16,6 +17,11 @@ verification support that outcome without becoming a chain of prerequisite skill
 | [**critic**](skills/critic/SKILL.md) | "Is this work actually done?" | A pass, failure or unverified verdict backed by observed evidence |
 | [**motion-design**](skills/motion-design/SKILL.md) | "Make this interaction feel right." | Purposeful, interruptible motion and observed checks |
 | [**write-swift**](skills/write-swift/SKILL.md) | "Fix this SwiftUI lifecycle bug." | Swift changes checked against the project's toolchain and state boundaries |
+| [**feature-development**](skills/feature-development/SKILL.md) | "Build this feature." | Behavior delivered in verified test-first slices |
+| [**research**](skills/research/SKILL.md) | "Find out how this API handles retries." | A cited, dated answer from primary sources |
+| [**writing**](skills/writing/SKILL.md) | "Tighten this README." | Prose that reads plainly, or an instruction file agents follow |
+| [**teach**](skills/teach/SKILL.md) | "Explain this; that didn't land." | Understanding checked by the learner doing something |
+| [**close-out**](skills/close-out/SKILL.md) | "Write the PR." | A commit message, PR body, handoff, announcement or retro true to the evidence |
 
 ## How the skills work
 
@@ -50,6 +56,7 @@ flowchart TB
 
   subgraph decide [Decide]
     idea[idea-development]
+    research[research]
   end
   subgraph design [Design]
     ui[ui-design]
@@ -57,6 +64,7 @@ flowchart TB
     motion[motion-design]
   end
   subgraph change [Change code]
+    feature[feature-development]
     improve[codebase-improvement]
     bugs[diagnosing-bugs]
     swift[write-swift]
@@ -65,23 +73,34 @@ flowchart TB
     review[code-review]
     critic[critic]
   end
+  subgraph communicate [Communicate]
+    closeout[close-out]
+    writing[writing]
+    teach[teach]
+  end
 
   next -. any stage .- decide
-  decide ==> design ==> change ==> check
+  decide ==> design ==> change ==> check ==> communicate
 
+  idea -->|missing fact| research
   idea -->|appearance| visual
   idea -->|interface behavior| ui
+  idea -->|settled build| feature
   idea -->|structural friction| improve
   ui <-->|shared context| visual
   ui -->|substantial motion| motion
   visual -->|substantial motion| motion
   design -->|unsettled outcome| idea
+  feature -->|structural friction| improve
+  feature -. failing symptom .-> bugs
   improve -->|unsettled intent| idea
   improve -->|bounded bug| bugs
   bugs -. no failing symptom .-> improve
+  bugs -->|missing seam| improve
   swift -. flows or motion .-> ui
   review -. "is it done?" .-> critic
   critic -. "review the change" .-> review
+  critic -->|verified| closeout
 ```
 
 Thick arrows are the usual direction of work, not a required sequence. Solid

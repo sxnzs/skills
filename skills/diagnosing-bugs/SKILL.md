@@ -1,6 +1,6 @@
 ---
 name: diagnosing-bugs
-description: Find and fix the cause of a reported bug or regression with proof. Use when something is broken, failing, or unexpectedly slow. For improving structure without a failing symptom, use codebase-improvement.
+description: Find and fix the cause of a bug or regression with proof. Use when something is broken, failing, or slow. To improve structure without a symptom, use codebase-improvement.
 ---
 
 Establish the reported symptom before explaining it. Build the tightest loop

@@ -39,3 +39,8 @@ mostly as optional references. Every recorded result above describes the earlier
 skill bytes at commit `3135edd` and has not been re-run. Comparing the absorbed
 skills against both that commit and Matt's pinned originals on matched fixtures
 is the open evaluation.
+
+The consolidation pass that followed added feature-development, research,
+writing, teach and close-out, absorbed further sources into idea-development,
+codebase-improvement and critic, and shortened every description to 180
+characters or fewer. None of these has behavioral evidence yet.

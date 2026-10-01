@@ -1,6 +1,6 @@
 ---
 name: visual-design
-description: Establish visual character through rendered comparisons and concrete design values. Use when choosing look and feel, typography, color, composition or a theme. For flows and interactions use ui-design; for substantial animation use motion-design.
+description: Establish visual character through rendered comparisons and concrete values. Use when choosing look and feel, type, color or theme. For flows use ui-design.
 ---
 
 # Visual Design
