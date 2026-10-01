@@ -72,3 +72,16 @@ friction. These four skills name the destination instead.
 **next** answers the question that friction produces. Its shape comes from
 the pstack router (one recommendation, read the artifacts, never interview)
 and keeps the handoff map in one place instead of in every skill.
+
+## Debugging, review, and verification
+
+The three focused rewrites were developed in the skill-corpus pilot.
+[Matt's code-review](https://github.com/mattpocock/skills/blob/main/skills/engineering/code-review/SKILL.md)
+contributed the separate intent and standards lenses;
+[diagnosing-bugs](https://github.com/mattpocock/skills/blob/main/skills/engineering/diagnosing-bugs/SKILL.md)
+contributed reproduction before explanation. The local critic workflow contributed
+checking completion claims independently of the producer's report.
+
+The rewrites retain observable acceptance checks and leave model selection,
+tool names, and issue-tracker setup to the active harness. Their bodies were
+rewritten; no upstream helper scripts are distributed with them.

@@ -3,6 +3,7 @@
 Four agent skills for the work that happens before code is written or changed:
 turning ideas, messy code, and unsettled screens into shared decisions and plans.
 A fifth, **next**, answers "what now?" with one step.
+Three focused skills cover debugging, code review, and verification of finished work.
 
 | Skill | Say something like | Leaves behind |
 | --- | --- | --- |
@@ -11,6 +12,9 @@ A fifth, **next**, answers "what now?" with one step.
 | [**visual-design**](skills/visual-design/SKILL.md) | "Let's find the visual direction." | A chosen look, expressed as concrete values |
 | [**ui-design**](skills/ui-design/SKILL.md) | "Help me design this interface." | Agreed flows, states, and interactions |
 | [**next**](skills/next/SKILL.md) | "What's next?" | One recommended step and why, from what already exists |
+| [**diagnosing-bugs**](skills/diagnosing-bugs/SKILL.md) | "Fix this regression." | A cause and a fix with failing-before/passing-after evidence |
+| [**code-review**](skills/code-review/SKILL.md) | "Check the latest changes." | Findings against intent and repository standards |
+| [**critic**](skills/critic/SKILL.md) | "Is this work actually done?" | A verified pass/fail verdict against the completion report |
 
 ## Why these four
 
@@ -51,7 +55,9 @@ mkdir -p ~/.claude/skills
 for s in "$PWD"/skills/skills/*; do ln -s "$s" ~/.claude/skills/; done
 ```
 
-The skills stop at a decision or plan; building it is a separate request.
+The four design workflows stop at a decision or plan; building it is a separate
+request. Debugging fixes the reported cause, review reports findings, and critic
+checks completion claims.
 
 ## Verify
 
