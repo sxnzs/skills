@@ -1,6 +1,6 @@
 ---
 name: teach
-description: Build understanding through explanation and practice. Use when asked to teach me, explain X, or explain it differently. For making a decision instead use idea-development.
+description: Build understanding through explanation and practice. Use when asked to teach me, explain X to me, or explain it differently. For making a decision instead use idea-development.
 ---
 
 # Teach

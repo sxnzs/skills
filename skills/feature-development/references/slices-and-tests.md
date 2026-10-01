@@ -13,6 +13,9 @@ evidence that the pieces cooperate.
 Declare real blocking edges, not an arbitrary sequence. If a proposed increment
 cannot pass checks independently, split it differently or make the prerequisite
 explicit. Keep supporting migrations compatible until consumers have moved.
+A mechanical change with a codebase-wide blast radius is the exception to
+vertical slicing: add the new form beside the old, migrate callers in batches
+that each stay green, and delete the old form only when nothing uses it.
 
 For each cycle, execute the new test before implementation and inspect why it
 fails. Then implement only its behavior and execute the focused test plus checks

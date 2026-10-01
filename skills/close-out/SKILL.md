@@ -7,7 +7,7 @@ description: Report finished work as a commit message, PR body, handoff, announc
 
 Turn finished or paused work into the message its next reader needs: a
 reviewer, a future maintainer, another agent, or the people who should hear
-about it. Work nobody can find or trust is not finished.
+about it.
 
 ## What done looks like
 
@@ -25,7 +25,8 @@ existing artifacts are linked rather than restated.
   proves it.
 - **PR body:** follow [PR body](references/pr-body.md): the smallest view that
   shows the change, before-and-after evidence, and how risky the merge is.
-- **Handoff:** for another session or agent, state the goal, current state,
+- **Handoff:** for another session or agent, shaped by what that session will
+  do next, state the goal, current state,
   decisions with reasons, open questions, affected files, checks and their
   results, and the next step; suggest the skills that fit it. Point to specs,
   plans, issues and commits instead of copying them. Save it outside the

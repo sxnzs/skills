@@ -1,6 +1,6 @@
 ---
 name: write-swift
-description: Write or review Swift and SwiftUI against the real toolchain, isolation and lifecycle contracts. Use when Swift correctness, concurrency or SwiftUI state needs work.
+description: Write or review Swift and SwiftUI against the real toolchain, isolation and lifecycle contracts. Use when Swift concurrency or SwiftUI state needs work. For flows use ui-design.
 ---
 
 # Write Swift

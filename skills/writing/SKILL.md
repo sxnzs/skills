@@ -1,6 +1,6 @@
 ---
 name: writing
-description: Produce clear prose. Use when asked to write, edit, or tighten articles, docs, READMEs, release notes, or agent instructions. For unclear intent use idea-development.
+description: Produce clear prose. Use when asked to write, edit, or tighten articles, docs, READMEs, or agent instructions. For unclear intent use idea-development.
 ---
 
 # Writing
