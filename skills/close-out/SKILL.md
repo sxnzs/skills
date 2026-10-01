@@ -12,7 +12,8 @@ about it.
 ## What done looks like
 
 The requested artifact, true to the evidence: what changed, why, how it was
-checked, and what remains. Verified and unverified claims are kept apart, and
+checked, and what remains. Work found but not landed is listed as dropped or
+deferred, with the reason. Verified and unverified claims are kept apart, and
 existing artifacts are linked rather than restated.
 
 ## How the work goes
