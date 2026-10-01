@@ -1,6 +1,6 @@
 ---
 name: visual-design
-description: Establish visual character through rendered comparisons and concrete values. Use when choosing look and feel, type, color or theme. For flows use ui-design.
+description: Set look and feel as concrete values. Use when choosing type, color or theme. Flows use ui-design.
 ---
 
 # Visual Design

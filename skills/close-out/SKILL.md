@@ -1,6 +1,6 @@
 ---
 name: close-out
-description: Report finished work as a commit message, PR body, handoff, announcement or retro. Use when wrapping up, writing a PR or handing off a session. To verify completion use critic.
+description: Write the commit, PR, handoff or retro for finished work. Use when wrapping up. Verifying uses critic.
 ---
 
 # Close-out

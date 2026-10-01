@@ -1,6 +1,6 @@
 ---
 name: research
-description: Answer a question from primary sources in a cited, dated note. Use when researching docs, APIs, specs or facts a decision waits on. To decide among options use idea-development.
+description: Cited answers from primary sources. Use when a decision waits on a fact. Choices use idea-development.
 ---
 
 # Research

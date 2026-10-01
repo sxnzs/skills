@@ -1,6 +1,6 @@
 ---
 name: motion-design
-description: Build, tune, or audit animation and gesture physics by purpose and observed behavior. Use when transitions, motion, or direct manipulation need work. For flows use ui-design.
+description: Tune animation and gesture physics by observed behavior. Use when motion needs work. Flows use ui-design.
 ---
 
 # Motion Design

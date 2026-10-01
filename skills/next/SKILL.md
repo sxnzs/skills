@@ -1,6 +1,6 @@
 ---
 name: next
-description: Recommend the one next step for work in progress, with the reason. Use when asked "what's next?" or "which skill now?", or after a workflow ends. Recommends only.
+description: Recommend one next step and why. Use when asked what's next or which skill now. Recommends only.
 ---
 
 # Next

@@ -1,6 +1,6 @@
 ---
 name: idea-development
-description: Turn a loose idea into decisions and a buildable plan. Use when brainstorming, shaping a product, or asking if it is worth building. For refactors use codebase-improvement.
+description: Turn an idea into decisions and a plan. Use when brainstorming or scoping. Refactors use codebase-improvement.
 ---
 
 # Idea Development

@@ -1,6 +1,6 @@
 ---
 name: ui-design
-description: Design interface flows, states, and interactions with realistic prototypes. Use when a flow, screen structure, or interaction is unsettled. For looks use visual-design.
+description: Design flows, states and interactions with prototypes. Use when a flow is unsettled. Looks use visual-design.
 ---
 
 # UI Design

@@ -1,6 +1,6 @@
 ---
 name: writing
-description: Produce clear prose. Use when asked to write, edit, or tighten articles, docs, READMEs, or agent instructions. For unclear intent use idea-development.
+description: Make prose plain. Use when writing or editing docs, READMEs or agent instructions. PRs use close-out.
 ---
 
 # Writing

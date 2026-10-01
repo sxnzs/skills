@@ -1,6 +1,6 @@
 ---
 name: feature-development
-description: Build behavior in verified test-first slices. Use when building a feature, implementing a spec or ticket, or adding behavior. For a failing symptom use diagnosing-bugs.
+description: Build behavior in test-first slices. Use when implementing a feature or spec. Bugs use diagnosing-bugs.
 ---
 
 # Feature Development

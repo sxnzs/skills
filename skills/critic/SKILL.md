@@ -1,6 +1,6 @@
 ---
 name: critic
-description: Verify finished work against its claims and required checks. Use when an agent reports completion or to ask if work is done. To review the change itself, use code-review.
+description: Verify claimed work against evidence. Use when work is reported done. Diff review uses code-review.
 ---
 
 Derive the completion contract from the user's request and repository requirements.

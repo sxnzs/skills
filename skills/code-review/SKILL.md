@@ -1,6 +1,6 @@
 ---
 name: code-review
-description: Review changes against intended behavior and repository standards. Use when reviewing a diff, branch, PR or work in progress. To check whether work is done, use critic.
+description: Review a change against intent and standards. Use when reviewing a diff or PR. Done-checks use critic.
 ---
 
 Establish the requested comparison and intended behavior. For a branch or PR,

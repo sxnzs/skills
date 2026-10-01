@@ -1,6 +1,6 @@
 ---
 name: codebase-improvement
-description: Improve code structure around demonstrated friction. Use when refactoring, paying tech debt, or code is hard to change. For a failing symptom use diagnosing-bugs.
+description: Improve structure where it causes friction. Use when refactoring. Failing symptoms use diagnosing-bugs.
 ---
 
 # Codebase Improvement
