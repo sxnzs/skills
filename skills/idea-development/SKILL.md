@@ -1,59 +1,51 @@
 ---
 name: idea-development
-description: Develop a loose idea into a shared vision, recorded decisions, and a buildable plan through two-way discussion. Use when someone says "help me develop this idea", "talk this through with me", or "is this worth building?", wants to brainstorm or spec something new, or has a hunch that isn't a plan yet. Stops at the plan. For restructuring existing code use codebase-improvement.
+description: Turn a loose idea into a clear outcome, resolved decisions and a buildable plan. Use when brainstorming, shaping a product, or deciding whether something is worth building. For restructuring existing code use codebase-improvement.
 ---
 
 # Idea Development
 
-Turn a half-formed idea into something both of you understand the same way, then into a plan someone could build from.
+Make the idea concrete enough to judge and the plan specific enough to build.
+Preserve the user's goal while challenging assumptions that could undermine it.
 
 ## What done looks like
 
-- A short statement of the idea that the human agrees is theirs.
-- The decisions made along the way, each with the reason and the options rejected.
-- Open questions that remain, named rather than papered over.
-- A plan sized to the work: a paragraph for a small idea, phased steps with a
-  completion check per phase for a large one.
-
-Stop earlier if the idea turns out not to be worth building. That is a result, not a failure.
+A shared outcome and intended user, the decisions and their reasons, consequential
+unknowns, and a plan with observable acceptance checks. Deciding that the idea is
+not worth building is also a useful outcome.
 
 ## How the conversation goes
 
-- **Look before you ask.** Read the code, docs, or prior notes the idea touches
-  before asking the human anything they could have expected you to find.
-- **Arrive with proposals, not a blank form.** Where a question has plausible
-  answers, bring two or three grounded options and their trade-offs. The human
-  chooses; you don't mandate.
-- **Route questions by who can answer them.** If running something, reading
-  something, or a quick experiment settles it, do that. Save the human's
-  attention for preference, taste, and product calls.
-- **Take the riskiest unknown first.** Settle what could sink the idea before
-  polishing what couldn't.
-- **Make the idea concrete enough to disagree with.** Show the smallest view
-  that makes the point: example usage, a sketch of the interface, a before/after,
-  a file tree, a throwaway prototype. Abstract agreement hides real disagreement.
-- **Challenge, don't interrogate.** Push on assumptions that would change the
-  plan. Skip ones that wouldn't.
+- Read the relevant existing work before asking for facts you can find. Separate
+  facts to inspect or measure from choices about users, outcomes and preferences.
+  Explain unfamiliar concepts at the depth needed for the decision.
+- Order questions by dependency. Settle an intended user or success criterion
+  before choices that depend on it; ask about the currently answerable decisions,
+  not a questionnaire for the entire project. Prioritize an unknown that could
+  invalidate the idea over polishing details.
+- Bring concrete proposals and honest trade-offs for unresolved choices. Use
+  the smallest useful representation: example usage for a capability, a flow
+  for an interaction, a structural diff for a change, or a prototype for behavior.
+  Compare real alternatives; do not invent a menu where constraints already
+  determine the answer.
+- Reuse the user's decisions. Choose reasonable reversible details within them,
+  stating assumptions when they affect the result. Ask when an answer changes
+  the outcome, scope or commitment; continue independent work while it is open.
+- Capture decisions and durable vocabulary in the handoff. When a saved plan
+  is requested or part of the project's established workflow, use existing notes.
+  Record rationale and material rejected alternatives rather than the transcript.
+  Size the plan to the work: a paragraph can suffice; dependencies and checks
+  belong in a graph when phases branch or rejoin.
 
 ## Boundaries
 
-- Capture decisions, not the transcript. Record a decision when it would be
-  expensive to rediscover. Write the result where the project already keeps
-  plans or docs; ask once if there is no obvious place.
-- The plan is a handoff, not the build.
-- If the idea is really "make this existing code better", switch to
-  **codebase-improvement**. If it is about how something looks or behaves on
-  screen, bring in **visual-design** or **ui-design**. Carry the context across;
-  don't restart discovery.
-- A fully specified, bounded fix with no open decision doesn't need this
-  workflow: say so and recommend building it directly. Otherwise scale the
-  exploration to the question.
-- Other skills (research, a browser tool, diagnosis, review) are optional
-  helpers, never prerequisites: use one when it is available and useful,
-  otherwise do the work directly. Questioning and prototype judgment stay here.
-- Before handing off, check that the written plan states the goal, scope,
-  chosen direction and why, rejected alternatives, constraints, open questions
-  that matter, and acceptance checks, with affected files and exact values
-  where relevant. Every reference a fresh builder needs must still exist.
-- End with one recommended next step, not a menu, and the reason for it
-  (**next** has the usual moves). Recommend; don't start without the go-ahead.
+Brainstorming and planning requests stop at the agreed direction or plan, with
+one recommended next step; discussion alone does not authorize production edits.
+When the user has also requested implementation and
+the material choices are resolved, carry that context into the authorized build
+instead of asking them to approve the same work again.
+
+Existing structural friction belongs to **codebase-improvement**; appearance to
+**visual-design**; interface behavior to **ui-design**. Use an available helper
+only when useful. The handoff must state goal, scope, decisions, meaningful open
+questions, affected artifacts and acceptance checks; keep its references usable.

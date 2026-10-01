@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Interruptible motion example</title>
+    <style>
+      :root { color-scheme: light dark; font: 16px/1.45 system-ui, sans-serif; }
+      body { max-width: 38rem; margin: 3rem auto; padding: 0 1rem; }
+      button, [role="slider"] { font: inherit; }
+      [data-toggle] { padding: .5rem .8rem; }
+      [data-details] {
+        margin: .75rem 0 2rem;
+        padding: .8rem 1rem;
+        border-inline-start: .2rem solid #7aa2f7;
+        background: color-mix(in srgb, CanvasText 8%, Canvas);
+        transform-origin: top left;
+      }
+      [data-track] {
+        position: relative;
+        width: min(100%, 22rem);
+        height: 2.5rem;
+        margin: .8rem 0;
+        border-radius: 999px;
+        background: color-mix(in srgb, CanvasText 18%, Canvas);
+        touch-action: none;
+      }
+      [data-thumb] {
+        position: absolute;
+        inset-block: .25rem;
+        left: .25rem;
+        width: 2rem;
+        border: 0;
+        border-radius: 50%;
+        background: #7aa2f7;
+        cursor: grab;
+        touch-action: none;
+      }
+      [data-thumb]:active { cursor: grabbing; }
+      [data-status] { display: block; min-height: 1.5em; color: color-mix(in srgb, CanvasText 72%, Canvas); }
+      @media (prefers-reduced-motion: reduce) {
+        [data-details], [data-thumb] { transition: none; }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Motion that survives interruption</h1>
+      <p>Reverse the disclosure while it moves. Drag and release the thumb, pause before release, or use the arrow keys. Pointer cancellation restores the last committed position.</p>
+
+      <button type="button" data-toggle aria-expanded="false" aria-controls="details">Toggle details</button>
+      <section id="details" data-details hidden>
+        <strong>The latest request owns completion.</strong>
+        <p>A stale close callback cannot hide this content after it has been reopened. Turn on your operating system's reduced-motion setting to check the same logical state without waiting for animation playback.</p>
+      </section>
+
+      <label for="snap">Snap control</label>
+      <div data-track>
+        <button
+          id="snap"
+          data-thumb
+          type="button"
+          role="slider"
+          aria-label="Snap position"
+          aria-valuemin="0"
+          aria-valuemax="100"
+          aria-valuenow="0"
+          tabindex="0"
+        ></button>
+      </div>
+      <output data-status aria-live="polite">Ready.</output>
+    </main>
+    <script type="module" src="./motion.mjs"></script>
+  </body>
+</html>

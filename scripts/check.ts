@@ -25,7 +25,7 @@ export function validate(root: string): string[] {
       errors.push(`${name}: missing SKILL.md`);
       continue;
     }
-    docs.push(path);
+    collect(join(skillsDir, name));
     const text = readFileSync(join(root, path), 'utf8');
     const front = /^---\r?\n([\s\S]*?)\r?\n---(?:\r?\n|$)/.exec(text);
     if (!front) errors.push(`${name}: missing frontmatter`);

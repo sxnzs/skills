@@ -1,0 +1,1 @@
+I have chosen the shared private helper approach. Refactor names.py now so label and key reuse the same normalization implementation. Keep both public functions and their exact behavior. Run the repository check and finish the change.

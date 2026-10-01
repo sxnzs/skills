@@ -1,87 +1,48 @@
 # Lineage
 
-What these skills learned from the skills that inspired them. Links point to
-the upstream files; read them for the full picture.
+The four upstream packs were read from pinned, licensed copies.
+These links identify the actual revisions studied, rather than a moving branch.
 
-## @poteto — workflows shaped to the problem
+| Author / pack | Pinned source |
+| --- | --- |
+| @poteto / pstack | [cursor/plugins at fae2c6e](https://github.com/cursor/plugins/tree/fae2c6ed95821bd85f614a73e4842e13229fa5e5/pstack) |
+| @dexhorthy / HumanLayer | [humanlayer/skills at ca7c808](https://github.com/humanlayer/skills/tree/ca7c8088db69e315a8b2deea43820270457f8f3c) |
+| @emilkowalski | [emilkowalski/skills at d16ebe6](https://github.com/emilkowalski/skills/tree/d16ebe60d09a5ba2afcb7054ede9d0a10c9f6128) |
+| @mattpocock | [mattpocock/skills at d81f3a1](https://github.com/mattpocock/skills/tree/d81f3a183412e71a5b1e84ca21bc1a35eea03a60) |
 
-Sources: [`architect`](https://github.com/cursor/plugins/blob/main/pstack/skills/architect/SKILL.md),
-[`figure-it-out`](https://github.com/cursor/plugins/blob/main/pstack/skills/figure-it-out/SKILL.md),
-and the rest of [pstack](https://github.com/cursor/plugins/tree/main/pstack).
+## Mechanisms retained
 
-- `architect` grounds the problem, produces structurally different designs,
-  compares them, and builds against the chosen one. The caller's usage comes
-  first; types and signatures follow. → **codebase-improvement** leads with usage
-  and demands structurally different alternatives.
-- `figure-it-out` defines observable success, attacks the riskiest unknown
-  first, and keeps a decision trail. → every skill here ends in recorded
-  decisions with the rejected options; **idea-development** takes the riskiest
-  unknown first.
-- Questions are routed by observability: if running something answers it, run
-  it; ask the human only for preference and product calls. → "route questions by
-  who can answer them", and the design skills ask the human to look only when
-  the agent can't render or click through itself.
-- "Keep only prose that changes a decision." → the test applied to every line
-  of these skills.
+Each skill owns a job the user can name. Source techniques live inside that job
+when they change a decision; they do not become a chain of prerequisite skills.
 
-Not copied: pstack's default autonomy (proceed to implementation, human
-checkpoint opt-in). These skills stop at a plan and hand the choice back.
+| Sources | Owning skill | What changes a decision |
+| --- | --- | --- |
+| Matt diagnosing-bugs; pstack root-causes and behavior-testing principles | diagnosing-bugs | Establish the symptom, minimize without losing it, distinguish hypotheses with probes, and prove regression at the real seam. |
+| Matt code-review; pstack blast-radius | code-review | Separate intent from standards; check the actual implementation of the fact that makes consequential behavior safe. |
+| Matt codebase-design and deepening; pstack architect | codebase-improvement | Start with caller usage; hide a substantial responsibility behind a small interface, remove coordination and introduce adapters for actual dependencies. |
+| Matt grilling and domain-modeling; HumanLayer show-me and design-control-loop | idea-development | Ask about decisions whose prerequisites are settled, inspect facts before asking, and use the smallest representation that makes a choice concrete. Record decisions and material rejected alternatives. |
+| pstack figure-it-out and evidence guidance; the local critic workflow | codebase-improvement, critic | Use observable completion predicates, check increments, independently inspect completion claims, and distinguish missing evidence from a demonstrated failure. |
+| Emil prototype; HumanLayer show-me | ui-design, visual-design | Compare a named axis with realistic content and equally careful execution; inspect the interaction or rendering presented. Keep untested behavior explicit and artifacts usable. |
+| Emil animate, review-animations, improve-animations and apple-design | motion-design | Gate movement by purpose and frequency, preserve interruption and gesture continuity, and verify feel in playback. |
+| Emil write-swift; official Swift documentation | write-swift | Check effective isolation settings, actor reentrancy, task ownership and SwiftUI event/lifecycle boundaries against the actual toolchain. |
 
-## @dexhorthy — make shared understanding visible
+**next** responds to the friction of choosing among skills: inspect the current
+artifacts, recommend the one step that resolves the consequential gap, and stop
+at the recommendation. Its routing approach comes from pstack. It includes
+specialist routes without imposing a sequence on other workflows.
 
-Sources: [`show-me`](https://github.com/humanlayer/skills/blob/main/plugins/show-me/skills/show-me/SKILL.md),
-[`design-control-loop`](https://github.com/humanlayer/skills/blob/main/plugins/design-control-loop/skills/design-control-loop/SKILL.md).
+## Deliberate boundaries
 
-- `show-me`: "Pick the smallest view that makes the key point clear."
-  Pseudocode, a call tree, a file tree, a structural diff, or one HTML artifact,
-  whichever fits. → "make the idea concrete enough to disagree with".
-- `design-control-loop` reads the repository before questioning, arrives with
-  grounded proposals, surfaces trade-offs rather than mandating choices, records
-  the design before building, and gives each phase an observable completion
-  check. → the collaboration pattern of **idea-development**.
-- The name `show-me` is the user's own request, not the capability. → skill
-  names here are the work people say they are starting.
+The user's request determines the deliverable. A discussion or planning request
+stops at that result; an authorized implementation continues once its direction
+is settled. Consequential product or taste choices remain with the user. Review
+produces findings, completion verification a verdict, and next a recommendation;
+those jobs do not need a decisions-and-rejected-options appendix.
 
-## @emilkowalski — exploration with a craft floor
+No upstream model roster, tool names, issue-tracker setup, fixed question quota,
+automatic maintenance loop or mandatory orchestration is distributed. How, why,
+teach and show-me contribute methods rather than additional routers. Model
+calibration belongs to the active harness and evaluation notes.
 
-Sources: [`prototype`](https://github.com/emilkowalski/skills/blob/main/skills/prototype/SKILL.md),
-[`improve-animations`](https://github.com/emilkowalski/skills/blob/main/skills/improve-animations/SKILL.md).
-
-- `prototype`: "A sloppy variant doesn't widen the exploration; it just loses
-  on execution." Genuinely different directions on a named axis, realistic
-  content, full size, an honest "when it wins / what it costs", then stop for
-  the human's choice. → the core of **visual-design** and **ui-design**.
-- `improve-animations` separates surveying, judging, selecting, planning, and
-  executing, and writes plans for an executor with no context. → "hand off exact
-  decisions".
-- Numbers instead of adjectives; frequency decides how much motion something
-  earns. → concrete values in visual-design, "used a hundred times a day earns
-  speed" in ui-design.
-- Emil's prototypes explore layout, personality, motion, and interaction
-  together. → visual-design and ui-design stay separate names but hand off to
-  each other instead of being isolated stages.
-
-## @mattpocock — the starting point
-
-Source: [mattpocock/skills](https://github.com/mattpocock/skills).
-
-The grilling, domain-modeling, and prototyping skills there are what made the
-problem visible: they are good individually, and choosing the next one is the
-friction. These four skills name the destination instead.
-
-**next** answers the question that friction produces. Its shape comes from
-the pstack router (one recommendation, read the artifacts, never interview)
-and keeps the handoff map in one place instead of in every skill.
-
-## Debugging, review, and verification
-
-The three focused rewrites were developed in the skill-corpus pilot.
-[Matt's code-review](https://github.com/mattpocock/skills/blob/main/skills/engineering/code-review/SKILL.md)
-contributed the separate intent and standards lenses;
-[diagnosing-bugs](https://github.com/mattpocock/skills/blob/main/skills/engineering/diagnosing-bugs/SKILL.md)
-contributed reproduction before explanation. The local critic workflow contributed
-checking completion claims independently of the producer's report.
-
-The rewrites retain observable acceptance checks and leave model selection,
-tool names, and issue-tracker setup to the active harness. Their bodies were
-rewritten; no upstream helper scripts are distributed with them.
+The skill bodies were rewritten. Upstream scripts are not distributed. Original
+licenses remain with the vendored packs; this repository retains its MIT license.

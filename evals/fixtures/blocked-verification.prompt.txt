@@ -1,0 +1,1 @@
+Check whether the delivered work is actually done against README.md and completion.md. Verify the available artifact and required check. Do not fix or alter the files.

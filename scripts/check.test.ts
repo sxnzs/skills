@@ -48,7 +48,8 @@ test('missing skill file', () => fixture((root) => {
   assert.ok(validate(root).includes('test-skill: missing SKILL.md'));
 }));
 
-for (const doc of ['README.md', 'LINEAGE.md', 'evals/cases.md', 'skills/test-skill/SKILL.md']) {
+for (const doc of ['README.md', 'LINEAGE.md', 'evals/cases.md', 'skills/test-skill/SKILL.md',
+  'skills/test-skill/references/nested/method.md']) {
   test(`links relative to ${doc}`, () => fixture((root, put) => {
     const prefix = doc.endsWith('SKILL.md') ? good : '';
     put(doc, prefix + '[missing](missing.md#section)');

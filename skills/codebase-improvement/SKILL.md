@@ -1,58 +1,52 @@
 ---
 name: codebase-improvement
-description: Find what makes existing code hard to change, agree on a better structure among genuinely different alternatives, and plan the change in verifiable steps. Use when someone says "help me improve this codebase", asks to refactor, restructure, or pay down tech debt, code is painful to change, or a module's shape is fighting the work. Not for a single bug fix or feature. Plans before editing.
+description: Improve code structure around demonstrated friction and verifiable behavior. Use when refactoring, paying down tech debt, or a module is hard to change. For a reported failure use diagnosing-bugs; for unsettled product intent use idea-development.
 ---
 
 # Codebase Improvement
 
-Work out, together, what is actually making this code hard to work with and what a better shape would be, before anyone changes it.
+Find what makes a real change difficult, then choose the smallest structural
+improvement that removes that friction. A large file or unfamiliar style alone
+does not justify a refactor.
 
 ## What done looks like
 
-When friction is supported:
-
-- The friction, stated concretely: which change was hard, where, and why.
-- Two or three structurally different alternatives. If one reads as a tweak of
-  another, they are one alternative.
-- For each: the caller's usage first, then the interface, then what moves where,
-  and an honest "when it wins / what it costs".
-- The chosen direction, the alternatives rejected and why.
-- An implementation plan with steps small enough to verify one at a time, and
-  what check proves each step didn't break behavior.
-
-"Leave it as it is" is a valid alternative and sometimes the right answer.
+A supported problem, an explicit behavior contract, the chosen structure and
+its trade-offs, and increments that can each be checked. For a planning request,
+the deliverable is the plan. For an authorized refactor, it is the verified change.
 
 ## How the work goes
 
-- **Ground it in real friction.** Start from a change someone tried to make, a
-  bug that kept recurring, or code nobody wants to touch. Inspect the available
-  code, calls, and history first. If no concrete friction emerges, ask for an
-  example before proposing changes. Without evidence, leaving code unchanged
-  is a valid result.
-- **Show the shape, not the essay.** Usage examples, call trees, and before/after
-  structure let the human disagree with something specific.
-- **Prefer deleting to adding.** Removing a layer beats wrapping it.
-- **Settle what can be measured by measuring it.** Test coverage, call counts,
-  and build times don't need the human's opinion.
+- Inspect the relevant callers, data flow, tests and change history. Separate
+  observed friction from a plausible concern and recorded rationale from inferred
+  intent. If no concrete friction emerges, ask for an example; unchanged code is
+  a valid outcome. Measure factual questions rather than putting them to a vote.
+- Compare genuinely different structures when the direction is unresolved.
+  Show caller usage first, then the interface and what moves where, with when
+  each wins and what it costs. Do not manufacture alternatives to an already
+  chosen approach. A call tree, structural diff or before/after example is often
+  enough to make the choice concrete.
+- Prefer ownership that hides a substantial responsibility behind a small
+  interface. Look for callers coordinating internal stages, shared storage or
+  wire details, and pass-through layers. Delete redundant coordination before
+  adding wrappers. Introduce a port or adapter for an actual dependency need,
+  not hypothetical future implementations.
+- State which behavior must remain identical. Where a meaningful behavior check
+  is missing, establishing it is the first implementation increment. Test the
+  public contract rather than the new file layout or internal call sequence.
+- Sequence independently verifiable changes; check each before continuing.
+  For branchy work, record dependencies and acceptance checks in the project's
+  existing plans. Keep vocabulary and difficult-to-reverse decisions only where
+  they would otherwise be expensive to rediscover.
 
 ## Boundaries
 
-- Plan before editing. The human picks the direction; the plan is the handoff.
-  Write it where the project already keeps plans or docs.
-- Keep behavior identical unless a behavior change was explicitly agreed. If
-  there is no check that would catch a behavior change, adding one is the first
-  step of the chosen implementation plan, not work to begin before the choice.
-- If the real question is "what should this product do", switch to
-  **idea-development**, carrying what you learned.
-- A fully specified, bounded fix with no open decision doesn't need this
-  workflow: say so and recommend building it directly. Otherwise scale the
-  exploration to the question.
-- Other skills (research, a browser tool, diagnosis, review) are optional
-  helpers, never prerequisites: use one when it is available and useful,
-  otherwise do the work directly. Questioning and prototype judgment stay here.
-- Before handing off, check that the written plan states the goal, scope,
-  chosen direction and why, rejected alternatives, constraints, open questions
-  that matter, and acceptance checks, with affected files and exact values
-  where relevant. Every reference a fresh builder needs must still exist.
-- End with one recommended next step, not a menu, and the reason for it
-  (**next** has the usual moves). Recommend; don't start without the go-ahead.
+Preserve behavior unless the user agreed to change it. Resolve consequential
+choices with the human; reuse decisions and authorization already given. If the
+user asked to implement a settled refactor, carry it through the relevant checks.
+If they asked for options or a plan, stop there with one recommended next step.
+
+Unsettled product intent belongs to **idea-development**; a bounded bug belongs
+to **diagnosing-bugs**. Carry context across rather than restarting discovery.
+Any handoff must identify the goal, scope, decisions, material open questions,
+affected files and acceptance checks, with references that still exist.

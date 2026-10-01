@@ -3,22 +3,34 @@ name: code-review
 description: Review changes against their intended behavior and this repository's standards. Use when reviewing a diff, branch, PR, or work in progress. For checking whether finished work is done, use critic.
 ---
 
-Review with two separate lenses and report them separately; a change can pass
-one and fail the other.
+Establish the requested comparison and intended behavior. For work in progress,
+include staged, unstaged and relevant untracked changes unless the user narrows
+the scope. Enumerate untracked paths before opening relevant files; exclude
+credential stores and redact secret values from reports. Read callers, contracts
+and tests around the change before judging it.
 
-- **Intent:** does it do what was asked? Find the spec in commit messages, a
-  linked file, `specs/`, plans, or the conversation. Missing requirements,
-  wrong behavior, and unasked-for scope all count. No spec: say so.
-- **Standards:** does it follow this repository's written rules (`AGENTS.md`,
-  contributing notes, its verify command)? Documented rules outrank general
-  taste; label taste as taste.
+- Review **intent** and **repository standards** as distinct lenses. Find the
+  requirements in the conversation, spec, plans or change history. Missing
+  requirements are uncertainty to report, not permission to invent a spec.
+  Written repository rules outrank personal taste.
+- Follow the changed behavior to a concrete failure condition. Check whether
+  callers, validation, state transitions or boundary values make it reachable.
+  Distinguish defects introduced by this change from pre-existing problems.
+  For consequential changes, identify the fact their safety depends on and test
+  it through the actual code. Check beyond symbol callers when the contract crosses
+  wire formats, storage, pinned dependencies or asynchronous lifecycles.
+- Run relevant required checks when possible, using disposable artifacts where
+  necessary and staying within the task's authorization for external effects.
+  Investigate failures enough to attribute them; record blocked or
+  skipped checks. Do not modify the implementation unless separately asked.
+- Report actionable defects by consequence. For each, give the changed file and
+  precise line, the triggering condition, incorrect result, impact and supporting
+  evidence. Keep severity proportional to that impact and distinguish evidence
+  from an unconfirmed concern.
+- Do not manufacture findings to fill a quota, repeat the same defect under both
+  lenses, or turn an unrequested rewrite into a review requirement. Mention taste
+  only when requested or necessary to explain a documented constraint.
 
-Scope is everything that changed, including uncommitted and untracked files,
-unless told otherwise. Run the repository's checks rather than assuming them.
-
-Rank by consequence: data loss, security, fail-open paths, and anything that
-publishes what should stay private come first. Cite file:line for each
-finding, say how it fails, and separate must-fix from judgment calls. Do not
-pad; a short list of real findings beats a long list with noise.
-
-End with `FINDINGS:` and a numbered list: severity, file:line, one line each.
+Lead with the findings that matter. A review with no actionable findings is valid;
+state material verification gaps without presenting them as proven bugs. Follow
+the requested review format.

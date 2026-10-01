@@ -1,65 +1,54 @@
 ---
 name: visual-design
-description: Develop a visual direction together (type, color, composition, material, motion character) by comparing well-made rendered options, ending in concrete values a builder can apply. Use when someone says "let's find the look", asks about look and feel, style, branding, or a theme, a product feels generic, or a new surface needs its own identity. For flows, states, and interaction behavior use ui-design.
+description: Establish visual character through rendered comparisons and concrete design values. Use when choosing look and feel, typography, color, composition or a theme. For flows and interactions use ui-design; for substantial animation use motion-design.
 ---
 
 # Visual Design
 
-Find a visual direction the human recognizes as right, by comparing real, well-made options rather than describing them.
+Find a visual direction grounded in the product, audience and existing design
+language. Make it visible at the intended size, then express it as values a
+builder can apply.
 
 ## What done looks like
 
-- A named direction with the reasoning behind it: who it is for and what it
-  should feel like.
-- Concrete decisions a builder can apply without taste: type choices and scale,
-  color values and their roles, spacing, radius, elevation, motion character.
-  Numbers, not adjectives.
-- The directions that lost, and what each would have cost.
+A justified direction, inspected renderings, concrete values mapped to the
+project's tokens, relevant state behavior, and the alternatives and trade-offs
+that informed the choice. A presentation awaiting selection remains pending.
 
 ## How the work goes
 
-- **Start from what exists.** Read the project's current tokens, components,
-  and any brand material before proposing anything.
-- **Diverge on a named axis.** Size the comparison to the unresolved decision:
-  a detail for a tiny question, two to four genuinely different directions when
-  the broader look is unsettled. Name the difference (density, personality,
-  contrast, material, typography). Three shades of the same idea is one option.
-- **Keep a craft floor.** Use realistic content at its intended size and in the
-  real surroundings, with equally good, shipped-quality execution on the
-  dimension being compared.
-  A careless direction loses on execution and teaches nothing about the idea.
-- **Look at what rendered.** Screenshot and inspect every direction; code and
-  screen often disagree. If you can't render, say so and ask the human to look
-  rather than describing what you haven't seen.
-- **Present, then stop.** Show the directions side by side with "when it wins /
-  what it costs", and let the human choose. Taste is theirs to decide.
+- Inspect existing tokens, components, brand references and the surrounding
+  surface. Reuse the user's chosen direction and project language. If the
+  audience or desired outcome is unsettled, carry that question into
+  **idea-development** before choosing an identity for them.
+- Compare genuinely different directions on a named axis when the look is open.
+  Typography, density, contrast or material may change the character; palette
+  swaps alone may not. Size the experiment to the question, and do not force
+  several variants for a settled or tiny detail.
+- Use realistic content, deliberate hierarchy and equally careful execution.
+  Inspect options full-size in their actual surroundings; evaluate relevant
+  narrow widths, long content and control states. Avoid letting one option lose
+  simply because its implementation is unfinished.
+- Render and inspect what you present. Check legibility, contrast, hierarchy,
+  coherence and relevant interaction states. Mark renderings you cannot inspect
+  as unverified; give the human a usable artifact rather than an imagined result.
+- Present viable directions and honest trade-offs when taste still needs a
+  choice. Respect a reserved human selection; keep its artifacts available.
+- Record actual type choices and scale, color roles and values, spacing, radius,
+  elevation and relevant motion mapped to the existing design system. Include
+  stable visual references and acceptance checks in the handoff. Save it in
+  existing docs when requested or part of the established planning workflow;
+  update production tokens when implementation is requested. Use **motion-design** if available
+  when timing, gestures or interruption need their own investigation.
 
 ## Boundaries
 
-- Presentation awaiting human choice is pending, not complete.
-- Write the chosen design in the project's existing docs or plans: reconstructable
-  visual references, exact values mapped onto its tokens and conventions,
-  behaviors where relevant, rationale, rejected alternatives, and consequential
-  open questions.
-- Build explorations on a throwaway surface, not in production components. Clean
-  up only agent-created disposable exploration after human choice and an adequate
-  recorded handoff. Preserve user-authored and otherwise irreplaceable assets.
-  Apply the design to real code only when asked.
-- If the intended user, task, or product outcome is unsettled, return to
-  **idea-development**, carrying the context rather than restarting discovery.
-- Extend the project's existing tokens and components; don't fork them unasked.
-- Visual direction and interface behavior inform each other. When the question is
-  how something works rather than how it looks, bring in **ui-design** without
-  restarting.
-- A fully specified, bounded fix with no open decision doesn't need this
-  workflow: say so and recommend building it directly. Otherwise scale the
-  exploration to the question.
-- Other skills (research, a browser tool, diagnosis, review) are optional
-  helpers, never prerequisites: use one when it is available and useful,
-  otherwise do the work directly. Questioning and prototype judgment stay here.
-- Before handing off, check that the written plan states the goal, scope,
-  chosen direction and why, rejected alternatives, constraints, open questions
-  that matter, and acceptance checks, with affected files and exact values
-  where relevant. Every reference a fresh builder needs must still exist.
-- End with one recommended next step, not a menu, and the reason for it
-  (**next** has the usual moves). Recommend; don't start without the go-ahead.
+Explore unsettled directions on an isolated surface. Preserve user assets and
+reconstructable evidence; clean up only disposable work after recording the
+choice. Apply a settled direction to real code when the user requested that
+implementation, then verify it. A direction-only request ends with the handoff
+and one next step.
+
+Interface behavior belongs to **ui-design**; share context instead of restarting.
+Use optional helpers only when they improve the current decision, and extend
+the existing design system rather than creating a parallel one.
