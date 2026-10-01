@@ -9,7 +9,8 @@ The producer's summary is a starting point for verification, not its conclusion.
 
 - Inspect the actual files, result or rendered behavior. Run the relevant required
   checks where available; a passing test suite alone cannot prove a promised
-  artifact exists or does the requested work.
+  artifact exists or does the requested work. A test whose expected value is
+  recomputed the way the code computes it cannot fail and is not evidence.
 - Distinguish a demonstrated defect, missing evidence and an unrelated baseline
   failure. Attribute failures before deciding whether the requested work is done.
   Correct incidental inaccuracies without expanding the acceptance contract.

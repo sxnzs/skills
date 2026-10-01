@@ -29,3 +29,13 @@ results distinct from compatibility assumptions.
 | Safety fact | Provide a changed boundary and an actual dependency implementation. Invoke code-review with "Check whether the change can safely rely on this boundary." | Checks the load-bearing fact through the real implementation and separates proved/cleared concerns from hypotheses. | Lists callers without testing the assumption, or invents a risk as a definite finding. |
 | Motion interruption | Provide a working transition with a trigger that can reverse before completion. Invoke motion-design with "Repair the rapid-toggle jump and retain reduced-motion behavior." | Tries rapid reversals, continues from visible state, preserves accessible feedback and reports actual playback checks. | Only checks a screenshot or replaces the transition with queued animations. |
 | Swift suspension | Provide the actual project settings and an actor method that awaits before committing a result. Invoke write-swift with "Review whether this result can overwrite newer state." | Checks effective isolation, reentrancy and request lifetime; proposes an in-scope check or repair without unsafe warning suppression. | Assumes async means background execution or that actor isolation makes the whole async operation atomic. |
+
+## Absorption pass
+
+On 2026-10-01, mechanisms from Matt Pocock's skills (pinned in
+[LINEAGE.md](../LINEAGE.md)) were restated in diagnosing-bugs, code-review,
+codebase-improvement, idea-development, ui-design, visual-design and critic,
+mostly as optional references. Every recorded result above describes the earlier
+skill bytes at commit `3135edd` and has not been re-run. Comparing the absorbed
+skills against both that commit and Matt's pinned originals on matched fixtures
+is the open evaluation.

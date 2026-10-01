@@ -28,7 +28,8 @@ that informed the choice. A presentation awaiting selection remains pending.
 - Use realistic content, deliberate hierarchy and equally careful execution.
   Inspect options full-size in their actual surroundings; evaluate relevant
   narrow widths, long content and control states. Avoid letting one option lose
-  simply because its implementation is unfinished.
+  simply because its implementation is unfinished. The switchable in-place setup
+  in **ui-design** also suits comparing directions on the real page.
 - Render and inspect what you present. Check legibility, contrast, hierarchy,
   coherence and relevant interaction states. Mark renderings you cannot inspect
   as unverified; give the human a usable artifact rather than an imagined result.

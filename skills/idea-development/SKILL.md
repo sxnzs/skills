@@ -18,14 +18,21 @@ not worth building is also a useful outcome.
 
 - Read the relevant existing work before asking for facts you can find. Separate
   facts to inspect or measure from choices about users, outcomes and preferences.
-  Explain unfamiliar concepts at the depth needed for the decision.
+  Explain unfamiliar concepts at the depth needed for the decision. When a term
+  conflicts with the project's glossary or code, or is overloaded ("account":
+  customer or user?), name the conflict and propose a precise term; probe its
+  boundaries with concrete edge cases.
 - Order questions by dependency. Settle an intended user or success criterion
   before choices that depend on it; ask about the currently answerable decisions,
-  not a questionnaire for the entire project. Prioritize an unknown that could
-  invalidate the idea over polishing details.
+  not a questionnaire for the entire project. Ask that set in one round, numbered,
+  with your recommended answer for each; a question that depends on another one
+  still open waits for the next round. Look up facts yourself, in parallel when
+  possible, and hold back only the questions that depend on them. Prioritize an
+  unknown that could invalidate the idea over polishing details.
 - Bring concrete proposals and honest trade-offs for unresolved choices. Use
   the smallest useful representation: example usage for a capability, a flow
-  for an interaction, a structural diff for a change, or a prototype for behavior.
+  for an interaction, a structural diff for a change, or a [logic
+  prototype](references/logic-prototype.md) for a state model or rules.
   Compare real alternatives; do not invent a menu where constraints already
   determine the answer.
 - Reuse the user's decisions. Choose reasonable reversible details within them,
@@ -34,13 +41,18 @@ not worth building is also a useful outcome.
 - Capture decisions and durable vocabulary in the handoff. When a saved plan
   is requested or part of the project's established workflow, use existing notes.
   Record rationale and material rejected alternatives rather than the transcript.
+  Update an existing glossary as terms settle, without implementation detail.
+  Propose a decision record only when the choice is hard to reverse, surprising
+  without context and the result of a real trade-off.
   Size the plan to the work: a paragraph can suffice; dependencies and checks
   belong in a graph when phases branch or rejoin.
 
 ## Boundaries
 
-Brainstorming and planning requests stop at the agreed direction or plan, with
-one recommended next step; discussion alone does not authorize production edits.
+The conversation is done when the currently answerable decisions are settled or
+explicitly deferred, and nothing consequential is silently assumed. Brainstorming
+and planning requests stop at the agreed direction or plan, with one recommended
+next step; discussion alone does not authorize production edits.
 When the user has also requested implementation and
 the material choices are resolved, carry that context into the authorized build
 instead of asking them to approve the same work again.

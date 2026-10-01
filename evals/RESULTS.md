@@ -33,7 +33,8 @@ resolve it. Opus's baseline explicitly treated an unavailable check as failing.
 The observed improvement is this classification, not proof of better code
 correctness or successful release verification.
 
-The skill bytes tested are unchanged in the maintained candidate. Captures,
+The skill bytes tested matched the maintained candidate until the absorption
+pass described in the [behavioral cases](README.md#absorption-pass). Captures,
 input SHA-256 hashes, tool calls, final replies and postchecks are preserved
 outside this repository. Observed token usage and elapsed time are recorded
 there, but one run and different cache states do not support a
