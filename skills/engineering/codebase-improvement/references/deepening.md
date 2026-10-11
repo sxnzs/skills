@@ -1,6 +1,16 @@
 # Deepening
 
-Use when merging shallow pieces into one module or moving where a seam sits.
+Use when surveying for structural friction, merging shallow pieces into one
+module or moving where a seam sits.
+
+## Where friction shows
+
+- Understanding one concept means bouncing between many small modules.
+- An interface is nearly as complex as what it hides.
+- Pure functions were extracted for testability, but the bugs live in how they
+  are called.
+- Coupled modules leak storage, ordering or wire details across their seams.
+- Behavior is untested, or hard to test through its current interface.
 
 ## Vocabulary
 

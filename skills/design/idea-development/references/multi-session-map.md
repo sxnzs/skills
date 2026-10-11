@@ -5,7 +5,9 @@ session. The map finds the route by resolving decisions; it does not build the
 destination. Use the project's issue tracker when writes there are already
 authorized; otherwise keep the map and ticket drafts as Markdown files in the
 repository. Creating, claiming, updating or closing tracker tickets requires
-that authorization; planning alone does not provide it.
+that authorization; planning alone does not provide it. When the project
+documents its tracker conventions, such as `docs/agents/issue-tracker.md`,
+follow its locations, map and ticket shapes, and claim and status strings.
 
 ## The map
 

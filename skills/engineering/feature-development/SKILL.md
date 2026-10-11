@@ -28,12 +28,15 @@ requested.
   interfaces when clear. Ask only if an ambiguity materially changes behavior or
   the contract. If no meaningful automated seam exists, state the gap and use an
   observable manual check; do not manufacture an internal test to claim coverage.
-- For multiple slices, record each delivered behavior, acceptance check, affected
-  files and blocking edges in the project's existing planning format. Start only
-  slices whose blockers are satisfied. Each slice must exercise a narrow complete
-  path and remain independently verifiable, not deliver a disconnected layer.
-  Use [slicing and test discipline](references/slices-and-tests.md) when choosing
-  increments or evaluating a test's value.
+- For multiple slices, record each delivered behavior, acceptance check,
+  affected files and blocking edges in the project's existing planning or ticket
+  format. Start only slices whose blockers are satisfied; when parallel workers
+  are already authorized, independent ones may run in isolated worktrees,
+  integrated one at a time with checks after each. Each slice must exercise a
+  narrow complete path and remain independently verifiable, not deliver a
+  disconnected layer. Use [slicing, tickets and test
+  discipline](references/slices-and-tests.md) when choosing increments, writing
+  tickets or evaluating a test's value.
 - Implement one slice as one failing test at a public seam, the least code that
   passes it, then the relevant checks. Observe failure for the missing behavior,
   not a broken fixture or compilation error. Derive expected values independently

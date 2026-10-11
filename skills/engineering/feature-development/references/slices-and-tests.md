@@ -17,6 +17,22 @@ A mechanical change with a codebase-wide blast radius is the exception to
 vertical slicing: add the new form beside the old, migrate callers in batches
 that each stay green, and delete the old form only when nothing uses it.
 
+## Write tickets
+
+When slices become tickets for other sessions or agents, size each to finish in
+one fresh session. Make any prefactor that eases the work its own first ticket,
+blocking the rest. A ticket states what a caller can do once it lands, its
+blockers or "none", observable acceptance checks, and its triage status. Leave
+out file paths and code, which go stale; a prototype snippet that encodes a
+decision (a state machine, a type shape) may stay. Follow the project's
+documented tracker conventions, such as `docs/agents/issue-tracker.md` and
+`docs/agents/triage-labels.md`, for location, file shape and status strings.
+Before publishing to a tracker, show the numbered breakdown with blockers and
+let the user correct granularity and blocking edges. Create blockers first so
+later tickets can reference them.
+
+## Run the loop
+
 For each cycle, execute the new test before implementation and inspect why it
 fails. Then implement only its behavior and execute the focused test plus checks
 appropriate to the changed surface. A test that already passes does not establish

@@ -29,7 +29,9 @@ existing artifacts are linked rather than restated.
 - **Handoff:** for another session or agent, shaped by what that session will
   do next, state the goal, current state,
   decisions with reasons, open questions, affected files, checks and their
-  results, and the next step; suggest the skills that fit it. Point to specs,
+  results, and the next step; suggest the skills that fit it. End with the
+  launch line: the directory to start the session in and the handoff's
+  absolute path. Point to specs,
   plans, issues and commits instead of copying them. Save it where the project
   keeps handoffs, such as `HANDOFF.md`; otherwise use `artifacts/`. Follow a
   location the user specifies, or seed a new background session with it

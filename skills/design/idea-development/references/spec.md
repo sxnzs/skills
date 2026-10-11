@@ -3,7 +3,8 @@
 Use when a settled direction should become a document someone else can build
 from. Synthesize from the conversation and codebase; do not reopen decisions
 already made. Use the project's glossary terms and respect its recorded
-decisions. Save a local draft using the project's spec conventions. Publish to
+decisions. Save a local draft using the project's spec conventions, including
+documented tracker conventions such as `docs/agents/issue-tracker.md`. Publish to
 the project's spec store or update issues only when those writes are already
 authorized; otherwise hand over the local draft.
 

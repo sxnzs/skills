@@ -25,7 +25,9 @@ An exploration-only request ends with usable raw material, not a forced article.
   around it.
 - When material is missing, draw out observations, scenes, claims, and memorable
   phrases from the author. Capture useful fragments without prematurely forcing
-  an outline. Keep uncertainty visible. Preserve raw notes separately when making
+  an outline. When an idea keeps recurring, push for a leading word: one coined
+  term or metaphor the piece can hang on, which later shapes structure and
+  title. Keep uncertainty visible. Preserve raw notes separately when making
   a new draft unless the author requested changes to them.
 - Arrange the material into beats: each beat makes a move for the reader, such as
   introducing a situation or supporting a claim. Track which concepts the reader

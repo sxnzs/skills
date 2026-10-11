@@ -22,6 +22,12 @@ the deliverable is the plan. For an authorized refactor, it is the verified chan
   observed friction from a plausible concern and recorded rationale from inferred
   intent. If no concrete friction emerges, ask for an example; unchanged code is
   a valid outcome. Measure factual questions rather than putting them to a vote.
+- When asked to survey rather than to fix a named friction, present candidates
+  before designing any: files involved, the friction, the proposed change, its
+  payoff in locality, leverage and tests, and a strength of strong, worth
+  exploring or speculative. Recommend one to tackle first; design interfaces
+  only for the candidate the user picks. [Deepening](references/deepening.md)
+  lists where friction shows.
 - Compare genuinely different structures when the direction is unresolved.
   Show caller usage first, then the interface and what moves where, with when
   each wins and what it costs. Do not manufacture alternatives to an already
@@ -48,7 +54,8 @@ the deliverable is the plan. For an authorized refactor, it is the verified chan
   existing plans. Keep vocabulary and difficult-to-reverse decisions only where
   they would otherwise be expensive to rediscover. Do not re-propose what a
   recorded decision rejected unless observed friction justifies reopening it;
-  say so when it does.
+  say so when it does. When the user rejects a candidate for a reason a future
+  review would need, offer to record it.
 
 ## Boundaries
 

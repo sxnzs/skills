@@ -43,3 +43,15 @@ compact reference for recurring terms or procedures when useful, and update
 earlier simplifications as understanding deepens. Recommend practitioner feedback
 when real-world judgment matters, without making community participation a
 prerequisite for teaching.
+
+## Structure a course when asked
+
+When the learner wants a course over many sessions and has no notes of their
+own, offer a small workspace. Start from a mission: why they want this and what
+concrete success looks like ("ship a Rust CLI to my team", not "learn Rust");
+if they cannot say why, ask before teaching. Ground the topic in a short list of
+high-trust sources, each annotated with what it covers. Each lesson is short,
+gives one tangible win tied to the mission, names one primary source to read
+next, and reuses shared styles and widgets from earlier lessons. After each
+session, record what the learner demonstrated and how, and pick the next lesson
+from that record rather than from what was covered.
