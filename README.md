@@ -187,8 +187,8 @@ worth adding to your own agent instructions.
 
 ## Contributing and local development
 
-Issues and pull requests are welcome. The rules for editing skills are in
-[AGENTS.md](AGENTS.md).
+Issues and pull requests are welcome. Keep skill changes scoped and run the
+checks below.
 
 ```sh
 git clone https://github.com/sxnzs/skills && cd skills
