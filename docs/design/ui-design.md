@@ -47,3 +47,25 @@ It isn't promoted. When implementation is requested, prototype code is rewritten
 ## Where it fits
 
 Within the design set, [idea-development](idea-development.md) settles who the design is for and what outcome counts, this skill settles the interaction, and [visual-design](visual-design.md) settles the aesthetic character. Substantial motion or direct manipulation hands off to [motion-design](motion-design.md). The settled design then becomes build input for engineering skills like [feature-development](../engineering/feature-development.md) or [write-swift](../engineering/write-swift.md).
+
+<!-- handoffs:start -->
+## Handoffs
+
+| When | Then |
+| --- | --- |
+| The outcome or audience is unsettled | runs [idea-development](../design/idea-development.md) |
+| Identity or aesthetic character is the question | runs [visual-design](../design/visual-design.md) |
+| Motion or gesture needs its own investigation | runs [motion-design](../design/motion-design.md) |
+| The design is settled and ready to build | runs [feature-development](../engineering/feature-development.md) |
+| The interface is Swift or SwiftUI | suggests [write-swift](../engineering/write-swift.md) |
+
+Reached from [idea-development](../design/idea-development.md), [motion-design](../design/motion-design.md), [visual-design](../design/visual-design.md), [write-swift](../engineering/write-swift.md).
+<!-- handoffs:end -->
+
+## Credits
+
+Drawn from upstream skills (MIT, revisions pinned in [LINEAGE](../../LINEAGE.md)); the skill itself is a rewrite.
+
+- "rendered behind a visual picker so you can flip through them live and promote the one that feels right" — [Emil Kowalski, prototype](https://github.com/emilkowalski/skills/blob/d16ebe60d09a5ba2afcb7054ede9d0a10c9f6128/skills/prototype/SKILL.md)
+- "Build 2-3 competing prototypes and compare side by side before committing." — [poteto, principle-exhaust-the-design-space](https://github.com/cursor/plugins/blob/fae2c6ed95821bd85f614a73e4842e13229fa5e5/pstack/skills/principle-exhaust-the-design-space/SKILL.md)
+- "Pick the smallest view that makes the key point clear." — [HumanLayer, show-me](https://github.com/humanlayer/skills/blob/ca7c8088db69e315a8b2deea43820270457f8f3c/plugins/show-me/skills/show-me/SKILL.md)

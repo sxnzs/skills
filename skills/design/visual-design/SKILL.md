@@ -56,6 +56,19 @@ choice. Apply a settled direction to real code when the user requested that
 implementation, then verify it. A direction-only request ends with the handoff
 and one next step.
 
-Interface behavior belongs to **ui-design**; share context instead of restarting.
+Share context across siblings instead of restarting.
 Use optional helpers only when they improve the current decision, and extend
 the existing design system rather than creating a parallel one.
+
+## Handoffs
+
+**run** continues into that skill with this context unless the request stops
+short of it, then it is only suggested. **suggest** names it in one closing line
+once the deliverable is final and never continues unasked. A missing skill never
+blocks; do the work inline.
+
+- The outcome is unsettled → run **idea-development**
+- Flow or interaction behavior is the question → run **ui-design**
+- Timing, gestures or interruption need investigation → run **motion-design**
+- The direction is settled and ready to build → run **feature-development**
+- The tokens land in Swift or SwiftUI → suggest **write-swift**

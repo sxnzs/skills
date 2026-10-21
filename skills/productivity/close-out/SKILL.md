@@ -50,3 +50,15 @@ Close-out writes about the work; it does not change the work, invent evidence or
 mark something verified that was not. Publishing, pushing, posting or sending
 follows the project's and user's authorization; prepare the artifact and leave
 external actions to them unless already approved.
+
+## Handoffs
+
+**run** continues into that skill with this context unless the request stops
+short of it, then it is only suggested. **suggest** names it in one closing line
+once the deliverable is final and never continues unasked. A missing skill never
+blocks; do the work inline.
+
+- The work's claims lack evidence → run **critic**
+- The branch is waiting for review → suggest **code-review**
+- The draft needs tightening → suggest **writing**
+- The retro finds repeated friction in the agent's setup → suggest **agent-setup**

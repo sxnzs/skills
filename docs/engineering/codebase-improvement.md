@@ -47,3 +47,28 @@ Not by default. An alternative rejected by a recorded decision stays rejected un
 ## Where it fits
 
 Structure work sits between building and fixing: [feature-development](feature-development.md) hands over demonstrated friction when slices are blocked, and a bounded bug goes to [diagnosing-bugs](diagnosing-bugs.md) instead. Unsettled product intent belongs upstream with [idea-development](../design/idea-development.md). Once a refactor lands, [code-review](code-review.md) can check the change, and behavior-preserving claims are exactly what [critic](critic.md) is built to test.
+
+<!-- handoffs:start -->
+## Handoffs
+
+| When | Then |
+| --- | --- |
+| Product intent is unsettled | runs [idea-development](../design/idea-development.md) |
+| The friction is a bounded bug | runs [diagnosing-bugs](../engineering/diagnosing-bugs.md) |
+| The structure is not yet understood | runs [explain-code](../engineering/explain-code.md) |
+| A chosen refactor needs behavior checks built first | runs [feature-development](../engineering/feature-development.md) |
+| The refactor is implemented | runs [critic](../engineering/critic.md) |
+| The friction comes from the repo's setup, not its code | suggests [agent-setup](../engineering/agent-setup.md) |
+| Verified work needs its commit message or PR body | suggests [close-out](../productivity/close-out.md) |
+
+Reached from [idea-development](../design/idea-development.md), [code-review](../engineering/code-review.md), [diagnosing-bugs](../engineering/diagnosing-bugs.md), [explain-code](../engineering/explain-code.md), [feature-development](../engineering/feature-development.md).
+<!-- handoffs:end -->
+
+## Credits
+
+Drawn from upstream skills (MIT, revisions pinned in [LINEAGE](../../LINEAGE.md)); the skill itself is a rewrite.
+
+- "Shared vocabulary for designing deep modules." — [Matt Pocock, codebase-design](https://github.com/mattpocock/skills/blob/d81f3a183412e71a5b1e84ca21bc1a35eea03a60/skills/engineering/codebase-design/SKILL.md)
+- "Bias toward deletion and the smallest change that solves the problem." — [poteto, principle-laziness-protocol](https://github.com/cursor/plugins/blob/fae2c6ed95821bd85f614a73e4842e13229fa5e5/pstack/skills/principle-laziness-protocol/SKILL.md)
+- "migrate callers and remove the old API in the same refactor wave instead of preserving compatibility layers" — [poteto, principle-migrate-callers-then-delete-legacy-apis](https://github.com/cursor/plugins/blob/fae2c6ed95821bd85f614a73e4842e13229fa5e5/pstack/skills/principle-migrate-callers-then-delete-legacy-apis/SKILL.md)
+- "pick a base, graft the strongest parts of the losers into it" — [poteto, arena](https://github.com/cursor/plugins/blob/fae2c6ed95821bd85f614a73e4842e13229fa5e5/pstack/skills/arena/SKILL.md)

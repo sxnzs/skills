@@ -1,6 +1,6 @@
 {
   "name": "sxnzs-skills",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "private": true,
   "description": "Agent skills for the work before, during and after code: idea development, design, test-first building, debugging, review, verification, research and writing.",
   "repository": {

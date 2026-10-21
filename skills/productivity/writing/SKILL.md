@@ -56,3 +56,16 @@ facts. Leave code, data, metadata, and link targets intact unless their revision
 is requested. Never invent facts or citations; ask for missing evidence or flag
 the gap. Clearly fictional invention belongs only in an explicitly creative
 request. Writing does not authorize publication or changes to agent permissions.
+
+## Handoffs
+
+**run** continues into that skill with this context unless the request stops
+short of it, then it is only suggested. **suggest** names it in one closing line
+once the deliverable is final and never continues unasked. A missing skill never
+blocks; do the work inline.
+
+- The text is a commit message, PR body, handoff or retro → run **close-out**
+- The text documents code nobody has explained yet → suggest **explain-code**
+- The text depends on facts not yet checked → suggest **research**
+- The repo's agent setup is as weak as its instruction file → suggest **agent-setup**
+- The reader must learn, not just read → suggest **teach**

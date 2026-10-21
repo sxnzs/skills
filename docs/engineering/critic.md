@@ -47,3 +47,23 @@ No. Checks run within existing authorization; deployment and other external writ
 ## Where it fits
 
 Critic is the check between "the work says it's done" and the work being done. It runs after [feature-development](feature-development.md), [diagnosing-bugs](diagnosing-bugs.md) or [codebase-improvement](codebase-improvement.md) produce a change, alongside or after [code-review](code-review.md). Work that passes goes to [close-out](../productivity/close-out.md) for the commit message, PR body or handoff.
+
+<!-- handoffs:start -->
+## Handoffs
+
+| When | Then |
+| --- | --- |
+| The change itself needs reading line by line | suggests [code-review](../engineering/code-review.md) |
+| The verdict is FAIL and the cause is unknown | runs [diagnosing-bugs](../engineering/diagnosing-bugs.md) |
+| The verdict is FAIL because requested behavior is missing | suggests [feature-development](../engineering/feature-development.md) |
+| Verification needs a fact from outside the repo | runs [research](../productivity/research.md) |
+| The verdict is PASS and the work needs its commit message, PR body or handoff | suggests [close-out](../productivity/close-out.md) |
+
+Reached from [agent-setup](../engineering/agent-setup.md), [code-review](../engineering/code-review.md), [codebase-improvement](../engineering/codebase-improvement.md), [diagnosing-bugs](../engineering/diagnosing-bugs.md), [feature-development](../engineering/feature-development.md), [close-out](../productivity/close-out.md).
+<!-- handoffs:end -->
+
+## Credits
+
+Drawn from upstream skills (MIT, revisions pinned in [LINEAGE](../../LINEAGE.md)); the skill itself is a rewrite.
+
+- "Verify against the real artifact (run the feature, read the actual value, inspect the diff), not a proxy, self-report, or 'it compiles.'" — [poteto, principle-prove-it-works](https://github.com/cursor/plugins/blob/fae2c6ed95821bd85f614a73e4842e13229fa5e5/pstack/skills/principle-prove-it-works/SKILL.md)

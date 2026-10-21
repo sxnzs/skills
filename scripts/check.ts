@@ -1,6 +1,22 @@
 import { existsSync, readdirSync, readFileSync } from 'node:fs';
 import { dirname, join, relative, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { checkLanes, readHandoffs, syncDocs } from './graph.ts';
+
+// Upstream links in our docs must point at a revision pinned in LINEAGE.md.
+function checkPins(root: string, docs: string[]): string[] {
+  const lineage = join(root, 'LINEAGE.md');
+  if (!existsSync(lineage)) return [];
+  const pinned = [...readFileSync(lineage, 'utf8').matchAll(/\/(?:tree|blob)\/([0-9a-f]{40})/g)].map(match => match[1]);
+  const upstream = /github\.com\/(?:mattpocock\/skills|cursor\/plugins|humanlayer\/skills|emilkowalski\/skills)\/(?:blob|tree)\/([0-9a-f]+)/g;
+  const errors: string[] = [];
+  for (const doc of docs) {
+    if (!existsSync(join(root, doc))) continue;
+    for (const match of readFileSync(join(root, doc), 'utf8').matchAll(upstream))
+      if (!pinned.some(sha => sha.startsWith(match[1]))) errors.push(`${doc}: upstream link ${match[0]} is not a revision pinned in LINEAGE.md`);
+  }
+  return errors;
+}
 
 // Supports flat scalar frontmatter and inline Markdown links, not general YAML/Markdown.
 export function validate(root: string): string[] {
@@ -83,6 +99,14 @@ export function validate(root: string): string[] {
     for (const ref of text.matchAll(/\*\*([a-z]+(?:-[a-z]+)+)\*\*/g))
       if (!names.includes(ref[1])) errors.push(`${name}: references unknown skill ${ref[1]}`);
   }
+  const { edges, errors: handoffErrors } = readHandoffs(root, skills);
+  errors.push(...handoffErrors);
+  if (existsSync(docsDir)) {
+    errors.push(...syncDocs(root, skills, edges));
+    const readme = join(docsDir, 'README.md');
+    if (existsSync(readme) && names.includes('next')) errors.push(...checkLanes(readFileSync(readme, 'utf8'), edges, names));
+  }
+  errors.push(...checkPins(root, docs));
   for (const doc of docs) {
     const path = join(root, doc);
     if (!existsSync(path)) { errors.push(`${doc}: missing document`); continue; }

@@ -48,3 +48,27 @@ Conflicting or overloaded terms are named and a precise term proposed, then prob
 ## Where it fits
 
 This is the front door of the design set: ideas in, decisions out. Facts a decision waits on go to [research](../productivity/research.md); once the direction is agreed, [feature-development](../engineering/feature-development.md) builds it, [ui-design](ui-design.md) shapes the flows, and [visual-design](visual-design.md) settles the look. Structural friction in an existing codebase is [codebase-improvement](../engineering/codebase-improvement.md)'s territory instead.
+
+<!-- handoffs:start -->
+## Handoffs
+
+| When | Then |
+| --- | --- |
+| A decision waits on a fact outside the project | runs [research](../productivity/research.md) |
+| The open question is how it looks | runs [visual-design](../design/visual-design.md) |
+| The open question is how it behaves | runs [ui-design](../design/ui-design.md) |
+| The real issue is structural friction in existing code | runs [codebase-improvement](../engineering/codebase-improvement.md) |
+| The area to change is not understood | runs [explain-code](../engineering/explain-code.md) |
+| The direction is settled and ready to build | runs [feature-development](../engineering/feature-development.md) |
+| The user must understand a concept before deciding | suggests [teach](../productivity/teach.md) |
+
+Reached from [ui-design](../design/ui-design.md), [visual-design](../design/visual-design.md), [code-review](../engineering/code-review.md), [codebase-improvement](../engineering/codebase-improvement.md), [explain-code](../engineering/explain-code.md), [feature-development](../engineering/feature-development.md), [research](../productivity/research.md), [teach](../productivity/teach.md).
+<!-- handoffs:end -->
+
+## Credits
+
+Drawn from upstream skills (MIT, revisions pinned in [LINEAGE](../../LINEAGE.md)); the skill itself is a rewrite.
+
+- "Grill the user relentlessly about a plan, decision, or idea." — [Matt Pocock, grilling](https://github.com/mattpocock/skills/blob/d81f3a183412e71a5b1e84ca21bc1a35eea03a60/skills/productivity/grilling/SKILL.md)
+- "Plan a huge chunk of work (more than one agent session can hold) as a shared map of decision tickets" — [Matt Pocock, wayfinder](https://github.com/mattpocock/skills/blob/d81f3a183412e71a5b1e84ca21bc1a35eea03a60/skills/engineering/wayfinder/SKILL.md)
+- "Turn a decision you can't fully answer into a questionnaire for someone else to fill in." — [Matt Pocock, to-questionnaire](https://github.com/mattpocock/skills/blob/d81f3a183412e71a5b1e84ca21bc1a35eea03a60/skills/productivity/to-questionnaire/SKILL.md)

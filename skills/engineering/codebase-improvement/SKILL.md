@@ -1,6 +1,6 @@
 ---
 name: codebase-improvement
-description: Improve structure where it causes friction. Use when refactoring. Failing symptoms use diagnosing-bugs.
+description: Improve structure where it causes friction. Use when code is painful to change or you ask to refactor. Failing symptoms use diagnosing-bugs.
 ---
 
 # Codebase Improvement
@@ -41,7 +41,10 @@ the deliverable is the plan. For an authorized refactor, it is the verified chan
   removing a module would only move its code, it is a pass-through; if complexity
   would reappear across callers, it earns its keep. Look for callers coordinating
   internal stages, shared storage or wire details. Delete redundant coordination
-  before adding wrappers. A port needs two real adapters, usually production and
+  before adding wrappers. When a new interface replaces an old one and no
+  outside caller depends on it, migrate the callers and delete the old one in
+  the same change rather than keeping a compatibility layer. A port needs two
+  real adapters, usually production and
   test; one is indirection. [Deepening](references/deepening.md) maps dependency
   kinds to seams and tests.
 - State which behavior must remain identical. Where a meaningful behavior check
@@ -65,7 +68,21 @@ user asked to implement a settled refactor, carry it through the relevant checks
 continuing between increments rather than pausing to report or offer.
 If they asked for options or a plan, stop there with one recommended next step.
 
-Unsettled product intent belongs to **idea-development**; a bounded bug belongs
-to **diagnosing-bugs**. Carry context across rather than restarting discovery.
+Carry context across rather than restarting discovery.
 Any handoff must identify the goal, scope, decisions, material open questions,
 affected files and acceptance checks, with references that still exist.
+
+## Handoffs
+
+**run** continues into that skill with this context unless the request stops
+short of it, then it is only suggested. **suggest** names it in one closing line
+once the deliverable is final and never continues unasked. A missing skill never
+blocks; do the work inline.
+
+- Product intent is unsettled → run **idea-development**
+- The friction is a bounded bug → run **diagnosing-bugs**
+- The structure is not yet understood → run **explain-code**
+- A chosen refactor needs behavior checks built first → run **feature-development**
+- The refactor is implemented → run **critic**
+- The friction comes from the repo's setup, not its code → suggest **agent-setup**
+- Verified work needs its commit message or PR body → suggest **close-out**

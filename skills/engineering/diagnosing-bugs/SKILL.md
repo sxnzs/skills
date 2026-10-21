@@ -1,6 +1,6 @@
 ---
 name: diagnosing-bugs
-description: Fix a bug at its proven cause. Use when something is broken or slow. Refactors use codebase-improvement.
+description: Fix a bug at its proven cause. Use when something is broken, failing, flaky or slow, or you say debug this. Refactors use codebase-improvement.
 ---
 
 Establish the reported symptom before explaining it. Build the tightest loop
@@ -26,6 +26,9 @@ redact secret values in traces, fixtures and reports.
   logs at the distinguishing boundaries. Minimize the reproduction one variable
   at a time until removing any remaining element makes it pass; for slowness,
   record a baseline and bisect before optimizing.
+- When two fixes that share one premise have failed the same check, stop
+  patching: write the premise down, count where the imbalance falls, and
+  question the premise before a third fix.
 - Before settling on a cause, check the symptom's history: prior reports, fixes
   that shipped and were reverted, and related work still in flight. Confirm each
   artifact you find — commit, branch, ticket — against the current code; a
@@ -60,3 +63,16 @@ check, never directions. Report the cause and its certainty,
 the hypotheses ruled out, what changed, the relevant evidence and any remaining
 blocker; put the confirmed cause in the commit message when committing. Follow
 the user's requested output format.
+
+## Handoffs
+
+**run** continues into that skill with this context unless the request stops
+short of it, then it is only suggested. **suggest** names it in one closing line
+once the deliverable is final and never continues unasked. A missing skill never
+blocks; do the work inline.
+
+- Nothing fails and the pain is structural, or no seam can reach the real pattern → run **codebase-improvement**
+- The cause turns on a fact outside the repo → run **research**
+- The code's behavior is unfamiliar before tracing it → run **explain-code**
+- A fix is verified and the change is non-trivial → run **critic**
+- A verified fix needs its commit message or PR body → suggest **close-out**

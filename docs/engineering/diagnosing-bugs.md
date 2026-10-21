@@ -47,3 +47,25 @@ At the causal boundary the evidence supports, within the requested scope, with o
 ## Where it fits
 
 A failing symptom is this skill's entry point, while a request for new behavior belongs to [feature-development](feature-development.md). If a proven cause reveals structure that should change, hand the friction to [codebase-improvement](codebase-improvement.md). The finished repair is a change like any other, so it can pass through [code-review](code-review.md), and the confirmed cause belongs in the commit message — which [close-out](../productivity/close-out.md) writes.
+
+<!-- handoffs:start -->
+## Handoffs
+
+| When | Then |
+| --- | --- |
+| Nothing fails and the pain is structural, or no seam can reach the real pattern | runs [codebase-improvement](../engineering/codebase-improvement.md) |
+| The cause turns on a fact outside the repo | runs [research](../productivity/research.md) |
+| The code's behavior is unfamiliar before tracing it | runs [explain-code](../engineering/explain-code.md) |
+| A fix is verified and the change is non-trivial | runs [critic](../engineering/critic.md) |
+| A verified fix needs its commit message or PR body | suggests [close-out](../productivity/close-out.md) |
+
+Reached from [motion-design](../design/motion-design.md), [code-review](../engineering/code-review.md), [codebase-improvement](../engineering/codebase-improvement.md), [critic](../engineering/critic.md), [explain-code](../engineering/explain-code.md), [feature-development](../engineering/feature-development.md), [write-swift](../engineering/write-swift.md), [research](../productivity/research.md).
+<!-- handoffs:end -->
+
+## Credits
+
+Drawn from upstream skills (MIT, revisions pinned in [LINEAGE](../../LINEAGE.md)); the skill itself is a rewrite.
+
+- "Diagnosis loop for hard bugs and performance regressions." — [Matt Pocock, diagnosing-bugs](https://github.com/mattpocock/skills/blob/d81f3a183412e71a5b1e84ca21bc1a35eea03a60/skills/engineering/diagnosing-bugs/SKILL.md)
+- "When two or more fixes that share one premise have failed the same gate, suspect the premise, not the fixes." — [poteto, principle-attack-the-premise](https://github.com/cursor/plugins/blob/fae2c6ed95821bd85f614a73e4842e13229fa5e5/pstack/skills/principle-attack-the-premise/SKILL.md)
+- "Trace each symptom to its root cause and fix it there; reproduce first, ask why until you reach it, resist nil-check guards that silence crashes." — [poteto, principle-fix-root-causes](https://github.com/cursor/plugins/blob/fae2c6ed95821bd85f614a73e4842e13229fa5e5/pstack/skills/principle-fix-root-causes/SKILL.md)

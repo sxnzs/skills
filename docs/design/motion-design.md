@@ -47,3 +47,27 @@ No. Screenshots can't establish timing, interruption or frame smoothness, so cla
 ## Where it fits
 
 [ui-design](ui-design.md) and [visual-design](visual-design.md) hand motion questions here when timing, gestures or interruption need investigation. When repair is requested, motion-design implements and verifies the settled change. [write-swift](../engineering/write-swift.md) supplies Swift-specific guidance, and [code-review](../engineering/code-review.md) can review the resulting diff.
+
+<!-- handoffs:start -->
+## Handoffs
+
+| When | Then |
+| --- | --- |
+| The motion is part of an unsettled flow | runs [ui-design](../design/ui-design.md) |
+| The tuning happens in Swift or SwiftUI | runs [write-swift](../engineering/write-swift.md) |
+| The settled motion is ready to build | runs [feature-development](../engineering/feature-development.md) |
+| The question is the look, not the movement | suggests [visual-design](../design/visual-design.md) |
+| A rapid-toggle or interruption bug has an unknown cause | suggests [diagnosing-bugs](../engineering/diagnosing-bugs.md) |
+| The motion change is finished | suggests [code-review](../engineering/code-review.md) |
+
+Reached from [ui-design](../design/ui-design.md), [visual-design](../design/visual-design.md), [write-swift](../engineering/write-swift.md).
+<!-- handoffs:end -->
+
+## Credits
+
+Drawn from upstream skills (MIT, revisions pinned in [LINEAGE](../../LINEAGE.md)); the skill itself is a rewrite.
+
+- "should it animate at all, what purpose" — [Emil Kowalski, animate](https://github.com/emilkowalski/skills/blob/d16ebe60d09a5ba2afcb7054ede9d0a10c9f6128/skills/animate/SKILL.md)
+- "reject everything that shouldn't" — [Emil Kowalski, find-animation-opportunities](https://github.com/emilkowalski/skills/blob/d16ebe60d09a5ba2afcb7054ede9d0a10c9f6128/skills/find-animation-opportunities/SKILL.md)
+- "Default to flagging; approval is earned." — [Emil Kowalski, review-animations](https://github.com/emilkowalski/skills/blob/d16ebe60d09a5ba2afcb7054ede9d0a10c9f6128/skills/review-animations/SKILL.md)
+- "fluid, physical motion" — [Emil Kowalski, apple-design](https://github.com/emilkowalski/skills/blob/d16ebe60d09a5ba2afcb7054ede9d0a10c9f6128/skills/apple-design/SKILL.md)

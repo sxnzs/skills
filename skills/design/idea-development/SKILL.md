@@ -1,6 +1,6 @@
 ---
 name: idea-development
-description: Turn an idea into decisions and a plan. Use when brainstorming or scoping. Refactors use codebase-improvement.
+description: Turn an idea into decisions and a plan. Use when brainstorming, scoping or stress-testing a plan. Refactors use codebase-improvement.
 ---
 
 # Idea Development
@@ -59,10 +59,20 @@ and planning requests stop at the agreed direction or plan, with one recommended
 next step; discussion alone does not authorize production edits.
 When the user has also requested implementation and the material choices are
 resolved, carry that context into **feature-development** instead of asking them
-to approve the same work again. Facts outside the project that a decision waits
-on belong to **research**.
-
-Existing structural friction belongs to **codebase-improvement**; appearance to
-**visual-design**; interface behavior to **ui-design**. Use an available helper
-only when useful. The handoff must state goal, scope, decisions, meaningful open
+to approve the same work again. Use an available helper only when useful. The handoff must state goal, scope, decisions, meaningful open
 questions, affected artifacts and acceptance checks; keep its references usable.
+
+## Handoffs
+
+**run** continues into that skill with this context unless the request stops
+short of it, then it is only suggested. **suggest** names it in one closing line
+once the deliverable is final and never continues unasked. A missing skill never
+blocks; do the work inline.
+
+- A decision waits on a fact outside the project → run **research**
+- The open question is how it looks → run **visual-design**
+- The open question is how it behaves → run **ui-design**
+- The real issue is structural friction in existing code → run **codebase-improvement**
+- The area to change is not understood → run **explain-code**
+- The direction is settled and ready to build → run **feature-development**
+- The user must understand a concept before deciding → suggest **teach**

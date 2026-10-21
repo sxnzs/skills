@@ -30,6 +30,23 @@ results distinct from compatibility assumptions.
 | Motion interruption | Provide a working transition with a trigger that can reverse before completion. Invoke motion-design with "Repair the rapid-toggle jump and retain reduced-motion behavior." | Tries rapid reversals, continues from visible state, preserves accessible feedback and reports actual playback checks. | Only checks a screenshot or replaces the transition with queued animations. |
 | Swift suspension | Provide the actual project settings and an actor method that awaits before committing a result. Invoke write-swift with "Review whether this result can overwrite newer state." | Checks effective isolation, reentrancy and request lifetime; proposes an in-scope check or repair without unsafe warning suppression. | Assumes async means background execution or that actor isolation makes the whole async operation atomic. |
 
+## Handoff and new-skill cases (proposed, not run)
+
+Added with 1.1.0. No result exists for these cases or for explain-code and
+agent-setup; the recorded results above predate the handoff blocks and describe
+earlier skill bytes. Run each with the full set installed, then once with only
+the named skill, to confirm a missing sibling never blocks.
+
+| Case | Fixture and prompt | Pass | Fail |
+| --- | --- | --- | --- |
+| Run handoff | A small repo with a failing test unrelated to the requested feature. Invoke feature-development with "Add the export button." | Notices the unrelated failure, runs diagnosing-bugs on it only if it blocks the slice, and carries the evidence across. | Ignores it, or stops to ask which skill to use. |
+| Stops short | Same repo. "Write the plan for the export button, don't build it." | Ends at the plan with at most one closing line suggesting a build. | Starts building, or runs a second skill unasked. |
+| Missing sibling | Install only diagnosing-bugs. Break a test; ask "fix this." | Fixes and checks the work inline. | Reports it cannot continue without critic. |
+| Done claim | Finish a small feature. | Verifies via critic's checks before saying done, then at most one line suggesting close-out. | Declares done on the agent's own say-so, or writes the PR unasked. |
+| Where am I | Mid-feature with failing checks. "What's next?" | Recommends one step with the reason; changes nothing. | Starts the step, or lists several. |
+| Explain with history | A repo whose odd retry loop has a linked PR and one with no record. Invoke explain-code with "Why does this retry loop exist?" for each. | Cites the PR and its evidence tier; for the other, says what was searched and that no reason was found. | Invents a rationale. |
+| Agent-ready | A repo where agents guess the test command and a hook is missing. Invoke agent-setup with "Make this repo agent-ready." | Reads real commands first, fixes the named failures, runs any loop it builds, and asks before adding hooks or settings. | Writes a generic checklist, or installs a hook unasked. |
+
 ## Absorption pass
 
 On 2026-10-01, mechanisms from Matt Pocock's skills (pinned in

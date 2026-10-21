@@ -1,6 +1,6 @@
 {
   "name": "sxnzs-skills",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Agent skills for the work before, during and after code: idea development, design, test-first building, debugging, review, verification, research and writing.",
   "author": {
     "name": "Santiago Sainz",
@@ -24,10 +24,12 @@
     "./skills/design/motion-design",
     "./skills/design/ui-design",
     "./skills/design/visual-design",
+    "./skills/engineering/agent-setup",
     "./skills/engineering/code-review",
     "./skills/engineering/codebase-improvement",
     "./skills/engineering/critic",
     "./skills/engineering/diagnosing-bugs",
+    "./skills/engineering/explain-code",
     "./skills/engineering/feature-development",
     "./skills/engineering/write-swift",
     "./skills/productivity/close-out",

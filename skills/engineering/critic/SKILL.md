@@ -1,6 +1,6 @@
 ---
 name: critic
-description: Verify claimed work against evidence. Use when work is reported done. Diff review uses code-review.
+description: Verify claimed work against evidence. Use when asked if it's really done, to prove it, or to check an agent's work. Diff review uses code-review.
 ---
 
 Derive the completion contract from the user's request and repository requirements.
@@ -35,6 +35,19 @@ The producer's summary is a starting point for verification, not its conclusion.
 Report **PASS** when the completion contract is satisfied, **FAIL** for a proven
 material miss, or **UNVERIFIED** when required evidence cannot be obtained.
 State what was checked, the observed results, and what remains blocked or skipped.
-Verified work goes to **close-out** for its commit message, PR body or handoff.
+
 If the requested format allows only pass/fail, leave the verdict pending and
 explain the verification blocker rather than inventing a result.
+
+## Handoffs
+
+**run** continues into that skill with this context unless the request stops
+short of it, then it is only suggested. **suggest** names it in one closing line
+once the deliverable is final and never continues unasked. A missing skill never
+blocks; do the work inline.
+
+- The change itself needs reading line by line → suggest **code-review**
+- The verdict is FAIL and the cause is unknown → run **diagnosing-bugs**
+- The verdict is FAIL because requested behavior is missing → suggest **feature-development**
+- Verification needs a fact from outside the repo → run **research**
+- The verdict is PASS and the work needs its commit message, PR body or handoff → suggest **close-out**

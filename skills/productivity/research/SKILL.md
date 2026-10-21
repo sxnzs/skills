@@ -36,8 +36,19 @@ such notes; its path is reported.
 
 ## Boundaries
 
-Research reports; it does not change code or settle preferences. Hand the
-findings to **idea-development** when they feed a choice, or to the skill that
-requested them. Use only sources the user is authorized to access, keep
+Research reports; it does not change code or settle preferences. Hand the findings to the skill that requested them. Use only sources the user is authorized to access, keep
 credentials and private data out of the note, and name what could not be
 verified rather than filling the gap.
+
+## Handoffs
+
+**run** continues into that skill with this context unless the request stops
+short of it, then it is only suggested. **suggest** names it in one closing line
+once the deliverable is final and never continues unasked. A missing skill never
+blocks; do the work inline.
+
+- The findings feed a choice → run **idea-development**
+- The question is about this repo's own code → run **explain-code**
+- The findings explain a failure → suggest **diagnosing-bugs**
+- The findings change how code should be built → suggest **feature-development**
+- The user needs to understand the topic, not just have the answer → suggest **teach**

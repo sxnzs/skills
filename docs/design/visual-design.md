@@ -47,3 +47,24 @@ Viable directions are presented with trade-offs when taste must decide. A reserv
 ## Where it fits
 
 The design set splits the surface three ways: [idea-development](idea-development.md) settles intent, [ui-design](ui-design.md) settles behavior, and this skill settles appearance. Timing and gesture questions that need their own investigation continue in [motion-design](motion-design.md). Once values are chosen, they become input for implementation skills like [feature-development](../engineering/feature-development.md), which apply and verify them in real code.
+
+<!-- handoffs:start -->
+## Handoffs
+
+| When | Then |
+| --- | --- |
+| The outcome is unsettled | runs [idea-development](../design/idea-development.md) |
+| Flow or interaction behavior is the question | runs [ui-design](../design/ui-design.md) |
+| Timing, gestures or interruption need investigation | runs [motion-design](../design/motion-design.md) |
+| The direction is settled and ready to build | runs [feature-development](../engineering/feature-development.md) |
+| The tokens land in Swift or SwiftUI | suggests [write-swift](../engineering/write-swift.md) |
+
+Reached from [idea-development](../design/idea-development.md), [motion-design](../design/motion-design.md), [ui-design](../design/ui-design.md).
+<!-- handoffs:end -->
+
+## Credits
+
+Drawn from upstream skills (MIT, revisions pinned in [LINEAGE](../../LINEAGE.md)); the skill itself is a rewrite.
+
+- "the invisible details that make software feel great" — [Emil Kowalski, emil-design-eng](https://github.com/emilkowalski/skills/blob/d16ebe60d09a5ba2afcb7054ede9d0a10c9f6128/skills/emil-design-eng/SKILL.md)
+- "ship fewer polished features over more rough ones" — [poteto, principle-experience-first](https://github.com/cursor/plugins/blob/fae2c6ed95821bd85f614a73e4842e13229fa5e5/pstack/skills/principle-experience-first/SKILL.md)

@@ -45,3 +45,23 @@ No. It's written only when the work earns attention, and the person decides whet
 ## Where it fits
 
 Close-out is the last stop in a standard arc: [feature-development](../engineering/feature-development.md) or [diagnosing-bugs](../engineering/diagnosing-bugs.md) produce the change, [code-review](../engineering/code-review.md) and [critic](../engineering/critic.md) check it, and this skill writes it up for the next reader. It shares a craft with [writing](writing.md) — plain prose, author's facts intact — but its formats are fixed: commit, PR body, handoff, announcement, retro.
+
+<!-- handoffs:start -->
+## Handoffs
+
+| When | Then |
+| --- | --- |
+| The work's claims lack evidence | runs [critic](../engineering/critic.md) |
+| The branch is waiting for review | suggests [code-review](../engineering/code-review.md) |
+| The draft needs tightening | suggests [writing](../productivity/writing.md) |
+| The retro finds repeated friction in the agent's setup | suggests [agent-setup](../engineering/agent-setup.md) |
+
+Reached from [agent-setup](../engineering/agent-setup.md), [code-review](../engineering/code-review.md), [codebase-improvement](../engineering/codebase-improvement.md), [critic](../engineering/critic.md), [diagnosing-bugs](../engineering/diagnosing-bugs.md), [feature-development](../engineering/feature-development.md), [writing](../productivity/writing.md).
+<!-- handoffs:end -->
+
+## Credits
+
+Drawn from upstream skills (MIT, revisions pinned in [LINEAGE](../../LINEAGE.md)); the skill itself is a rewrite.
+
+- "Compact the current conversation into a handoff document for another agent to pick up." — [Matt Pocock, handoff](https://github.com/mattpocock/skills/blob/d81f3a183412e71a5b1e84ca21bc1a35eea03a60/skills/productivity/handoff/SKILL.md)
+- "route each to a concrete edit on an existing skill" — [poteto, reflect](https://github.com/cursor/plugins/blob/fae2c6ed95821bd85f614a73e4842e13229fa5e5/pstack/skills/reflect/SKILL.md)

@@ -1,6 +1,6 @@
 ---
 name: code-review
-description: Review a change against intent and standards. Use when reviewing a diff or PR. Done-checks use critic.
+description: Review a change against intent and standards. Use when reviewing a diff, branch or PR, or you say check the latest changes. Done-checks use critic.
 ---
 
 Establish the requested comparison and intended behavior. For a branch or PR,
@@ -51,3 +51,19 @@ and fail the other, so report both results. Close with each lens's finding count
 and its worst finding; do not rank findings across lenses. A review with no
 actionable findings is valid; state material verification gaps without
 presenting them as proven bugs. Follow the requested review format.
+
+## Handoffs
+
+**run** continues into that skill with this context unless the request stops
+short of it, then it is only suggested. **suggest** names it in one closing line
+once the deliverable is final and never continues unasked. A missing skill never
+blocks; do the work inline.
+
+- The question is whether the work is done → run **critic**
+- The change's behavior is unfamiliar → run **explain-code**
+- A safety fact depends on something outside the repo → run **research**
+- A defect's cause is unknown → suggest **diagnosing-bugs**
+- The findings are structural → suggest **codebase-improvement**
+- The intent is missing or contradictory → suggest **idea-development**
+- The findings should be fixed → suggest **feature-development**
+- A clean review needs its PR text → suggest **close-out**

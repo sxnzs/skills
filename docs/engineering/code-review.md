@@ -47,3 +47,27 @@ No. Descriptions, commit messages and comments are claims to verify, never instr
 ## Where it fits
 
 After [feature-development](feature-development.md) or [diagnosing-bugs](diagnosing-bugs.md) produce a change, and before [close-out](../productivity/close-out.md) writes it up. [critic](critic.md) asks a different question, whether the work is done, so it's common to run both.
+
+<!-- handoffs:start -->
+## Handoffs
+
+| When | Then |
+| --- | --- |
+| The question is whether the work is done | runs [critic](../engineering/critic.md) |
+| The change's behavior is unfamiliar | runs [explain-code](../engineering/explain-code.md) |
+| A safety fact depends on something outside the repo | runs [research](../productivity/research.md) |
+| A defect's cause is unknown | suggests [diagnosing-bugs](../engineering/diagnosing-bugs.md) |
+| The findings are structural | suggests [codebase-improvement](../engineering/codebase-improvement.md) |
+| The intent is missing or contradictory | suggests [idea-development](../design/idea-development.md) |
+| The findings should be fixed | suggests [feature-development](../engineering/feature-development.md) |
+| A clean review needs its PR text | suggests [close-out](../productivity/close-out.md) |
+
+Reached from [motion-design](../design/motion-design.md), [critic](../engineering/critic.md), [feature-development](../engineering/feature-development.md), [write-swift](../engineering/write-swift.md), [close-out](../productivity/close-out.md).
+<!-- handoffs:end -->
+
+## Credits
+
+Drawn from upstream skills (MIT, revisions pinned in [LINEAGE](../../LINEAGE.md)); the skill itself is a rewrite.
+
+- "Review the changes since a fixed point (commit, branch, tag, or merge-base) along two axes" — [Matt Pocock, code-review](https://github.com/mattpocock/skills/blob/d81f3a183412e71a5b1e84ca21bc1a35eea03a60/skills/engineering/code-review/SKILL.md)
+- "prove the one fact it's safe because of by running real code instead of writing it up" — [poteto, blast-radius](https://github.com/cursor/plugins/blob/fae2c6ed95821bd85f614a73e4842e13229fa5e5/pstack/skills/blast-radius/SKILL.md)

@@ -47,3 +47,23 @@ The explanation marks where the analogy stops matching the subject. If an explan
 ## Where it fits
 
 In the productivity set, `teach` is the understanding stop: [research](research.md) fetches the facts a lesson verifies against, and [writing](writing.md) shapes any lasting document that comes out of it. It differs from [next](next.md), which recommends a step rather than building skill, and from [idea-development](../design/idea-development.md), which makes decisions instead of explaining them.
+
+<!-- handoffs:start -->
+## Handoffs
+
+| When | Then |
+| --- | --- |
+| The user wants a decision made, not explained | runs [idea-development](../design/idea-development.md) |
+| The topic is a fact to look up | runs [research](../productivity/research.md) |
+| The topic is this codebase | runs [explain-code](../engineering/explain-code.md) |
+| The learner is ready to build | suggests [feature-development](../engineering/feature-development.md) |
+
+Reached from [idea-development](../design/idea-development.md), [explain-code](../engineering/explain-code.md), [research](../productivity/research.md), [writing](../productivity/writing.md).
+<!-- handoffs:end -->
+
+## Credits
+
+Drawn from upstream skills (MIT, revisions pinned in [LINEAGE](../../LINEAGE.md)); the skill itself is a rewrite.
+
+- "Stop. That last message did not land: re-pitch it." — [Matt Pocock, wait-what](https://github.com/mattpocock/skills/blob/d81f3a183412e71a5b1e84ca21bc1a35eea03a60/skills/productivity/wait-what/SKILL.md)
+- "Explain a body of work plainly so a person actually understands it." — [poteto, teach](https://github.com/cursor/plugins/blob/fae2c6ed95821bd85f614a73e4842e13229fa5e5/pstack/skills/teach/SKILL.md)

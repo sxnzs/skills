@@ -53,6 +53,18 @@ of the main line. Otherwise finish with the design handoff and
 one next step. Preserve user assets and artifacts needed to reconstruct the choice;
 clean up only disposable exploration after an adequate handoff.
 
-For identity or aesthetic character, use **visual-design** without restarting
-discovery. A fully specified small interaction can be built directly; optional
+A fully specified small interaction can be built directly; optional
 helper skills and tools do not create new prerequisites.
+
+## Handoffs
+
+**run** continues into that skill with this context unless the request stops
+short of it, then it is only suggested. **suggest** names it in one closing line
+once the deliverable is final and never continues unasked. A missing skill never
+blocks; do the work inline.
+
+- The outcome or audience is unsettled → run **idea-development**
+- Identity or aesthetic character is the question → run **visual-design**
+- Motion or gesture needs its own investigation → run **motion-design**
+- The design is settled and ready to build → run **feature-development**
+- The interface is Swift or SwiftUI → suggest **write-swift**

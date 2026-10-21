@@ -46,8 +46,19 @@ question does not require a course or learning workspace.
 
 ## Boundaries
 
-Teach toward understanding, not compliance with a preferred answer. If the user
-wants a decision made rather than explained, use **idea-development**. Never
+Teach toward understanding, not compliance with a preferred answer.  Never
 invent facts or citations. When the learner identifies graded assessment work,
 teach the method, offer hints, or use an analogous exercise rather than completing
 the submission for them. Create persistent learning artifacts only when requested.
+
+## Handoffs
+
+**run** continues into that skill with this context unless the request stops
+short of it, then it is only suggested. **suggest** names it in one closing line
+once the deliverable is final and never continues unasked. A missing skill never
+blocks; do the work inline.
+
+- The user wants a decision made, not explained → run **idea-development**
+- The topic is a fact to look up → run **research**
+- The topic is this codebase → run **explain-code**
+- The learner is ready to build → suggest **feature-development**

@@ -34,3 +34,17 @@ Do not migrate the language mode or lower deployment support without a request.
 Implement when asked; review without editing when asked to review. Report the
 change or findings, the target and checks actually run, and any build, simulator
 or device behavior that remains unverified.
+
+## Handoffs
+
+**run** continues into that skill with this context unless the request stops
+short of it, then it is only suggested. **suggest** names it in one closing line
+once the deliverable is final and never continues unasked. A missing skill never
+blocks; do the work inline.
+
+- The flow or interaction is unsettled → run **ui-design**
+- Motion or gesture needs its own investigation → run **motion-design**
+- A bug's cause is unknown → run **diagnosing-bugs**
+- Toolchain or API behavior depends on documentation → run **research**
+- New behavior needs building test-first → suggest **feature-development**
+- The change is finished → suggest **code-review**

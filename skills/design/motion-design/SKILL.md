@@ -43,3 +43,17 @@ human rather than silently selecting it.
 
 Report the behavior changed or found, the actual values/tool used, observed
 checks and any feel or device testing that remains unverified.
+
+## Handoffs
+
+**run** continues into that skill with this context unless the request stops
+short of it, then it is only suggested. **suggest** names it in one closing line
+once the deliverable is final and never continues unasked. A missing skill never
+blocks; do the work inline.
+
+- The motion is part of an unsettled flow → run **ui-design**
+- The tuning happens in Swift or SwiftUI → run **write-swift**
+- The settled motion is ready to build → run **feature-development**
+- The question is the look, not the movement → suggest **visual-design**
+- A rapid-toggle or interruption bug has an unknown cause → suggest **diagnosing-bugs**
+- The motion change is finished → suggest **code-review**

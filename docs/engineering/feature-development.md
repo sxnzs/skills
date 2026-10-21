@@ -48,3 +48,29 @@ Each side's intent is traced to its commit, spec or ticket, both outcomes are pr
 ## Where it fits
 
 This is the implementation skill for new behavior. Unsettled requirements belong upstream with [idea-development](../design/idea-development.md), a failing symptom with [diagnosing-bugs](diagnosing-bugs.md). When structure blocks a useful slice, [codebase-improvement](codebase-improvement.md) takes over with the demonstrated friction. The finished change goes to [code-review](code-review.md), and [critic](critic.md) or [close-out](../productivity/close-out.md) handle the question of whether it's done and how it gets written up.
+
+<!-- handoffs:start -->
+## Handoffs
+
+| When | Then |
+| --- | --- |
+| An unsettled requirement would change the behavior | runs [idea-development](../design/idea-development.md) |
+| A failing symptom or unexpected behavior appears | runs [diagnosing-bugs](../engineering/diagnosing-bugs.md) |
+| Structure blocks a useful slice | runs [codebase-improvement](../engineering/codebase-improvement.md) |
+| The code to change is unfamiliar or its reasons are unknown | runs [explain-code](../engineering/explain-code.md) |
+| A non-trivial change is built and its checks pass | runs [critic](../engineering/critic.md) |
+| The finished change needs a second reader | suggests [code-review](../engineering/code-review.md) |
+| Verified work needs its commit message or PR body | suggests [close-out](../productivity/close-out.md) |
+| The repo has no runnable checks to build against | suggests [agent-setup](../engineering/agent-setup.md) |
+
+Reached from [idea-development](../design/idea-development.md), [motion-design](../design/motion-design.md), [ui-design](../design/ui-design.md), [visual-design](../design/visual-design.md), [agent-setup](../engineering/agent-setup.md), [code-review](../engineering/code-review.md), [codebase-improvement](../engineering/codebase-improvement.md), [critic](../engineering/critic.md), [explain-code](../engineering/explain-code.md), [write-swift](../engineering/write-swift.md), [research](../productivity/research.md), [teach](../productivity/teach.md).
+<!-- handoffs:end -->
+
+## Credits
+
+Drawn from upstream skills (MIT, revisions pinned in [LINEAGE](../../LINEAGE.md)); the skill itself is a rewrite.
+
+- "tracer-bullet tickets" — [Matt Pocock, to-tickets](https://github.com/mattpocock/skills/blob/d81f3a183412e71a5b1e84ca21bc1a35eea03a60/skills/engineering/to-tickets/SKILL.md)
+- "Break work into small units that each end in a verifiable state" — [poteto, principle-sequence-verifiable-units](https://github.com/cursor/plugins/blob/fae2c6ed95821bd85f614a73e4842e13229fa5e5/pstack/skills/principle-sequence-verifiable-units/SKILL.md)
+- "Keep a reviewable decision trail for long-running or unattended work" — [poteto, show-me-your-work](https://github.com/cursor/plugins/blob/fae2c6ed95821bd85f614a73e4842e13229fa5e5/pstack/skills/show-me-your-work/SKILL.md)
+- "Proceed, present the result, let the human course-correct after the fact; reserve confirmation for irreversible actions." — [poteto, principle-never-block-on-the-human](https://github.com/cursor/plugins/blob/fae2c6ed95821bd85f614a73e4842e13229fa5e5/pstack/skills/principle-never-block-on-the-human/SKILL.md)

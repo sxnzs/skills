@@ -1,6 +1,6 @@
 ---
 name: feature-development
-description: Build behavior in test-first slices. Use when implementing a feature or spec. Bugs use diagnosing-bugs.
+description: Build behavior in test-first slices. Use when implementing a feature, spec or tickets, or you say build this. Bugs use diagnosing-bugs.
 ---
 
 # Feature Development
@@ -47,15 +47,15 @@ requested.
   mirror the code and report that red-before-green was not observed. Once the
   required checks pass, broaden or repeat testing only for a
   new change, failure or concern.
+- For unattended or long-running work, keep a log with one row per decision (what, why, an evidence
+  pointer, result) that a reviewer can read cold; commit it only when they need it to trust the result.
 - After green, consider a separate behavior-preserving refactor and re-run checks;
   do not mix restructuring into the red-to-green loop. If structure prevents a
   useful slice, use **codebase-improvement** with the demonstrated friction. When
   conflicts interrupt integration, follow [intent-based conflict resolution](references/merge-conflicts.md).
 - Finish by checking the diff against acceptance criteria and unrelated work,
   running the required project checks, and reporting commands and outcomes.
-  Recommend **code-review** for the finished change; use **critic** when the
-  question is whether completion is proven, and **close-out** for the commit
-  message, PR body or handoff. None of these replaces implementation evidence.
+  Handoffs below never replace this evidence.
 
 ## Boundaries
 
@@ -63,7 +63,21 @@ A planning request stops at the slice plan. An authorized build continues throug
 checks without asking again for approval already given. Between slices, report
 status beside the next action rather than ending the turn to announce it or
 offer to continue; non-blocking questions travel with continued work. Stop when
-nothing can advance without the user. Consequential unsettled
-requirements belong to **idea-development**; a failing symptom belongs to
-**diagnosing-bugs**. Preserve unrelated work and respect the project's authority
-for external or destructive actions.
+nothing can advance without the user. Preserve unrelated work and respect the
+project's authority for external or destructive actions.
+
+## Handoffs
+
+**run** continues into that skill with this context unless the request stops
+short of it, then it is only suggested. **suggest** names it in one closing line
+once the deliverable is final and never continues unasked. A missing skill never
+blocks; do the work inline.
+
+- An unsettled requirement would change the behavior → run **idea-development**
+- A failing symptom or unexpected behavior appears → run **diagnosing-bugs**
+- Structure blocks a useful slice → run **codebase-improvement**
+- The code to change is unfamiliar or its reasons are unknown → run **explain-code**
+- A non-trivial change is built and its checks pass → run **critic**
+- The finished change needs a second reader → suggest **code-review**
+- Verified work needs its commit message or PR body → suggest **close-out**
+- The repo has no runnable checks to build against → suggest **agent-setup**

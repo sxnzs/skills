@@ -47,3 +47,26 @@ An exploration-only request ends with usable raw material, not a forced article.
 ## Where it fits
 
 Writing sits beside the work skills rather than inside them: [close-out](close-out.md) owns the commit and PR formats for finished work, while this skill owns prose that has to be read — docs, READMEs, agent instructions. It consumes the outputs of [research](research.md) for sourced claims and [teach](teach.md)'s understanding of what a learner needs, and consequential message-or-audience decisions route back to [idea-development](../design/idea-development.md).
+
+<!-- handoffs:start -->
+## Handoffs
+
+| When | Then |
+| --- | --- |
+| The text is a commit message, PR body, handoff or retro | runs [close-out](../productivity/close-out.md) |
+| The text documents code nobody has explained yet | suggests [explain-code](../engineering/explain-code.md) |
+| The text depends on facts not yet checked | suggests [research](../productivity/research.md) |
+| The repo's agent setup is as weak as its instruction file | suggests [agent-setup](../engineering/agent-setup.md) |
+| The reader must learn, not just read | suggests [teach](../productivity/teach.md) |
+
+Reached from [agent-setup](../engineering/agent-setup.md), [explain-code](../engineering/explain-code.md), [close-out](../productivity/close-out.md).
+<!-- handoffs:end -->
+
+## Credits
+
+Drawn from upstream skills (MIT, revisions pinned in [LINEAGE](../../LINEAGE.md)); the skill itself is a rewrite.
+
+- "Writing documents for agents." — [Matt Pocock, writing-for-agents](https://github.com/mattpocock/skills/blob/d81f3a183412e71a5b1e84ca21bc1a35eea03a60/skills/productivity/writing-for-agents/SKILL.md)
+- "mine raw fragments, no structure yet" — [Matt Pocock, writing-fragments](https://github.com/mattpocock/skills/blob/d81f3a183412e71a5b1e84ca21bc1a35eea03a60/skills/in-progress/writing-fragments/SKILL.md)
+- "shape raw material into an article, paragraph by paragraph" — [Matt Pocock, writing-shape](https://github.com/mattpocock/skills/blob/d81f3a183412e71a5b1e84ca21bc1a35eea03a60/skills/in-progress/writing-shape/SKILL.md)
+- "Cut AI tells from any writing." — [poteto, unslop](https://github.com/cursor/plugins/blob/fae2c6ed95821bd85f614a73e4842e13229fa5e5/pstack/skills/unslop/SKILL.md)

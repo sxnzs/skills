@@ -1,6 +1,6 @@
 # Skills
 
-Fifteen agent skills for the work around code: deciding what to build, building
+Seventeen agent skills for the work around code: deciding what to build, building
 it in checked steps, finding out why it broke, proving it's done, and telling
 people about it.
 
@@ -74,8 +74,10 @@ There is no setup step. Each skill reads your repository's own conventions
 | [feature-development](docs/engineering/feature-development.md) | "Build this feature." | Behavior delivered in verified, test-first slices |
 | [diagnosing-bugs](docs/engineering/diagnosing-bugs.md) | "Fix this regression." | A proven cause and a fix with failing-before, passing-after evidence |
 | [codebase-improvement](docs/engineering/codebase-improvement.md) | "This code is painful to change." | A justified structure and plan, implemented when you ask |
+| [explain-code](docs/engineering/explain-code.md) | "How does this work, and why is it like that?" | A traced path and cited rationale, with the confidence stated |
 | [code-review](docs/engineering/code-review.md) | "Check the latest changes." | Findings against intent and your repository's standards |
 | [critic](docs/engineering/critic.md) | "Is this actually done?" | A pass, fail or unverified verdict backed by evidence |
+| [agent-setup](docs/engineering/agent-setup.md) | "Agents keep guessing the test command." | Checks, hooks, a lean instruction file and a verification loop that was actually run |
 | [write-swift](docs/engineering/write-swift.md) | "Fix this SwiftUI lifecycle bug." | Swift checked against your real toolchain and isolation rules |
 | **Design** | | |
 | [idea-development](docs/design/idea-development.md) | "Help me develop this idea." | The decisions behind an idea, and a plan to build it |
@@ -89,7 +91,25 @@ There is no setup step. Each skill reads your repository's own conventions
 | [close-out](docs/productivity/close-out.md) | "Write the PR." | A commit message, PR body, handoff or retro true to the evidence |
 | [next](docs/productivity/next.md) | "What's next?" | One recommended step, and why |
 
-[How the skills fit together](docs/README.md) shows the handoffs between them.
+## How they work together
+
+Every skill ends with a short list of handoffs: *when this happens, go to that
+skill*. A bug found while building runs diagnosing-bugs; a finished build runs
+critic; a verified result suggests close-out. A handoff either **runs** (the
+agent carries your context across and keeps going, unless your request stopped
+short) or **suggests** (one closing line, never unasked). A skill you haven't
+installed never blocks anything.
+
+Typical routes, each hop a real handoff:
+
+- **Build a feature**: idea-development → feature-development → critic → close-out
+- **Fix a bug**: diagnosing-bugs → critic → close-out
+- **Understand, then change**: explain-code → codebase-improvement → feature-development
+
+When you're lost, say "what's next?" and **next** points to one step. The
+handoffs are checked in CI: a link to a missing skill, a skill nothing reaches,
+or a stale graph fails `npm run check`. [How the skills fit together](docs/README.md)
+has every route and the full map.
 
 ## Why these skills exist
 
@@ -118,6 +138,14 @@ thin slices: one failing test at a public seam, the least code that passes it,
 then the project's real checks. **[critic](docs/engineering/critic.md)** checks
 a finished claim against the actual files and check output, and answers PASS,
 FAIL or UNVERIFIED. It never upgrades "probably" to "verified".
+
+### Code nobody can explain
+
+Before changing an unfamiliar area you need how it works and why it is shaped
+that way. **[explain-code](docs/engineering/explain-code.md)** traces one real
+path, shows it in the smallest useful view, and for "why" follows the history to
+the pull requests and issues behind it, saying how strongly each claim is
+supported and what it searched and didn't find.
 
 ### Debugging by guessing
 
@@ -160,6 +188,14 @@ the claim (official docs, specs, source code), records the version or date each
 claim applies to, and leaves a short note you can check without repeating the
 work.
 
+### Agents stumbling in the same place
+
+The same wrong test command, the same skipped check, the same "done" that never
+ran the app. **[agent-setup](docs/engineering/agent-setup.md)** turns each
+repeated failure into something enforced (a check, a hook, a lean instruction
+file, a verification loop it has actually run) and asks before it touches
+anything that changes what agents may do.
+
 ### Work nobody hears about
 
 A verified change nobody knows about is unfinished.
@@ -187,8 +223,8 @@ worth adding to your own agent instructions.
 
 ## Contributing and local development
 
-Issues and pull requests are welcome. The rules for editing skills are in
-[AGENTS.md](AGENTS.md).
+Issues and pull requests are welcome. Keep skill changes scoped and run the
+checks below.
 
 ```sh
 git clone https://github.com/sxnzs/skills && cd skills
@@ -196,8 +232,9 @@ scripts/link-skills.sh   # symlink every skill into ~/.claude/skills and ~/.agen
 npm run check            # Node 24+ and Python 3; no install step
 ```
 
-The check validates skill metadata, sibling references, docs pages, plugin
-manifests and links, and runs the motion and Swift examples. It can't prove how
+The check validates skill metadata, the handoff graph, docs pages, plugin
+manifests, links and pinned upstream revisions, and runs the motion and Swift
+examples. It can't prove how
 an agent behaves; [evals](evals/README.md) covers that separately. Changes are
 listed in the [changelog](CHANGELOG.md).
 

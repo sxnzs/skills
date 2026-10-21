@@ -47,3 +47,24 @@ Yes. When asked to review, it reports findings without editing, along with the t
 ## Where it fits
 
 This is the language specialist inside the engineering set: it implements within the rules that [feature-development](feature-development.md) slices and tests around. For design-side decisions it defers outward — [ui-design](../design/ui-design.md) owns the surrounding interaction flow and [motion-design](../design/motion-design.md) owns gesture physics and timing. Like any finished change, its output can face [code-review](code-review.md) and [critic](critic.md).
+
+<!-- handoffs:start -->
+## Handoffs
+
+| When | Then |
+| --- | --- |
+| The flow or interaction is unsettled | runs [ui-design](../design/ui-design.md) |
+| Motion or gesture needs its own investigation | runs [motion-design](../design/motion-design.md) |
+| A bug's cause is unknown | runs [diagnosing-bugs](../engineering/diagnosing-bugs.md) |
+| Toolchain or API behavior depends on documentation | runs [research](../productivity/research.md) |
+| New behavior needs building test-first | suggests [feature-development](../engineering/feature-development.md) |
+| The change is finished | suggests [code-review](../engineering/code-review.md) |
+
+Reached from [motion-design](../design/motion-design.md), [ui-design](../design/ui-design.md), [visual-design](../design/visual-design.md).
+<!-- handoffs:end -->
+
+## Credits
+
+Drawn from upstream skills (MIT, revisions pinned in [LINEAGE](../../LINEAGE.md)); the skill itself is a rewrite.
+
+- "How to write modern Swift well" — [Emil Kowalski, write-swift](https://github.com/emilkowalski/skills/blob/d16ebe60d09a5ba2afcb7054ede9d0a10c9f6128/skills/write-swift/SKILL.md)
