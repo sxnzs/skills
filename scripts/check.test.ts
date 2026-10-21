@@ -158,6 +158,15 @@ for (const [label, text, expected] of [
   assert.ok(validate(root).some(error => expected.test(error)), validate(root).join('\n'));
 }));
 
+test('planning and read-only skills may not run editing skills', () => pair((root, put) => {
+  put('skills/test-bucket/test-skill/SKILL.md', skill('test-skill', ['- A → run **other-skill**', '- B → run **critic**']));
+  put('skills/test-bucket/critic/SKILL.md', skill('critic', ['- Fails → run **feature-development**']));
+  put('skills/test-bucket/feature-development/SKILL.md', skill('feature-development', ['- Built → run **critic**']));
+  assert.ok(validate(root).some(error => /critic: handoff to feature-development must be suggest/.test(error)));
+  put('skills/test-bucket/critic/SKILL.md', skill('critic', ['- Fails → suggest **feature-development**']));
+  assert.deepEqual(validate(root), []);
+}));
+
 test('handoff entries may wrap across lines', () => pair((root, put) => {
   put('skills/test-bucket/test-skill/SKILL.md', skill('test-skill', ['- Work shifts\n  across lines → run **other-skill**']));
   assert.deepEqual(readHandoffs(root, listSkills(root)).errors, []);

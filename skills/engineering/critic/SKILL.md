@@ -47,7 +47,7 @@ once the deliverable is final and never continues unasked. A missing skill never
 blocks; do the work inline.
 
 - The change itself needs reading line by line → suggest **code-review**
-- The verdict is FAIL and the cause is unknown → run **diagnosing-bugs**
+- The verdict is FAIL and the cause is unknown → suggest **diagnosing-bugs**
 - The verdict is FAIL because requested behavior is missing → suggest **feature-development**
 - Verification needs a fact from outside the repo → run **research**
 - The verdict is PASS and the work needs its commit message, PR body or handoff → suggest **close-out**

@@ -56,7 +56,7 @@ short of it, then it is only suggested. **suggest** names it in one closing line
 once the deliverable is final and never continues unasked. A missing skill never
 blocks; do the work inline.
 
-- The code misbehaves → run **diagnosing-bugs**
+- The code misbehaves → suggest **diagnosing-bugs**
 - The answer lives outside the repo → run **research**
 - The rationale decides an open choice → run **idea-development**
 - A change is planned on what was explained → suggest **feature-development**

@@ -41,7 +41,7 @@ happens, *then* that skill. Each entry is one of two kinds.
   diagnosing-bugs; a built feature runs critic.
 - **suggest**: a separate job that is your call. The agent names it in one
   closing line once its own deliverable is final, and never continues unasked.
-  A finished review suggests close-out; a settled plan suggests building it.
+  A finished review suggests close-out; a settled plan suggests building it. Planning, design, explaining and verifying skills never start edits on their own, and the check enforces that.
 
 A skill you haven't installed never blocks anything; the work happens inline.
 **next** holds the whole map for the moment you don't know where you are. The
@@ -99,20 +99,15 @@ flowchart LR
   idea_development --> research
   idea_development --> visual_design
   idea_development --> ui_design
-  idea_development --> codebase_improvement
   idea_development --> explain_code
-  idea_development --> feature_development
   motion_design --> ui_design
   motion_design --> write_swift
-  motion_design --> feature_development
   ui_design --> idea_development
   ui_design --> visual_design
   ui_design --> motion_design
-  ui_design --> feature_development
   visual_design --> idea_development
   visual_design --> ui_design
   visual_design --> motion_design
-  visual_design --> feature_development
   agent_setup --> writing
   agent_setup --> research
   agent_setup --> critic
@@ -124,13 +119,11 @@ flowchart LR
   codebase_improvement --> explain_code
   codebase_improvement --> feature_development
   codebase_improvement --> critic
-  critic --> diagnosing_bugs
   critic --> research
   diagnosing_bugs --> codebase_improvement
   diagnosing_bugs --> research
   diagnosing_bugs --> explain_code
   diagnosing_bugs --> critic
-  explain_code --> diagnosing_bugs
   explain_code --> research
   explain_code --> idea_development
   feature_development --> idea_development
@@ -153,16 +146,16 @@ flowchart LR
 
 | Skill | Runs | Suggests |
 | --- | --- | --- |
-| [idea-development](design/idea-development.md) | research, visual-design, ui-design, codebase-improvement, explain-code, feature-development | teach |
-| [motion-design](design/motion-design.md) | ui-design, write-swift, feature-development | visual-design, diagnosing-bugs, code-review |
-| [ui-design](design/ui-design.md) | idea-development, visual-design, motion-design, feature-development | write-swift |
-| [visual-design](design/visual-design.md) | idea-development, ui-design, motion-design, feature-development | write-swift |
+| [idea-development](design/idea-development.md) | research, visual-design, ui-design, explain-code | codebase-improvement, feature-development, teach |
+| [motion-design](design/motion-design.md) | ui-design, write-swift | feature-development, visual-design, diagnosing-bugs, code-review |
+| [ui-design](design/ui-design.md) | idea-development, visual-design, motion-design | feature-development, write-swift |
+| [visual-design](design/visual-design.md) | idea-development, ui-design, motion-design | feature-development, write-swift |
 | [agent-setup](engineering/agent-setup.md) | writing, research, critic | feature-development, close-out |
 | [code-review](engineering/code-review.md) | critic, explain-code, research | diagnosing-bugs, codebase-improvement, idea-development, feature-development, close-out |
 | [codebase-improvement](engineering/codebase-improvement.md) | idea-development, diagnosing-bugs, explain-code, feature-development, critic | agent-setup, close-out |
-| [critic](engineering/critic.md) | diagnosing-bugs, research | code-review, feature-development, close-out |
+| [critic](engineering/critic.md) | research | code-review, diagnosing-bugs, feature-development, close-out |
 | [diagnosing-bugs](engineering/diagnosing-bugs.md) | codebase-improvement, research, explain-code, critic | close-out |
-| [explain-code](engineering/explain-code.md) | diagnosing-bugs, research, idea-development | feature-development, codebase-improvement, teach, writing |
+| [explain-code](engineering/explain-code.md) | research, idea-development | diagnosing-bugs, feature-development, codebase-improvement, teach, writing |
 | [feature-development](engineering/feature-development.md) | idea-development, diagnosing-bugs, codebase-improvement, explain-code, critic | code-review, close-out, agent-setup |
 | [write-swift](engineering/write-swift.md) | ui-design, motion-design, diagnosing-bugs, research | feature-development, code-review |
 | [close-out](productivity/close-out.md) | critic | code-review, writing, agent-setup |

@@ -49,7 +49,7 @@ This is the skill to run before changing code you don't know. [feature-developme
 
 | When | Then |
 | --- | --- |
-| The code misbehaves | runs [diagnosing-bugs](../engineering/diagnosing-bugs.md) |
+| The code misbehaves | suggests [diagnosing-bugs](../engineering/diagnosing-bugs.md) |
 | The answer lives outside the repo | runs [research](../productivity/research.md) |
 | The rationale decides an open choice | runs [idea-development](../design/idea-development.md) |
 | A change is planned on what was explained | suggests [feature-development](../engineering/feature-development.md) |

@@ -66,5 +66,5 @@ blocks; do the work inline.
 - The outcome or audience is unsettled → run **idea-development**
 - Identity or aesthetic character is the question → run **visual-design**
 - Motion or gesture needs its own investigation → run **motion-design**
-- The design is settled and ready to build → run **feature-development**
+- The design is settled and ready to build → suggest **feature-development**
 - The interface is Swift or SwiftUI → suggest **write-swift**

@@ -55,7 +55,7 @@ No. Screenshots can't establish timing, interruption or frame smoothness, so cla
 | --- | --- |
 | The motion is part of an unsettled flow | runs [ui-design](../design/ui-design.md) |
 | The tuning happens in Swift or SwiftUI | runs [write-swift](../engineering/write-swift.md) |
-| The settled motion is ready to build | runs [feature-development](../engineering/feature-development.md) |
+| The settled motion is ready to build | suggests [feature-development](../engineering/feature-development.md) |
 | The question is the look, not the movement | suggests [visual-design](../design/visual-design.md) |
 | A rapid-toggle or interruption bug has an unknown cause | suggests [diagnosing-bugs](../engineering/diagnosing-bugs.md) |
 | The motion change is finished | suggests [code-review](../engineering/code-review.md) |

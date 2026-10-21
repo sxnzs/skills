@@ -56,7 +56,7 @@ The design set splits the surface three ways: [idea-development](idea-developmen
 | The outcome is unsettled | runs [idea-development](../design/idea-development.md) |
 | Flow or interaction behavior is the question | runs [ui-design](../design/ui-design.md) |
 | Timing, gestures or interruption need investigation | runs [motion-design](../design/motion-design.md) |
-| The direction is settled and ready to build | runs [feature-development](../engineering/feature-development.md) |
+| The direction is settled and ready to build | suggests [feature-development](../engineering/feature-development.md) |
 | The tokens land in Swift or SwiftUI | suggests [write-swift](../engineering/write-swift.md) |
 
 Reached from [idea-development](../design/idea-development.md), [motion-design](../design/motion-design.md), [ui-design](../design/ui-design.md).

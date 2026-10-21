@@ -7,6 +7,10 @@ import { fileURLToPath } from 'node:url';
 export type Skill = { bucket: string, name: string };
 export type Edge = { from: string, to: string, mode: 'run' | 'suggest', when: string };
 
+// Skills that plan, design, explain or verify; they suggest editing skills but never run them unasked.
+const NO_AUTO_EDIT = ['idea-development', 'ui-design', 'visual-design', 'motion-design', 'explain-code', 'critic', 'code-review', 'research', 'teach'];
+const EDITING = ['feature-development', 'diagnosing-bugs', 'codebase-improvement', 'agent-setup'];
+
 export const PREFACE = '**run** continues into that skill with this context unless the request stops short of it, '
   + 'then it is only suggested. **suggest** names it in one closing line once the deliverable is final and never '
   + 'continues unasked. A missing skill never blocks; do the work inline.';
@@ -42,6 +46,7 @@ export function readHandoffs(root: string, skills: Skill[]): { edges: Edge[], er
       if (!names.includes(to)) errors.push(`${name}: handoff to unknown skill ${to}`);
       else if (to === name) errors.push(`${name}: handoff to itself`);
       else if (seen.has(to)) errors.push(`${name}: duplicate handoff to ${to}`);
+      else if (mode === 'run' && NO_AUTO_EDIT.includes(name) && EDITING.includes(to)) errors.push(`${name}: handoff to ${to} must be suggest (${name} never starts edits unasked)`);
       else { seen.add(to); edges.push({ from: name, to, mode: mode as Edge['mode'], when }); }
     }
     if (!list.length) errors.push(`${name}: Handoffs block has no entries`);

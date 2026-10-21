@@ -53,7 +53,7 @@ blocks; do the work inline.
 
 - The motion is part of an unsettled flow → run **ui-design**
 - The tuning happens in Swift or SwiftUI → run **write-swift**
-- The settled motion is ready to build → run **feature-development**
+- The settled motion is ready to build → suggest **feature-development**
 - The question is the look, not the movement → suggest **visual-design**
 - A rapid-toggle or interruption bug has an unknown cause → suggest **diagnosing-bugs**
 - The motion change is finished → suggest **code-review**

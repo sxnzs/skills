@@ -54,7 +54,7 @@ Critic is the check between "the work says it's done" and the work being done. I
 | When | Then |
 | --- | --- |
 | The change itself needs reading line by line | suggests [code-review](../engineering/code-review.md) |
-| The verdict is FAIL and the cause is unknown | runs [diagnosing-bugs](../engineering/diagnosing-bugs.md) |
+| The verdict is FAIL and the cause is unknown | suggests [diagnosing-bugs](../engineering/diagnosing-bugs.md) |
 | The verdict is FAIL because requested behavior is missing | suggests [feature-development](../engineering/feature-development.md) |
 | Verification needs a fact from outside the repo | runs [research](../productivity/research.md) |
 | The verdict is PASS and the work needs its commit message, PR body or handoff | suggests [close-out](../productivity/close-out.md) |

@@ -56,7 +56,7 @@ Within the design set, [idea-development](idea-development.md) settles who the d
 | The outcome or audience is unsettled | runs [idea-development](../design/idea-development.md) |
 | Identity or aesthetic character is the question | runs [visual-design](../design/visual-design.md) |
 | Motion or gesture needs its own investigation | runs [motion-design](../design/motion-design.md) |
-| The design is settled and ready to build | runs [feature-development](../engineering/feature-development.md) |
+| The design is settled and ready to build | suggests [feature-development](../engineering/feature-development.md) |
 | The interface is Swift or SwiftUI | suggests [write-swift](../engineering/write-swift.md) |
 
 Reached from [idea-development](../design/idea-development.md), [motion-design](../design/motion-design.md), [visual-design](../design/visual-design.md), [write-swift](../engineering/write-swift.md).

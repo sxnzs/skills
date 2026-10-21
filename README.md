@@ -100,15 +100,15 @@ agent carries your context across and keeps going, unless your request stopped
 short) or **suggests** (one closing line, never unasked). A skill you haven't
 installed never blocks anything.
 
-Typical routes, each hop a real handoff:
+Typical routes:
 
 - **Build a feature**: idea-development → feature-development → critic → close-out
 - **Fix a bug**: diagnosing-bugs → critic → close-out
 - **Understand, then change**: explain-code → codebase-improvement → feature-development
 
 When you're lost, say "what's next?" and **next** points to one step. The
-handoffs are checked in CI: a link to a missing skill, a skill nothing reaches,
-or a stale graph fails `npm run check`. [How the skills fit together](docs/README.md)
+handoffs are checked by `npm run check`: a link to a missing skill, a skill
+nothing reaches, or a stale graph fails it. [How the skills fit together](docs/README.md)
 has every route and the full map.
 
 ## Why these skills exist

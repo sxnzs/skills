@@ -57,9 +57,9 @@ This is the front door of the design set: ideas in, decisions out. Facts a decis
 | A decision waits on a fact outside the project | runs [research](../productivity/research.md) |
 | The open question is how it looks | runs [visual-design](../design/visual-design.md) |
 | The open question is how it behaves | runs [ui-design](../design/ui-design.md) |
-| The real issue is structural friction in existing code | runs [codebase-improvement](../engineering/codebase-improvement.md) |
+| The real issue is structural friction in existing code | suggests [codebase-improvement](../engineering/codebase-improvement.md) |
 | The area to change is not understood | runs [explain-code](../engineering/explain-code.md) |
-| The direction is settled and ready to build | runs [feature-development](../engineering/feature-development.md) |
+| The direction is settled and ready to build | suggests [feature-development](../engineering/feature-development.md) |
 | The user must understand a concept before deciding | suggests [teach](../productivity/teach.md) |
 
 Reached from [ui-design](../design/ui-design.md), [visual-design](../design/visual-design.md), [code-review](../engineering/code-review.md), [codebase-improvement](../engineering/codebase-improvement.md), [explain-code](../engineering/explain-code.md), [feature-development](../engineering/feature-development.md), [research](../productivity/research.md), [teach](../productivity/teach.md).

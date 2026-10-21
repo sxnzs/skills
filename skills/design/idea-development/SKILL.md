@@ -72,7 +72,7 @@ blocks; do the work inline.
 - A decision waits on a fact outside the project → run **research**
 - The open question is how it looks → run **visual-design**
 - The open question is how it behaves → run **ui-design**
-- The real issue is structural friction in existing code → run **codebase-improvement**
+- The real issue is structural friction in existing code → suggest **codebase-improvement**
 - The area to change is not understood → run **explain-code**
-- The direction is settled and ready to build → run **feature-development**
+- The direction is settled and ready to build → suggest **feature-development**
 - The user must understand a concept before deciding → suggest **teach**

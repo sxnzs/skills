@@ -70,5 +70,5 @@ blocks; do the work inline.
 - The outcome is unsettled → run **idea-development**
 - Flow or interaction behavior is the question → run **ui-design**
 - Timing, gestures or interruption need investigation → run **motion-design**
-- The direction is settled and ready to build → run **feature-development**
+- The direction is settled and ready to build → suggest **feature-development**
 - The tokens land in Swift or SwiftUI → suggest **write-swift**
